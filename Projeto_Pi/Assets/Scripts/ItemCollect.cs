@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public enum tipoItem
@@ -12,6 +13,9 @@ public class ItemCollect : MonoBehaviour
 {
     public GameObject panel;
     public int Itemtipo;
+
+    private Scrollbar scrollbar;
+    private int id;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +28,7 @@ public class ItemCollect : MonoBehaviour
       
 
     }
-   
+         
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -32,7 +36,15 @@ public class ItemCollect : MonoBehaviour
             switch (Itemtipo)
             {
                 case 0:
-                    SceneManager.LoadSceneAsync(0);
+                    //SceneManager.LoadScene (1, LoadSceneMode.Additive);
+                    panel.SetActive(true);
+                    break;
+                case 1:
+                    panel.SetActive(true);
+                    scrollbar.value = id;
+                    break;
+                case 2:
+                    panel.SetActive(true);
                     break;
             }
         }
