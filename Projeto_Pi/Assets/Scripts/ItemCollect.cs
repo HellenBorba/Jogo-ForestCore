@@ -12,10 +12,9 @@ public enum tipoItem
 public class ItemCollect : MonoBehaviour
 {
     public GameObject panel;
-    public int Itemtipo;
+    public int Itemtipo, Contagem, id;
+    public Scrollbar scrollbar;
 
-    private Scrollbar scrollbar;
-    private int id;
     // Start is called before the first frame update
     void Start()
     {

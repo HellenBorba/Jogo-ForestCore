@@ -1,22 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameContoller : MonoBehaviour
 {
     public GameObject[] buton;
+
+    private ItemCollect IC;
     // Start is called before the first frame update
     void Start()
     {
-
+        IC = GameObject.Find("Poço").GetComponent<ItemCollect>();
     }
 
     // Update is called once per frame
     void Update()
     {
         Cursor.visible = true;
+
+        if (IC.scrollbar.value >= 1)
+        {
+            IC.scrollbar.value = 0;
+            IC.Contagem++;
+        }
     }
     public void seleciono(int ButtonTipo)
     {
@@ -45,9 +52,9 @@ public class GameContoller : MonoBehaviour
                 break;
         }
     }
-    public void End(int scroollbar)
+    public void End()
     {
-        if (scroollbar == 1)
+        if (IC.Contagem >= 260)
         {
             buton[5].SetActive(true);
         }
