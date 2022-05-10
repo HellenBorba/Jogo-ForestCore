@@ -4,30 +4,25 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public enum tipoItem
-{
-    agua, meu
-}
-
 public class ItemCollect : MonoBehaviour
 {
     public GameObject panel;
-    public int Itemtipo, Contagem, id;
     public Scrollbar scrollbar;
 
-    // Start is called before the first frame update
+    [SerializeField]
+    private int Itemtipo, id;
+    //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
 
     }
-
-    // Update is called once per frame
+    //----------------------------------------------------------------------------------------------------------------------------------------
     void Update()
     {
       
 
     }
-         
+    //----------------------------------------------------------------------------------------------------------------------------------------
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))

@@ -7,12 +7,13 @@ public class Player : MonoBehaviour
     public Rigidbody body;
     
     private float horizontal, vertical;
-    
+    //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
         Cursor.visible = false;
         body = GetComponent<Rigidbody>();
     }
+    //----------------------------------------------------------------------------------------------------------------------------------------
     void Update()
     {
         horizontal = Input.GetAxis("Horizontal");

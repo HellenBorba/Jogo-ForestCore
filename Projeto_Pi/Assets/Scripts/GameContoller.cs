@@ -6,25 +6,35 @@ using UnityEngine.UI;
 public class GameContoller : MonoBehaviour
 {
     public GameObject[] buton;
+    public GameObject Glicose;
+    public Text texto;
 
+    private int Contagem;
     private ItemCollect IC;
-    // Start is called before the first frame update
+    //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
         IC = GameObject.Find("Poço").GetComponent<ItemCollect>();
     }
-
-    // Update is called once per frame
+    //----------------------------------------------------------------------------------------------------------------------------------------
     void Update()
     {
         Cursor.visible = true;
 
-        if (IC.scrollbar.value >= 1)
+        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = Camera.main.nearClipPlane;
+        worldPosition = Camera.main.ScreenToWorldPoint(mousePos);
+        //----------------------------------------------------------------------------------------------------------------------------------------
+        if (IC.scrollbar.value >= 1) 
         {
             IC.scrollbar.value = 0;
-            IC.Contagem++;
+            Contagem++;
         }
+        //----------------------------------------------------------------------------------------------------------------------------------------
+        texto.text = "Progresso: " + Contagem + " = 200";
     }
+    //----------------------------------------------------------------------------------------------------------------------------------------
     public void seleciono(int ButtonTipo)
     {
         switch (ButtonTipo)
@@ -52,9 +62,10 @@ public class GameContoller : MonoBehaviour
                 break;
         }
     }
+    //----------------------------------------------------------------------------------------------------------------------------------------
     public void End()
     {
-        if (IC.Contagem >= 260)
+        if (Contagem >= 200)
         {
             buton[5].SetActive(true);
         }
