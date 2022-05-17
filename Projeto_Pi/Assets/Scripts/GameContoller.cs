@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class GameContoller : MonoBehaviour
 {
     public GameObject[] buton;
-    public GameObject Glicose;
     public Text texto;
+    public GameObject Camera1, Camera2;
 
     private int Contagem;
     private ItemCollect IC;
@@ -19,13 +19,6 @@ public class GameContoller : MonoBehaviour
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Update()
     {
-        Cursor.visible = true;
-
-        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 mousePos = Input.mousePosition;
-        mousePos.z = Camera.main.nearClipPlane;
-        worldPosition = Camera.main.ScreenToWorldPoint(mousePos);
-        //----------------------------------------------------------------------------------------------------------------------------------------
         if (IC.scrollbar.value >= 1) 
         {
             IC.scrollbar.value = 0;
