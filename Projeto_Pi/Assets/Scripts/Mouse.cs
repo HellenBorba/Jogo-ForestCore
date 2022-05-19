@@ -20,14 +20,16 @@ public class Mouse : MonoBehaviour
     //----------------------------------------------------------------------------------------------------------------------------------------
     private void OnMouseDown()
     {
-        print("oi");
+        print("funfo");
     }
+    //----------------------------------------------------------------------------------------------------------------------------------------
     private void OnMouseUp()
     {
         Vector3 mousePos = Input.mousePosition;
         mousePos.y = Camera.main.nearClipPlane;
         transform.position = Camera.main.ScreenToWorldPoint(mousePos); 
     }
+    //----------------------------------------------------------------------------------------------------------------------------------------
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Mol"))

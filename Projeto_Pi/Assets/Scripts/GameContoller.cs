@@ -63,4 +63,11 @@ public class GameContoller : MonoBehaviour
             buton[5].SetActive(true);
         }
     }
+    //---------------------------------------------------------------------------------------------------------------------------------------- 
+    public void Panel()
+    {
+        IC.panel.SetActive(false);
+        Camera1.SetActive(true);
+        Camera2.SetActive(false);
+    }
 }

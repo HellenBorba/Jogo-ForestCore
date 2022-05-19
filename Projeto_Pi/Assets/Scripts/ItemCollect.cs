@@ -20,7 +20,7 @@ public class ItemCollect : MonoBehaviour
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Update()
     {
-      
+       
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     private void OnCollisionEnter(Collision collision)
@@ -33,15 +33,18 @@ public class ItemCollect : MonoBehaviour
                     GC.Camera1.SetActive(false);
                     GC.Camera2.SetActive(true);
                     Cursor.visible = true;
-                    //SceneManager.LoadScene (1, LoadSceneMode.Additive);
                     panel.SetActive(true);
                     break;
                 case 1:
+                    GC.Camera1.SetActive(false);
+                    GC.Camera2.SetActive(true);
                     Cursor.visible = true;
                     panel.SetActive(true);
                     scrollbar.value = id;
                     break;
                 case 2:
+                    GC.Camera1.SetActive(false);
+                    GC.Camera2.SetActive(true);
                     Cursor.visible = true;
                     panel.SetActive(true);
                     break;
