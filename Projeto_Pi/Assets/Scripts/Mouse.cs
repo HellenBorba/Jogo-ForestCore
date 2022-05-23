@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Mouse : MonoBehaviour
 {
-    public GameObject Glicose;
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
@@ -13,21 +12,19 @@ public class Mouse : MonoBehaviour
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Update()
     {
-       /* Vector3 mousePos = Input.mousePosition;
-        mousePos.z = Camera.main.nearClipPlane;
-        transform.position = Camera.main.ScreenToWorldPoint(mousePos);*/
+      
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     private void OnMouseDown()
     {
-        print("funfo");
+      
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     private void OnMouseUp()
     {
         Vector3 mousePos = Input.mousePosition;
-        mousePos.y = Camera.main.nearClipPlane;
-        transform.position = Camera.main.ScreenToWorldPoint(mousePos); 
+        mousePos.z = Camera.main.nearClipPlane;
+        transform.position = Camera.main.ScreenToWorldPoint(mousePos);
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     private void OnTriggerEnter2D(Collider2D collision)
