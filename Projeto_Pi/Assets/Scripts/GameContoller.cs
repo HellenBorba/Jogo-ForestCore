@@ -68,5 +68,6 @@ public class GameContoller : MonoBehaviour
     {
         IC.panel.SetActive(false);
         Camera1.SetActive(true);
+        Camera2.SetActive(false);
     }
 }
