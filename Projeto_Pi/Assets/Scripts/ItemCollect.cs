@@ -43,10 +43,11 @@ public class ItemCollect : MonoBehaviour
                     scrollbar.value = id;
                     break;
                 case 2:
-                    GC.Camera1.SetActive(false);
-                    GC.Camera2.SetActive(true);
+                    GC.Camera3.tag = "MainCamera";
+                    GC.Camera1.tag = "Untagged";
+                    GC.Camera3.SetActive(true);
+                    GC.Camera2.SetActive(false);
                     Cursor.visible = true;
-                    panel.SetActive(true);
                     break;
             }
         }

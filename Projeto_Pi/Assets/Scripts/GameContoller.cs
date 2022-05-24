@@ -7,7 +7,7 @@ public class GameContoller : MonoBehaviour
 {
     public GameObject[] buton;
     public Text texto;
-    public GameObject Camera1, Camera2;
+    public GameObject Camera1, Camera2, Camera3;
 
     private int Contagem;
     private ItemCollect IC;
