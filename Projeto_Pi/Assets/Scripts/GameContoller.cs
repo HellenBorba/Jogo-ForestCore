@@ -7,9 +7,10 @@ public class GameContoller : MonoBehaviour
 {
     public GameObject[] buton;
     public Text texto;
-    public GameObject Camera1, Camera2, Camera3;
+    public GameObject[] Camera;
+    public Button[] interact;
 
-    private int Contagem;
+    private int contagem, cas, dig;
     private ItemCollect IC;
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
@@ -22,10 +23,15 @@ public class GameContoller : MonoBehaviour
         if (IC.scrollbar.value >= 1) 
         {
             IC.scrollbar.value = 0;
-            Contagem++;
+            contagem++;
         }
         //----------------------------------------------------------------------------------------------------------------------------------------
-        texto.text = "Progresso: " + Contagem + " = 200";
+        texto.text = "Progresso: " + contagem + " = 200";
+        //----------------------------------------------------------------------------------------------------------------------------------------
+        if(cas == 4)
+        {
+            buton[4].SetActive(true);
+        }
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void seleciono(int ButtonTipo)
@@ -33,32 +39,31 @@ public class GameContoller : MonoBehaviour
         switch (ButtonTipo)
         {
             case 0:
-                var colors = buton[0].GetComponent<Button>().colors;
-                colors.normalColor = Color.green;
-                buton[0].GetComponent<Button>().colors = colors;
+                dig = 1;
+                cas ++;
+                interact[0].interactable = false;
                 break;
             case 1:
-                var colors1 = buton[1].GetComponent<Button>().colors;
-                colors1.normalColor = Color.green;
-                buton[1].GetComponent<Button>().colors = colors1;
+                dig = 2;
+                cas++;
+                interact[1].interactable = false;
                 break;
             case 2:
-                var colors2 = buton[2].GetComponent<Button>().colors;
-                colors2.normalColor = Color.green;
-                buton[2].GetComponent<Button>().colors = colors2;
+                dig = 3;
+                cas++;
+                interact[2].interactable = false;
                 break;
             case 3:
-                var colors3 = buton[3].GetComponent<Button>().colors;
-                colors3.normalColor = Color.green;
-                buton[3].GetComponent<Button>().colors = colors3;
-                buton[4].SetActive(true);
+                dig = 4;
+                cas++;
+                interact[3].interactable = false;
                 break;
         }
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
-    public void End()
+    public void Puzzle_2()
     {
-        if (Contagem >= 200)
+        if (contagem >= 200)
         {
             buton[5].SetActive(true);
         }
@@ -66,8 +71,10 @@ public class GameContoller : MonoBehaviour
     //---------------------------------------------------------------------------------------------------------------------------------------- 
     public void Panel()
     {
-        IC.panel.SetActive(false);
-        Camera1.SetActive(true);
-        Camera2.SetActive(false);
+        IC.panel1.SetActive(false);
+        IC.panel2.SetActive(false);
+        Camera[0].SetActive(true);
+        Camera[1].SetActive(false);
+        Camera[2].SetActive(false);
     }
 }

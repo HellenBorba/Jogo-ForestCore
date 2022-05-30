@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Mouse : MonoBehaviour
 {
-    public Rigidbody rigidbody;
+    public Rigidbody rig;
+    public GameObject hidri;
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
@@ -23,14 +24,15 @@ public class Mouse : MonoBehaviour
     //----------------------------------------------------------------------------------------------------------------------------------------
     private void OnMouseDrag()
     {
-        print("drag");
+        gameObject.transform.position = hidri.transform.position;
         /*
+        print("drag");
         Vector3 mousePos = Input.mousePosition;
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-        transform.position = new Vector2(mousePos.x, mousePos.y);
+        transform.position = new Vector2(mousePos.x, mousePos.y)s;
         print("oi");
         */
-        rigidbody.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
+        //rig.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, - Camera.main.transform.position.z));
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     private void OnMouseUp()
