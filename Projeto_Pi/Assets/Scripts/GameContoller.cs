@@ -10,8 +10,10 @@ public class GameContoller : MonoBehaviour
     public GameObject[] Camera;
     public Button[] interact;
 
+    [SerializeField]
     private int contagem, cas, dig;
     private ItemCollect IC;
+    bool ordem;
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
@@ -34,29 +36,40 @@ public class GameContoller : MonoBehaviour
         }
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
-    public void seleciono(int ButtonTipo)
+    public void seleciono(int numBotao)
     {
-        switch (ButtonTipo)
+        print(numBotao);
+        switch (numBotao)
         {
+            // 1 - 3 - 2 - 0
             case 0:
-                dig = 1;
+                dig += 1;
                 cas ++;
                 interact[0].interactable = false;
                 break;
             case 1:
-                dig = 2;
+                ordem = true;
+                dig += 2;
                 cas++;
                 interact[1].interactable = false;
                 break;
             case 2:
-                dig = 3;
+                dig += 3;
                 cas++;
                 interact[2].interactable = false;
                 break;
             case 3:
-                dig = 4;
-                cas++;
-                interact[3].interactable = false;
+                if (ordem)
+                {
+                    dig += 4;
+                    cas++;
+                    interact[3].interactable = false;
+                }
+                else
+                {
+                    ordem = false;
+                }
+              
                 break;
         }
     }
