@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ItemCollect : MonoBehaviour
 {
-    public GameObject panel1, panel2;
+    public GameObject panel1, panel2, panel3;
     public Scrollbar scrollbar;
 
     [SerializeField]
@@ -46,6 +46,7 @@ public class ItemCollect : MonoBehaviour
                     GC.Camera[2].SetActive(true);
                     GC.Camera[0].SetActive(false);
                     Cursor.visible = true;
+                    panel3.SetActive(true);
                     break;
             }
         }

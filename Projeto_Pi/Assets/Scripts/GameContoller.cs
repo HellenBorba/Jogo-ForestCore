@@ -11,9 +11,9 @@ public class GameContoller : MonoBehaviour
     public Button[] interact;
 
     [SerializeField]
-    private int contagem, cas, dig;
+    private int contagem;
     private ItemCollect IC;
-    bool ordem;
+    private string senha;
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
@@ -29,47 +29,30 @@ public class GameContoller : MonoBehaviour
         }
         //----------------------------------------------------------------------------------------------------------------------------------------
         texto.text = "Progresso: " + contagem + " = 200";
-        //----------------------------------------------------------------------------------------------------------------------------------------
-        if(cas == 4)
-        {
-            buton[4].SetActive(true);
-        }
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void seleciono(int numBotao)
     {
-        print(numBotao);
+        senha = senha + numBotao;
+        if(senha == "3021")
+        {
+            buton[4].SetActive(true);
+        }
+        //----------------------------------------------------------------------------------------------------------------------------------------
         switch (numBotao)
         {
-            // 1 - 3 - 2 - 0
+            // 3 - 0 - 2 - 1 = 4 - 1 - 3 - 2
             case 0:
-                dig += 1;
-                cas ++;
                 interact[0].interactable = false;
                 break;
             case 1:
-                ordem = true;
-                dig += 2;
-                cas++;
                 interact[1].interactable = false;
                 break;
             case 2:
-                dig += 3;
-                cas++;
                 interact[2].interactable = false;
                 break;
             case 3:
-                if (ordem)
-                {
-                    dig += 4;
-                    cas++;
-                    interact[3].interactable = false;
-                }
-                else
-                {
-                    ordem = false;
-                }
-              
+                interact[3].interactable = false;
                 break;
         }
     }
@@ -86,6 +69,7 @@ public class GameContoller : MonoBehaviour
     {
         IC.panel1.SetActive(false);
         IC.panel2.SetActive(false);
+        IC.panel3.SetActive(false);
         Camera[0].SetActive(true);
         Camera[1].SetActive(false);
         Camera[2].SetActive(false);
