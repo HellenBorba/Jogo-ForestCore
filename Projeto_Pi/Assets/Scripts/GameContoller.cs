@@ -5,19 +5,20 @@ using UnityEngine.UI;
 
 public class GameContoller : MonoBehaviour
 {
-    public GameObject[] buton;
+    public GameObject[] buton, Camera, COH;
     public Text texto;
-    public GameObject[] Camera;
     public Button[] interact;
 
     [SerializeField]
     private int contagem;
     private ItemCollect IC;
     private string senha;
+    private Mouse MS;
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
         IC = GameObject.Find("Poço").GetComponent<ItemCollect>();
+        MS = GameObject.Find("Hidrogênio, Oxigênio e Carbono").GetComponent<Mouse>();
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Update()
@@ -57,7 +58,7 @@ public class GameContoller : MonoBehaviour
         }
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
-    public void Puzzle_2()
+    public void Puzzle2()
     {
         if (contagem >= 200)
         {
@@ -73,5 +74,5 @@ public class GameContoller : MonoBehaviour
         Camera[0].SetActive(true);
         Camera[1].SetActive(false);
         Camera[2].SetActive(false);
-    }
+    } 
 }
