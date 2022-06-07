@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mouse : MonoBehaviour
+public class MouseO : MonoBehaviour
 {
-    public Rigidbody rig;
+    //public Rigidbody rig;
     public GameObject[] Objeto;
-    public int nun;
-    public GameObject ponto;
+    public GameObject pontoFixo;
 
     [SerializeField]
-    private float timer;
+    private int vl;
     public Color green;
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
@@ -20,31 +19,37 @@ public class Mouse : MonoBehaviour
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Update()
     {
-        timer += Time.deltaTime;
-        if (timer >= 4)
+        switch (vl)
         {
-            gameObject.transform.position = ponto.transform.position;
+            case 1:
+                gameObject.transform.position = Objeto[0].transform.position;
+                if (gameObject.transform.position == Objeto[0].transform.position)
+                {
+                    Color a = green;
+                    Objeto[0].GetComponent<SpriteRenderer>().color = a;
+                }
+                break;
+            case 2:
+                gameObject.transform.position = pontoFixo.transform.position;
+                break;
+            case 3:
+                gameObject.transform.position = Objeto[1].transform.position;
+                Color b = green;
+                Objeto[1].GetComponent<SpriteRenderer>().color = b;
+                break;
+            case 4:
+                gameObject.transform.position = pontoFixo.transform.position;
+                break;
         }
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     private void OnMouseDown()
     {
-        print("click");
+        vl += 1;
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     private void OnMouseDrag()
-    {
-        gameObject.transform.position = Objeto[0].transform.position;
-        switch (nun)
         {
-            case 0:
-                if (gameObject.transform.position == Objeto[0].transform.position)
-                {
-                    Color c = green;
-                    Objeto[0].GetComponent<SpriteRenderer>().color = c;
-                }
-                break;
-        }
         //----------------------------------------------------------------------------------------------------------------------------------------
         /*
         print("drag");
@@ -52,7 +57,7 @@ public class Mouse : MonoBehaviour
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
         transform.position = new Vector2(mousePos.x, mousePos.y)s;
         print("oi");
-       
+
         /rig.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, - Camera.main.transform.position.z));
          */
     }

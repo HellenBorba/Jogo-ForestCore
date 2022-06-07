@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameContoller : MonoBehaviour
 {
-    public GameObject[] buton, Camera, COH;
+    public GameObject[] buton, Camera;
     public Text texto;
     public Button[] interact;
 
@@ -13,12 +13,10 @@ public class GameContoller : MonoBehaviour
     private int contagem;
     private ItemCollect IC;
     private string senha;
-    private Mouse MS;
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
         IC = GameObject.Find("Poço").GetComponent<ItemCollect>();
-        MS = GameObject.Find("Hidrogênio, Oxigênio e Carbono").GetComponent<Mouse>();
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Update()
