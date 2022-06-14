@@ -66,7 +66,7 @@ public class GameControllerCHO : MonoBehaviour
                 if(Hidrogenio.transform.position == Objeto[11].transform.position)
                 {
                     Color d = green;
-                    Objeto[8].GetComponent<SpriteRenderer>().color = d;
+                    Objeto[11].GetComponent<SpriteRenderer>().color = d;
                 }
                 break;
             case 24:
@@ -101,6 +101,7 @@ public class GameControllerCHO : MonoBehaviour
     #region O
     public void BotãoO()
     {
+        vl += 1;
         switch (vl)
         {
             case 3:
@@ -176,6 +177,7 @@ public class GameControllerCHO : MonoBehaviour
     #region C
     public void BotãoC()
     {
+        vl += 1;
         switch (vl)
         {
             case 5:
