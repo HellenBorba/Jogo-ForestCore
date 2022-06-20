@@ -8,22 +8,22 @@ public class GameControllerCHO : MonoBehaviour
     public GameObject pontoFixoH, pontoFixoO, pontoFixoC, Oxigenio, Hidrogenio, Carbono;
     public Color green;
 
+    [SerializeField]
     private string ordem;
     private GameContoller GC;
+    private ItemCollect IC;
     [SerializeField]
     private int vl;
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
         GC = GameObject.Find("GameController").GetComponent<GameContoller>();
+        IC = GameObject.Find("Poço").GetComponent<ItemCollect>();
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Update()
     {
-        if(ordem == "01234567891011121314151617181920212223242526272829303132333435")
-        {
-            GC.buton[6].SetActive(true);
-        }
+        //perguntar desde sempre, vermelho-1 azul-2 preto-3
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     #region H

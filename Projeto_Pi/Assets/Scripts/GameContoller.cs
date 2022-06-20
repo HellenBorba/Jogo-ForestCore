@@ -10,13 +10,14 @@ public class GameContoller : MonoBehaviour
     public Button[] interact;
 
     [SerializeField]
-    private int contagem;
+    private int contagem, senha1;
     private ItemCollect IC;
+    [SerializeField]
     private string senha;
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
-        IC = GameObject.Find("Poço").GetComponent<ItemCollect>();
+        IC = GameObject.Find("Poço1").GetComponent<ItemCollect>();
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Update()
@@ -28,12 +29,20 @@ public class GameContoller : MonoBehaviour
         }
         //----------------------------------------------------------------------------------------------------------------------------------------
         texto.text = "Progresso: " + contagem + " = 200";
+        //----------------------------------------------------------------------------------------------------------------------------------------
+        if (senha1 == 4)
+        {
+            if (senha != "3021")
+            {
+                Panel();
+            }
+        }
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void seleciono(int numBotao)
     {
         senha = senha + numBotao;
-        if(senha == "3021")
+        if (senha == "3021")
         {
             buton[4].SetActive(true);
         }
@@ -42,15 +51,19 @@ public class GameContoller : MonoBehaviour
         {
             // 3 - 0 - 2 - 1 = 4 - 1 - 3 - 2
             case 0:
+                senha1 += 1;
                 interact[0].interactable = false;
                 break;
             case 1:
+                senha1 += 1;
                 interact[1].interactable = false;
                 break;
             case 2:
+                senha1 += 1;
                 interact[2].interactable = false;
                 break;
             case 3:
+                senha1 += 1;
                 interact[3].interactable = false;
                 break;
         }
