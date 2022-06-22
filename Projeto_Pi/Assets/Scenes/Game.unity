@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2353,12 +2353,24 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2130762398}
         m_TargetAssemblyTypeName: GameControllerCHO, Assembly-CSharp
-        m_MethodName: "Bot\xE3oC"
+        m_MethodName: "N\xFAmero"
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2130762398}
+        m_TargetAssemblyTypeName: GameControllerCHO, Assembly-CSharp
+        m_MethodName: "Bot\xF5es"
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2835,8 +2847,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.0000013169159, y: -0.7059415, z: -0.0000013125863, w: 0.70827025}
-  m_LocalPosition: {x: 55.12, y: 0, z: 0}
+  m_LocalRotation: {x: 0.18366116, y: -0.006150067, z: 0.0011490881, w: 0.98296976}
+  m_LocalPosition: {x: 0.20585003, y: 5.37, z: -12.619999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4281,7 +4293,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2130762398}
         m_TargetAssemblyTypeName: GameControllerCHO, Assembly-CSharp
-        m_MethodName: "Bot\xE3oH"
+        m_MethodName: "N\xFAmero"
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2130762398}
+        m_TargetAssemblyTypeName: GameControllerCHO, Assembly-CSharp
+        m_MethodName: "Bot\xF5es"
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5273,12 +5297,24 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2130762398}
         m_TargetAssemblyTypeName: GameControllerCHO, Assembly-CSharp
-        m_MethodName: "Bot\xE3oO"
+        m_MethodName: "N\xFAmero"
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2130762398}
+        m_TargetAssemblyTypeName: GameControllerCHO, Assembly-CSharp
+        m_MethodName: "Bot\xF5es"
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5470,7 +5506,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1865842571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5961,7 +5997,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1958849933}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -37.830006, y: 1.6599998, z: 7.2000012}
+  m_LocalPosition: {x: -37.504154, y: -0.70000017, z: 11.480001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1361584282}
@@ -6229,7 +6265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2013404669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6724,12 +6760,12 @@ MonoBehaviour:
   pontoFixoH: {fileID: 939380959}
   pontoFixoO: {fileID: 1879407015}
   pontoFixoC: {fileID: 666685300}
-  Oxigenio: {fileID: 1805855004}
-  Hidrogenio: {fileID: 1495697661}
-  Carbono: {fileID: 862999501}
   green: {r: 0, g: 1, b: 0.1816504, a: 1}
-  ordem: 
   vl: 0
+  valor: 0
+  Oxigenio: {fileID: 1805855006}
+  Hidrogenio: {fileID: 1495697663}
+  Carbono: {fileID: 862999503}
 --- !u!1 &2135591123
 GameObject:
   m_ObjectHideFlags: 0
