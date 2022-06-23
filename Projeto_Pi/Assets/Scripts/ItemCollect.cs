@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ItemCollect : MonoBehaviour
 {
-    public GameObject panel1, panel2, panel3;
+    public GameObject panel1, panel2, panel3, panel3P;
     public Scrollbar scrollbar;
 
     [SerializeField]

@@ -17,7 +17,7 @@ public class GameControllerCHO : MonoBehaviour
     void Start()
     {
         GC = GameObject.Find("GameController").GetComponent<GameContoller>();
-        IC = GameObject.Find("Poço").GetComponent<ItemCollect>();
+        IC = GameObject.Find("Poço1").GetComponent<ItemCollect>();
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Update()
@@ -49,7 +49,7 @@ public class GameControllerCHO : MonoBehaviour
                 }
                 else
                 {
-                    print("nop");
+                    IC.panel3P.SetActive(true);
                 }
                 break;
             case 2:
