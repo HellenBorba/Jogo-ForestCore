@@ -11,12 +11,10 @@ public class GameControllerCHO : MonoBehaviour
     public int vl, valor;
     public Button Oxigenio, Hidrogenio, Carbono;
 
-    private GameContoller GC;
     private ItemCollect IC;
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
-        GC = GameObject.Find("GameController").GetComponent<GameContoller>();
         IC = GameObject.Find("Poço1").GetComponent<ItemCollect>();
     }
     //----------------------------------------------------------------------------------------------------------------------------------------

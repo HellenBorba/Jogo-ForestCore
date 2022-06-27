@@ -7,7 +7,8 @@ public class GameContoller : MonoBehaviour
 {
     public GameObject[] buton, Camera;
     public Text texto;
-    public Button[] interact;
+    public Button[] interact, circulo;
+    public Button CirculoStart;
 
     [SerializeField]
     private int contagem, senha1;
@@ -22,10 +23,10 @@ public class GameContoller : MonoBehaviour
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Update()
     {
-        if (IC.scrollbar.value >= 1) 
+        if (IC.scrollbar.value == 1) 
         {
-            IC.scrollbar.value = 0;
             contagem++;
+            IC.scrollbar.value = 0;
         }
         //----------------------------------------------------------------------------------------------------------------------------------------
         texto.text = "Progresso: " + contagem + " = 200";
@@ -69,8 +70,19 @@ public class GameContoller : MonoBehaviour
         }
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
-    public void Puzzle2()
+    public void Puzzle2(int click)
     {
+        switch(click)
+        {
+            case 1:
+                break;
+            case 2:
+                circulo[0].GetComponent<SpriteRenderer>().color = Color.green;
+                break;
+            case 3:
+                break;
+        }
+        //----------------------------------------------------------------------------------------------------------------------------------------
         if (contagem >= 200)
         {
             buton[5].SetActive(true);
