@@ -11,7 +11,7 @@ public class GameContoller : MonoBehaviour
     public Button CirculoStart;
 
     [SerializeField]
-    private int contagem, senha1;
+    private int contagem, senha1, click, valor;
     private ItemCollect IC;
     [SerializeField]
     private string senha;
@@ -70,14 +70,29 @@ public class GameContoller : MonoBehaviour
         }
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
-    public void Puzzle2(int click)
+    public void Número(int val)
     {
-        switch(click)
+        valor += val;
+    }
+    //----------------------------------------------------------------------------------------------------------------------------------------
+    public void Puzzle2()
+    {
+        click += 1;
+        switch (click)
         {
             case 1:
+                if (valor == 0)
+                {
+                    circulo[0].interactable = false;
+                    StartCoroutine(Case1());
+                }
                 break;
             case 2:
-                circulo[0].GetComponent<SpriteRenderer>().color = Color.green;
+                if(valor == 1)
+                {
+                    circulo[0].interactable = false;
+                    StartCoroutine(Case2());
+                }
                 break;
             case 3:
                 break;
@@ -87,6 +102,23 @@ public class GameContoller : MonoBehaviour
         {
             buton[5].SetActive(true);
         }
+    }
+    //----------------------------------------------------------------------------------------------------------------------------------------
+    IEnumerator Case1()
+    {
+        yield return new WaitForSeconds(1f);
+        circulo[0].interactable = true;
+    }
+    IEnumerator Case2()
+    {
+        yield return new WaitForSeconds(1f);
+        circulo[0].interactable = false;
+        yield return new WaitForSeconds(2f);
+        circulo[0].interactable = true;
+        yield return new WaitForSeconds(3f);
+        circulo[1].interactable = false;
+        yield return new WaitForSeconds(4f);
+        circulo[1].interactable = true;
     }
     //---------------------------------------------------------------------------------------------------------------------------------------- 
     public void Panel()
