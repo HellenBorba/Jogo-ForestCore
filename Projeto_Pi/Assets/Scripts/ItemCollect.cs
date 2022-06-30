@@ -7,10 +7,9 @@ using UnityEngine.SceneManagement;
 public class ItemCollect : MonoBehaviour
 {
     public GameObject panel1, panel2, panel3, panel3P;
-    public Scrollbar scrollbar;
 
     [SerializeField]
-    private int Itemtipo, id;
+    private int Itemtipo;
     private GameContoller GC;
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
@@ -40,7 +39,6 @@ public class ItemCollect : MonoBehaviour
                     GC.Camera[0].SetActive(false);
                     Cursor.visible = true;
                     panel2.SetActive(true);
-                    scrollbar.value = id;
                     break;
                 case 2:
                     GC.Camera[2].SetActive(true);

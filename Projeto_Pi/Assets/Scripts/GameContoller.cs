@@ -9,6 +9,7 @@ public class GameContoller : MonoBehaviour
     public Text texto;
     public Button[] interact, circulo;
     public Button CirculoStart;
+    public Slider slider;
 
     [SerializeField]
     private int contagem, senha1, click, valor;
@@ -23,13 +24,7 @@ public class GameContoller : MonoBehaviour
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Update()
     {
-        if (IC.scrollbar.value == 1) 
-        {
-            contagem++;
-            IC.scrollbar.value = 0;
-        }
-        //----------------------------------------------------------------------------------------------------------------------------------------
-        texto.text = "Progresso: " + contagem + " = 200";
+        texto.text = "Progresso: " + contagem;
         //----------------------------------------------------------------------------------------------------------------------------------------
         if (senha1 == 4)
         {
@@ -83,42 +78,79 @@ public class GameContoller : MonoBehaviour
             case 1:
                 if (valor == 0)
                 {
-                    circulo[0].interactable = false;
-                    StartCoroutine(Case1());
+                    StartCoroutine(Case((int)Random.Range(0, 4)));
                 }
                 break;
             case 2:
                 if(valor == 1)
                 {
-                    circulo[0].interactable = false;
-                    StartCoroutine(Case2());
+                    StartCoroutine(Case((int)Random.Range(0, 4)));
+                    slider.value += 1;
                 }
                 break;
-            case 3:
+            case 4:
+                if(valor == 3)
+                {
+                    StartCoroutine(Case((int)Random.Range(0, 4)));
+                    slider.value += 1;
+                }
                 break;
-        }
-        //----------------------------------------------------------------------------------------------------------------------------------------
-        if (contagem >= 200)
-        {
-            buton[5].SetActive(true);
+            case 7:
+                if(valor == 6)
+                {
+                    StartCoroutine(Case((int)Random.Range(0, 4)));
+                    slider.value += 1;
+                }
+                break;
+            case 11:
+                if(valor == 10)
+                {
+                    slider.value += 1;
+                    buton[5].SetActive(true);
+                }
+                break;
         }
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
-    IEnumerator Case1()
+    IEnumerator Case(int bla)
     {
-        yield return new WaitForSeconds(1f);
-        circulo[0].interactable = true;
+        yield return new WaitForSeconds(0.5f);
+        circulo[bla].interactable = false;
+        yield return new WaitForSeconds(0.5f);
+        circulo[bla].interactable = true;
+        if(click >= 2)
+        {
+            StartCoroutine(Case1((int)Random.Range(0,4)));
+        }
     }
-    IEnumerator Case2()
+    IEnumerator Case1(int bla)
     {
-        yield return new WaitForSeconds(1f);
-        circulo[0].interactable = false;
-        yield return new WaitForSeconds(2f);
-        circulo[0].interactable = true;
-        yield return new WaitForSeconds(3f);
-        circulo[1].interactable = false;
-        yield return new WaitForSeconds(4f);
-        circulo[1].interactable = true;
+        yield return new WaitForSeconds(0.5f);
+        circulo[bla].interactable = false;
+        yield return new WaitForSeconds(0.5f);
+        circulo[bla].interactable = true;
+        if (click >= 4)
+        {
+            StartCoroutine(Case2((int)Random.Range(0, 4)));
+        }
+    }
+    IEnumerator Case2(int bla)
+    {
+        yield return new WaitForSeconds(0.5f);
+        circulo[bla].interactable = false;
+        yield return new WaitForSeconds(0.5f);
+        circulo[bla].interactable = true;
+        if (click >= 7)
+        {
+            StartCoroutine(Case3((int)Random.Range(0, 4)));
+        }
+    }
+    IEnumerator Case3(int bla)
+    {
+        yield return new WaitForSeconds(0.5f);
+        circulo[bla].interactable = false;
+        yield return new WaitForSeconds(0.5f);
+        circulo[bla].interactable = true;
     }
     //---------------------------------------------------------------------------------------------------------------------------------------- 
     public void Panel()
