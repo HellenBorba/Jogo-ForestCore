@@ -12,10 +12,9 @@ public class GameContoller : MonoBehaviour
     public Slider slider;
 
     [SerializeField]
-    private int contagem, senha1, click, valor;
+    private int contagem, senha1, click;
     private ItemCollect IC;
-    [SerializeField]
-    private string senha;
+    private string senha, sequencia, valor;
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
@@ -67,7 +66,7 @@ public class GameContoller : MonoBehaviour
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void Número(int val)
     {
-        valor += val;
+        valor = valor + val;
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void Puzzle2()
@@ -76,48 +75,71 @@ public class GameContoller : MonoBehaviour
         switch (click)
         {
             case 1:
-                if (valor == 0)
-                {
-                    StartCoroutine(Case((int)Random.Range(0, 4)));
-                }
+                StartCoroutine(Case((int)Random.Range(0, 4)));
                 break;
             case 2:
-                if(valor == 1)
+                if(valor == sequencia)
                 {
                     StartCoroutine(Case((int)Random.Range(0, 4)));
                     slider.value += 1;
+                }else
+                {
+                    print("Sequência incorreta");
+                    click = 0;
+                    sequencia = null;
+                    valor = null;
                 }
                 break;
             case 4:
-                if(valor == 3)
+                if(valor == sequencia)
                 {
                     StartCoroutine(Case((int)Random.Range(0, 4)));
                     slider.value += 1;
+                }else
+                {
+                    print("Sequência incorreta");
+                    click = 0;
+                    sequencia = null;
+                    valor = null;
                 }
                 break;
             case 7:
-                if(valor == 6)
+                if(valor == sequencia)
                 {
                     StartCoroutine(Case((int)Random.Range(0, 4)));
                     slider.value += 1;
+                }else
+                {
+                    print("Sequência incorreta");
+                    click = 0;
+                    sequencia = null;
+                    valor = null;
                 }
                 break;
             case 11:
-                if(valor == 10)
+                if(valor == sequencia)
                 {
                     slider.value += 1;
                     buton[5].SetActive(true);
                 }
+                else
+                {
+                    print("Sequência incorreta");
+                    click = 0;
+                    sequencia = null;
+                    valor = null;
+                }
                 break;
         }
     }
-    //----------------------------------------------------------------------------------------------------------------------------------------
+    #region Corrotina Case
     IEnumerator Case(int bla)
     {
         yield return new WaitForSeconds(0.5f);
         circulo[bla].interactable = false;
         yield return new WaitForSeconds(0.5f);
         circulo[bla].interactable = true;
+        sequencia = sequencia + bla;
         if(click >= 2)
         {
             StartCoroutine(Case1((int)Random.Range(0,4)));
@@ -129,6 +151,7 @@ public class GameContoller : MonoBehaviour
         circulo[bla].interactable = false;
         yield return new WaitForSeconds(0.5f);
         circulo[bla].interactable = true;
+        sequencia = sequencia + bla;
         if (click >= 4)
         {
             StartCoroutine(Case2((int)Random.Range(0, 4)));
@@ -140,6 +163,7 @@ public class GameContoller : MonoBehaviour
         circulo[bla].interactable = false;
         yield return new WaitForSeconds(0.5f);
         circulo[bla].interactable = true;
+        sequencia = sequencia + bla;
         if (click >= 7)
         {
             StartCoroutine(Case3((int)Random.Range(0, 4)));
@@ -151,7 +175,9 @@ public class GameContoller : MonoBehaviour
         circulo[bla].interactable = false;
         yield return new WaitForSeconds(0.5f);
         circulo[bla].interactable = true;
+        sequencia = sequencia + bla;
     }
+    #endregion 
     //---------------------------------------------------------------------------------------------------------------------------------------- 
     public void Panel()
     {
