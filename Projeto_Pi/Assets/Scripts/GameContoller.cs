@@ -1,70 +1,100 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameContoller : MonoBehaviour
 {
     public GameObject[] buton, Camera;
-    public Text texto;
+    public Text texto_puzzle_2, texto_puzzle_1;
     public Button[] interact, circulo;
     public Button CirculoStart;
     public Slider slider;
+    public int contagem;
 
-    [SerializeField]
-    private int contagem, senha1, click;
+    private int click, quantidade;
     private ItemCollect IC;
-    private string senha, sequencia, valor;
+    private Núcleo NC;
+    private string sequencia, valor, codigo;
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
         IC = GameObject.Find("Poço1").GetComponent<ItemCollect>();
+        NC = GameObject.Find("Núcleo").GetComponent<Núcleo>();
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
-    void Update()
+    public void Update()
     {
-        texto.text = "Progresso: " + contagem;
-        //----------------------------------------------------------------------------------------------------------------------------------------
-        if (senha1 == 4)
+        #region Vitória
+        if (contagem == 3)
         {
-            if (senha != "3021")
+            StartCoroutine(Vitória());
+        }
+        #endregion
+        //----------------------------------------------------------------------------------------------------------------------------------------
+        #region Puzzle1
+        if (quantidade == 4)
+        {
+            if (codigo != "3021")
             {
-                Panel();
+                StartCoroutine(Puzzle1Final());
+                interact[0].interactable = true;
+                interact[1].interactable = true;
+                interact[2].interactable = true;
+                interact[3].interactable = true;
+                codigo = null;
+                quantidade = 0;
             }
         }
+        #endregion
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
+    #region Puzzle1
     public void seleciono(int numBotao)
     {
-        senha = senha + numBotao;
-        if (senha == "3021")
+        codigo = codigo + numBotao;
+        if (codigo == "3021")
         {
             buton[4].SetActive(true);
+            NC.barraVida.value += 10;
         }
         //----------------------------------------------------------------------------------------------------------------------------------------
         switch (numBotao)
         {
             // 3 - 0 - 2 - 1 = 4 - 1 - 3 - 2
             case 0:
-                senha1 += 1;
+                quantidade += 1;
                 interact[0].interactable = false;
                 break;
             case 1:
-                senha1 += 1;
+                quantidade += 1;
                 interact[1].interactable = false;
                 break;
             case 2:
-                senha1 += 1;
+                quantidade += 1;
                 interact[2].interactable = false;
                 break;
             case 3:
-                senha1 += 1;
+                quantidade += 1;
                 interact[3].interactable = false;
                 break;
         }
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
-    public void Número(int val)
+    IEnumerator Puzzle1Final()
+    {
+        yield return new WaitForSeconds(0f);
+        texto_puzzle_1.text = "Código incorreto!";
+        yield return new WaitForSeconds(1.5f);
+        texto_puzzle_1.text = "Reinicie!";
+        yield return new WaitForSeconds(3f);
+        texto_puzzle_1.text = "";
+    }
+    #endregion
+    //----------------------------------------------------------------------------------------------------------------------------------------
+    #region Puzzle2
+    public void Número2(int val)
     {
         valor = valor + val;
     }
@@ -84,7 +114,7 @@ public class GameContoller : MonoBehaviour
                     slider.value += 1;
                 }else
                 {
-                    print("Sequência incorreta");
+                    StartCoroutine(OrdemIncorreta());
                     click = 0;
                     sequencia = null;
                     valor = null;
@@ -97,7 +127,7 @@ public class GameContoller : MonoBehaviour
                     slider.value += 1;
                 }else
                 {
-                    print("Sequência incorreta");
+                    StartCoroutine(OrdemIncorreta());
                     click = 0;
                     sequencia = null;
                     valor = null;
@@ -110,7 +140,7 @@ public class GameContoller : MonoBehaviour
                     slider.value += 1;
                 }else
                 {
-                    print("Sequência incorreta");
+                    StartCoroutine(OrdemIncorreta());
                     click = 0;
                     sequencia = null;
                     valor = null;
@@ -121,10 +151,11 @@ public class GameContoller : MonoBehaviour
                 {
                     slider.value += 1;
                     buton[5].SetActive(true);
+                    NC.barraVida.value += 10;
                 }
                 else
                 {
-                    print("Sequência incorreta");
+                    StartCoroutine(OrdemIncorreta());
                     click = 0;
                     sequencia = null;
                     valor = null;
@@ -132,6 +163,7 @@ public class GameContoller : MonoBehaviour
                 break;
         }
     }
+    //----------------------------------------------------------------------------------------------------------------------------------------
     #region Corrotina Case
     IEnumerator Case(int bla)
     {
@@ -177,7 +209,16 @@ public class GameContoller : MonoBehaviour
         circulo[bla].interactable = true;
         sequencia = sequencia + bla;
     }
-    #endregion 
+    #endregion
+    //----------------------------------------------------------------------------------------------------------------------------------------
+    IEnumerator OrdemIncorreta()
+    {
+        yield return new WaitForSeconds(0f);
+        texto_puzzle_2.text = "Ordem errada! click novamente em start para recomeçar!";
+        yield return new WaitForSeconds(5f);
+        texto_puzzle_2.text = null;
+    }
+    #endregion
     //---------------------------------------------------------------------------------------------------------------------------------------- 
     public void Panel()
     {
@@ -187,5 +228,19 @@ public class GameContoller : MonoBehaviour
         Camera[0].SetActive(true);
         Camera[1].SetActive(false);
         Camera[2].SetActive(false);
-    } 
+    }
+    //----------------------------------------------------------------------------------------------------------------------------------------
+    #region Vitória
+    IEnumerator Vitória()
+    {
+        yield return new WaitForSeconds(0f);
+        IC.panelV.SetActive(true);
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene(0);
+    }
+    public void vitoria(int num)
+    {
+        contagem += num;
+    }
+    #endregion
 }
