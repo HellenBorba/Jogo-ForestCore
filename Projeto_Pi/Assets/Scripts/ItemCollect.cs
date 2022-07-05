@@ -5,8 +5,8 @@ using UnityEngine;
 public class ItemCollect : MonoBehaviour
 {
     public GameObject panel1, panel2, panel3, panel3P, panel3F, panelV;
+    public int Itemtipo;
 
-    private int Itemtipo;
     private GameContoller GC;
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
