@@ -9,7 +9,9 @@ public class GameControllerCHO : MonoBehaviour
     public GameObject pontoFixoH, pontoFixoO, pontoFixoC;
     public int vl, valor;
     public Button Oxigenio, Hidrogenio, Carbono;
+    public Text perdeu;
 
+    private float time;
     private ItemCollect IC;
     private GameContoller GC;
     private Núcleo NC;
