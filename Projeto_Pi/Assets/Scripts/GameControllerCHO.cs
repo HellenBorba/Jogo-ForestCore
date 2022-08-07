@@ -6,21 +6,43 @@ using UnityEngine.UI;
 public class GameControllerCHO : MonoBehaviour
 {
     public GameObject[] Objeto;
-    public GameObject pontoFixoH, pontoFixoO, pontoFixoC;
+    public GameObject pontoFixoH, pontoFixoO, pontoFixoC, explicação;
     public int vl, valor;
     public Button Oxigenio, Hidrogenio, Carbono;
-    public Text perdeu;
+    public Text perdeu, tempo;
 
-    private float time;
+    public float timer;
     private ItemCollect IC;
     private GameContoller GC;
     private Núcleo NC;
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
-        IC = GameObject.Find("Poço1").GetComponent<ItemCollect>();
+        IC = GameObject.Find("Poço").GetComponent<ItemCollect>();
         GC = GameObject.Find("GameController").GetComponent<GameContoller>();
         NC = GameObject.Find("Núcleo").GetComponent<Núcleo>();
+        //----------------------------------------------------------------------------------------------------------------------------------------
+        timer = 40;
+    }
+    //----------------------------------------------------------------------------------------------------------------------------------------
+    void Update()
+    {
+        tempo.text = "Tempo restante: " + timer;
+        //----------------------------------------------------------------------------------------------------------------------------------------
+        if (vl >= 1)
+        {
+            timer -= Time.deltaTime;
+            explicação.SetActive(false);
+        }
+        //----------------------------------------------------------------------------------------------------------------------------------------
+        if (timer <= 0)
+        {
+            Erro();
+            StartCoroutine(OrdemErrada());
+            perdeu.text = "Seu tempo acabou!";
+            vl = 0;
+            timer = 40;
+        }
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void Número(int val)
@@ -141,6 +163,8 @@ public class GameControllerCHO : MonoBehaviour
                         StartCoroutine(Final());
                         GC.buton[6].SetActive(true);
                         NC.barraVida.value += 10;
+                        GC.puzzles[4].SetActive(false);
+                        GC.puzzles[5].SetActive(true);
                     }
                 }
                 else
@@ -392,14 +416,14 @@ public class GameControllerCHO : MonoBehaviour
     {
         yield return new WaitForSeconds(0f);
         IC.panel3P.SetActive(true);
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         IC.panel3P.SetActive(false);
     }
     IEnumerator Final()
     {
         yield return new WaitForSeconds(0f);
         IC.panel3F.SetActive(true);
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(2f);
         IC.panel3F.SetActive(false);
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
@@ -424,4 +448,5 @@ public class GameControllerCHO : MonoBehaviour
         Objeto[16].GetComponent<SpriteRenderer>().color = Color.red;
         Objeto[17].GetComponent<SpriteRenderer>().color = Color.blue;
     }
+    //----------------------------------------------------------------------------------------------------------------------------------------
 }

@@ -38,4 +38,5 @@ public class Núcleo : MonoBehaviour
         yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(0);
     }
+    //----------------------------------------------------------------------------------------------------------------------------------------
 }

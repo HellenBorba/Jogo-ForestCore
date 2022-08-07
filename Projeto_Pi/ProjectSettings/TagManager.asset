@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Mol
   - CirculoStart
+  - Senha
+  - FiosFim
   layers:
   - Default
   - TransparentFX
