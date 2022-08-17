@@ -33,28 +33,14 @@ public class Player : MonoBehaviour
         float forwardInput = Input.GetAxisRaw("Vertical");
         float strafeInput = Input.GetAxisRaw("Horizontal");
 
+        print(Input.GetAxisRaw("Vertical"));
+
         forward = forwardInput * forwardSpeed * transform.forward;
         strafe = strafeInput * strafeSpeed * transform.right;
 
+        transform.position += new Vector3(strafeInput * strafeSpeed, 0, forwardInput * forwardSpeed) * Time.deltaTime;
+        
         vertical += gravity * Time.deltaTime * Vector3.up;
-
-        if (controller.isGrounded)
-        {
-            vertical = Vector3.down;
-            if (Input.GetButtonDown("Jump"))
-            {
-                vertical = jumpSpeed * Vector3.up;
-            }
-        }
-
-        if (vertical.y > 0 && (controller.collisionFlags & CollisionFlags.Above) != 0)// Não deixar o personagem grudar no teto
-        {
-            vertical = Vector3.zero;
-        }
-
-        Vector3 finalVelocity = forward + strafe + vertical;
-
-        controller.Move(finalVelocity * Time.deltaTime);
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     #region Puzzle2
