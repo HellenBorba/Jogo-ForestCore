@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Rigidbody body;
     public GameObject SenhaPuzzle2, textoAvisoPuzzle2; 
-    private float horizontal, vertical;
-
     private GameContoller GC;
+
+    private CharacterController controller;
+    private Vector3 forward, strafe, vertical;
+    public float forwardSpeed = 5, strafeSpeed = 5;
+    private float gravity, jumpSpeed;
+    public float maxJumpHeight = 2, timeToMaxHeight = 0.5f;
+
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
@@ -16,14 +20,41 @@ public class Player : MonoBehaviour
         //----------------------------------------------------------------------------------------------------------------------------------------
         Cursor.visible = false;
         //----------------------------------------------------------------------------------------------------------------------------------------
-        body = GetComponent<Rigidbody>();
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        controller = GetComponent<CharacterController>();
+        gravity = (-2 * maxJumpHeight) / (timeToMaxHeight * timeToMaxHeight);
+        jumpSpeed = (2 * maxJumpHeight) / timeToMaxHeight;
+
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Update()
     {
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
-        body.velocity = new Vector3(horizontal * 10, 0, vertical * 10);
+        float forwardInput = Input.GetAxisRaw("Vertical");
+        float strafeInput = Input.GetAxisRaw("Horizontal");
+
+        forward = forwardInput * forwardSpeed * transform.forward;
+        strafe = strafeInput * strafeSpeed * transform.right;
+
+        vertical += gravity * Time.deltaTime * Vector3.up;
+
+        if (controller.isGrounded)
+        {
+            vertical = Vector3.down;
+            if (Input.GetButtonDown("Jump"))
+            {
+                vertical = jumpSpeed * Vector3.up;
+            }
+        }
+
+        if (vertical.y > 0 && (controller.collisionFlags & CollisionFlags.Above) != 0)// Não deixar o personagem grudar no teto
+        {
+            vertical = Vector3.zero;
+        }
+
+        Vector3 finalVelocity = forward + strafe + vertical;
+
+        controller.Move(finalVelocity * Time.deltaTime);
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     #region Puzzle2
