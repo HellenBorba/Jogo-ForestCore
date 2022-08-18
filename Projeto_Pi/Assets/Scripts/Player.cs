@@ -5,27 +5,20 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public GameObject SenhaPuzzle2, textoAvisoPuzzle2; 
+
     private GameContoller GC;
-
-    private CharacterController controller;
     private Vector3 forward, strafe, vertical;
-    public float forwardSpeed = 5, strafeSpeed = 5;
-    private float gravity, jumpSpeed;
-    public float maxJumpHeight = 2, timeToMaxHeight = 0.5f;
-
+    private float forwardSpeed = 5, strafeSpeed = 5, gravity, jumpSpeed, maxJumpHeight = 2, timeToMaxHeight = 0.5f, minZ, minX, minY, maxY, maxX, maxZ;
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
         GC = GameObject.Find("GameController").GetComponent<GameContoller>();
         //----------------------------------------------------------------------------------------------------------------------------------------
         Cursor.visible = false;
-        //----------------------------------------------------------------------------------------------------------------------------------------
-        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        controller = GetComponent<CharacterController>();
+        //----------------------------------------------------------------------------------------------------------------------------------------
         gravity = (-2 * maxJumpHeight) / (timeToMaxHeight * timeToMaxHeight);
         jumpSpeed = (2 * maxJumpHeight) / timeToMaxHeight;
-
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Update()
@@ -33,14 +26,25 @@ public class Player : MonoBehaviour
         float forwardInput = Input.GetAxisRaw("Vertical");
         float strafeInput = Input.GetAxisRaw("Horizontal");
 
-        print(Input.GetAxisRaw("Vertical"));
-
         forward = forwardInput * forwardSpeed * transform.forward;
         strafe = strafeInput * strafeSpeed * transform.right;
 
         transform.position += new Vector3(strafeInput * strafeSpeed, 0, forwardInput * forwardSpeed) * Time.deltaTime;
         
         vertical += gravity * Time.deltaTime * Vector3.up;
+        //----------------------------------------------------------------------------------------------------------------------------------------
+        minZ = -26.647f;
+        maxZ = -2.833f;
+
+        minX = -17.957f;
+        maxX = -2.38f;
+
+        minY = 0.308f;
+        maxY = 0.926f;
+
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, minX, maxX),
+                                        Mathf.Clamp(transform.position.y, minY, maxY),
+                                        Mathf.Clamp(transform.position.z, minZ, maxZ));
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     #region Puzzle2
