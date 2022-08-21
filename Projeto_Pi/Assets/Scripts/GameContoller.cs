@@ -34,7 +34,7 @@ public class GameContoller : MonoBehaviour
         }
         #endregion
         //----------------------------------------------------------------------------------------------------------------------------------------
-        #region Puzzle1
+        #region Puzzle0
         if (quantidade == 4)
         {
             if (codigo != "3021")
@@ -51,7 +51,7 @@ public class GameContoller : MonoBehaviour
         #endregion
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
-    #region Puzzle1
+    #region Puzzle0
     public void Seleciono(int numBotao)
     {
         codigo = codigo + numBotao;
@@ -97,13 +97,13 @@ public class GameContoller : MonoBehaviour
     }
     #endregion
     //----------------------------------------------------------------------------------------------------------------------------------------
-    #region Puzzle2
-    public void Número2(int val)
+    #region Puzzle1
+    public void Número1(int val)
     {
         valor = valor + val;
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
-    public void Puzzle2()
+    public void Puzzle1()
     {
         click += 1;
         switch (click)
