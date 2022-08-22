@@ -161,7 +161,7 @@ public class GameControllerCHO : MonoBehaviour
                         Objeto[17].GetComponent<SpriteRenderer>().color = Color.green;
                         Hidrogenio.transform.position = pontoFixoH.transform.position;
                         StartCoroutine(Final());
-                        GC.buton[6].SetActive(true);
+                        GC.buton[2].SetActive(true);
                         NC.barraVida.value += 10;
                         GC.puzzles[4].SetActive(false);
                         GC.puzzles[5].SetActive(true);
@@ -415,16 +415,16 @@ public class GameControllerCHO : MonoBehaviour
     IEnumerator OrdemErrada()
     {
         yield return new WaitForSeconds(0f);
-        IC.panel3P.SetActive(true);
+        IC.panel2P.SetActive(true);
         yield return new WaitForSeconds(3f);
-        IC.panel3P.SetActive(false);
+        IC.panel2P.SetActive(false);
     }
     IEnumerator Final()
     {
         yield return new WaitForSeconds(0f);
-        IC.panel3F.SetActive(true);
+        IC.panel2F.SetActive(true);
         yield return new WaitForSeconds(2f);
-        IC.panel3F.SetActive(false);
+        IC.panel2F.SetActive(false);
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void Erro()

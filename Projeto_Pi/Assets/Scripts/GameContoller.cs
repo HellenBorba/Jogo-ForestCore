@@ -57,7 +57,7 @@ public class GameContoller : MonoBehaviour
         codigo = codigo + numBotao;
         if (codigo == "3021")
         {
-            buton[4].SetActive(true);
+            buton[0].SetActive(true);
             NC.barraVida.value += 10;
             puzzles[0].SetActive(false);
             puzzles[1].SetActive(true);
@@ -173,7 +173,7 @@ public class GameContoller : MonoBehaviour
                     texto_puzzle2_1.text = "Fim!";
                     texto_puzzle_2.text = "Parabéns!";
                     slider.value += 1;
-                    buton[5].SetActive(true);
+                    buton[1].SetActive(true);
                     NC.barraVida.value += 10;
                     puzzles[2].SetActive(false);
                     puzzles[3].SetActive(true);
@@ -289,9 +289,9 @@ public class GameContoller : MonoBehaviour
     //---------------------------------------------------------------------------------------------------------------------------------------- 
     public void Panel()
     {
+        IC.panel0.SetActive(false);
         IC.panel1.SetActive(false);
         IC.panel2.SetActive(false);
-        IC.panel3.SetActive(false);
         Camera[0].SetActive(true);
         Camera[1].SetActive(false);
         Camera[2].SetActive(false);
