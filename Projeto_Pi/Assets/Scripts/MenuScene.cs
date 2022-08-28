@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MenuScene : MonoBehaviour
@@ -9,6 +10,8 @@ public class MenuScene : MonoBehaviour
     public AudioSource SomM;
     public GameObject som;
     public int valVida;
+    public float sensibility;
+    public Vector3 rotation;
 
     private Núcleo NC;
     private int id, id2;
@@ -16,7 +19,6 @@ public class MenuScene : MonoBehaviour
     private void Start()
     {
         NC = GameObject.Find("Núcleo").GetComponent<Núcleo>();
-        Debug.Log(PlayerPrefs.GetInt("vida"));
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void Play()
@@ -90,4 +92,22 @@ public class MenuScene : MonoBehaviour
         PlayerPrefs.SetInt("vida", valVida);
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
+    public void Tela1()
+    {
+        Screen.SetResolution(3000, 1800, true);
+    }    
+    public void Tela2()
+    {
+        Screen.SetResolution(1000, 1200, true);
+    }    
+    public void Tela3()
+    {
+        Screen.SetResolution(500, 500, true);
+    }
+    //----------------------------------------------------------------------------------------------------------------------------------------
+    public void Mouse()
+    {
+        float _yMouse = Input.GetAxisRaw("Mouse X");
+        rotation = new Vector3(0, _yMouse, 0) * sensibility;
+    }
 }
