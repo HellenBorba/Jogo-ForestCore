@@ -11,7 +11,12 @@ public class Núcleo : MonoBehaviour
     public Text tempo;
 
     private float timer, tempoFeito;
+    private MenuScene MS;
     //----------------------------------------------------------------------------------------------------------------------------------------
+    public void Start()
+    {
+        MS = GameObject.Find("GameController_Menu").GetComponent<MenuScene>();
+    }
     void Update()
     {
         tempoFeito += Time.deltaTime;
@@ -19,7 +24,7 @@ public class Núcleo : MonoBehaviour
         //----------------------------------------------------------------------------------------------------------------------------------------
         if (timer >= 5)
         {
-            barraVida.value -= 2;
+            barraVida.value -= PlayerPrefs.GetInt("vida");
             timer = 0;
         }
         //----------------------------------------------------------------------------------------------------------------------------------------
