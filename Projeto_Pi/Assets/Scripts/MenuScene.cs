@@ -10,8 +10,6 @@ public class MenuScene : MonoBehaviour
     public AudioSource SomM;
     public GameObject som;
     public int valVida;
-    public float sensibility;
-    public Vector3 rotation;
 
     private Núcleo NC;
     private int id, id2;
@@ -102,12 +100,7 @@ public class MenuScene : MonoBehaviour
     }    
     public void Tela3()
     {
-        Screen.SetResolution(500, 500, true);
+        Screen.SetResolution(1200, 1200, true);
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
-    public void Mouse()
-    {
-        float _yMouse = Input.GetAxisRaw("Mouse X");
-        rotation = new Vector3(0, _yMouse, 0) * sensibility;
-    }
 }
