@@ -15,7 +15,6 @@ public class Player : MonoBehaviour
         GC = GameObject.Find("GameController").GetComponent<GameContoller>();
         //----------------------------------------------------------------------------------------------------------------------------------------
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
         //----------------------------------------------------------------------------------------------------------------------------------------
         gravity = (-2 * maxJumpHeight) / (timeToMaxHeight * timeToMaxHeight);
         jumpSpeed = (2 * maxJumpHeight) / timeToMaxHeight;
