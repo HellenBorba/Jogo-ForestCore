@@ -295,6 +295,7 @@ public class GameContoller : MonoBehaviour
         Camera[0].SetActive(true);
         Camera[1].SetActive(false);
         Camera[2].SetActive(false);
+        Camera[3].SetActive(false);
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     #region Vitória

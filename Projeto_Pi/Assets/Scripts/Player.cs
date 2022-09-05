@@ -44,6 +44,17 @@ public class Player : MonoBehaviour
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, minX, maxX),
                                         Mathf.Clamp(transform.position.y, minY, maxY),
                                         Mathf.Clamp(transform.position.z, minZ, maxZ));
+        //----------------------------------------------------------------------------------------------------------------------------------------
+        if(Input.GetKeyDown(KeyCode.W))
+        {
+            GC.Camera[0].SetActive(true);
+            GC.Camera[1].SetActive(false);
+        }
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            GC.Camera[1].SetActive(true);
+            GC.Camera[0].SetActive(false);
+        }
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     #region Puzzle2
