@@ -1,0 +1,487 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.28f1 (f5400f52e03f) revision 16072719'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22000) 64bit CoreSingleLanguage' Language: 'pt' Physical Memory: 6020 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+C:\Users\jully\OneDrive\Área de Trabalho\Hellen\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker1
+-projectPath
+C:/Users/jully/OneDrive/Área de Trabalho/Hellen/GitHub/TeamHL/Projeto_Pi
+-logFile
+Logs/AssetImportWorker1.log
+-srvPort
+55929
+Successfully changed project path to: C:/Users/jully/OneDrive/Área de Trabalho/Hellen/GitHub/TeamHL/Projeto_Pi
+C:/Users/jully/OneDrive/Área de Trabalho/Hellen/GitHub/TeamHL/Projeto_Pi
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 61.71 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.28f1 (f5400f52e03f)
+[Subsystems] Discovering subsystems at path C:/Users/jully/OneDrive/Área de Trabalho/Hellen/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/jully/OneDrive/Área de Trabalho/Hellen/GitHub/TeamHL/Projeto_Pi/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: AMD Radeon(TM) Vega 8 Graphics (ID=0x15d8)
+    Vendor:   
+    VRAM:     3010 MB
+    Driver:   27.20.11028.10001
+Initialize mono
+Mono path[0] = 'C:/Users/jully/OneDrive/Área de Trabalho/Hellen/Editor/Data/Managed'
+Mono path[1] = 'C:/Users/jully/OneDrive/Área de Trabalho/Hellen/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Users/jully/OneDrive/Área de Trabalho/Hellen/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56664
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Users/jully/OneDrive/Área de Trabalho/Hellen/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003836 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 67.32 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.155 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1155ms)
+		BeginReloadAssembly (105ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (868ms)
+			LoadAssemblies (103ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (293ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (49ms)
+			SetupLoadedEditorAssemblies (328ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (67ms)
+				BeforeProcessingInitializeOnLoad (32ms)
+				ProcessInitializeOnLoadAttributes (170ms)
+				ProcessInitializeOnLoadMethodAttributes (50ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.008200 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.495 seconds
+Domain Reload Profiling:
+	ReloadAssembly (3507ms)
+		BeginReloadAssembly (284ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (37ms)
+		EndReloadAssembly (3119ms)
+			LoadAssemblies (166ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (535ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (91ms)
+			SetupLoadedEditorAssemblies (2162ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (168ms)
+				ProcessInitializeOnLoadAttributes (461ms)
+				ProcessInitializeOnLoadMethodAttributes (1511ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Refreshing native plugins compatible for Editor in 1.15 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1694 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 98.5 MB.
+System memory in use after: 98.6 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2153.
+Total: 8.220500 ms (FindLiveObjects: 0.274500 ms CreateObjectMapping: 0.097300 ms MarkObjects: 7.640200 ms  DeleteObjects: 0.205600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/Sprites/Acabamentos/Botões_Puzzle0/New Piskel-1.png.png
+  artifactKey: Guid(d553cbace7201ab4eae634ea17e2c787) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Acabamentos/Botões_Puzzle0/New Piskel-1.png.png using Guid(d553cbace7201ab4eae634ea17e2c787) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1e8ea5ccaf5488ee7d551feacfc4fc7') in 0.255808 seconds 
+  Import took 0.261155 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 34.323261 seconds.
+  path: Assets/Sprites/Acabamentos/Botões_Puzzle0/New Piskel.png
+  artifactKey: Guid(657ee9fc879cfeb428e14ff23a158f15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Acabamentos/Botões_Puzzle0/New Piskel.png using Guid(657ee9fc879cfeb428e14ff23a158f15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d101c7e7615f68cf699772669702fd0') in 0.033916 seconds 
+  Import took 0.042006 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.813879 seconds.
+  path: Assets/Sprites/Acabamentos/Botões_Puzzle0/New Piskel.png
+  artifactKey: Guid(657ee9fc879cfeb428e14ff23a158f15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Acabamentos/Botões_Puzzle0/New Piskel.png using Guid(657ee9fc879cfeb428e14ff23a158f15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05f3bdb14367d02c673039de75a5c1db') in 0.117514 seconds 
+  Import took 0.123879 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 54.898960 seconds.
+  path: Assets/Sprites/Acabamentos/Botões_Puzzle0/New Piskel-1.png (1).png
+  artifactKey: Guid(bca9eb3a32a51ec4694b0d89d113ca2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Acabamentos/Botões_Puzzle0/New Piskel-1.png (1).png using Guid(bca9eb3a32a51ec4694b0d89d113ca2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b666ff0b6d73b150a5b29c3ffc5c89f') in 0.022382 seconds 
+  Import took 0.028160 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.949676 seconds.
+  path: Assets/Sprites/Acabamentos/Botões_Puzzle0/New Piskel-1.png (1).png
+  artifactKey: Guid(bca9eb3a32a51ec4694b0d89d113ca2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Acabamentos/Botões_Puzzle0/New Piskel-1.png (1).png using Guid(bca9eb3a32a51ec4694b0d89d113ca2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e92c3823ce68cffc4e00923ffb05d02') in 0.110106 seconds 
+  Import took 0.117212 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 103.068568 seconds.
+  path: Assets/Sprites/Acabamentos/Botões_Puzzle0/Botão_Puzzle-0.png
+  artifactKey: Guid(bca9eb3a32a51ec4694b0d89d113ca2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Acabamentos/Botões_Puzzle0/Botão_Puzzle-0.png using Guid(bca9eb3a32a51ec4694b0d89d113ca2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12a61ede8aa23f308e7ecc952fefd1e8') in 0.027192 seconds 
+  Import took 0.034549 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 832.465891 seconds.
+  path: Assets/Materials/New Material.mat
+  artifactKey: Guid(74b5ed27e2ef6134fb74f2efdc6f6e6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/New Material.mat using Guid(74b5ed27e2ef6134fb74f2efdc6f6e6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3da5f479b5a6759b70b4156399c04181') in 3.542566 seconds 
+  Import took 3.551101 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000791 seconds.
+  path: Assets/Leonardo/arvore.png
+  artifactKey: Guid(9361c66e8a929b143a7aa45bd9730a97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Leonardo/arvore.png using Guid(9361c66e8a929b143a7aa45bd9730a97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23f690f9d36fe08644ab2e74e68b0946') in 0.036070 seconds 
+  Import took 0.040714 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000650 seconds.
+  path: Assets/Leonardo/ARVORE CURVADA.obj
+  artifactKey: Guid(e0343128cd0305444bc394a9f479ed72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Leonardo/ARVORE CURVADA.obj using Guid(e0343128cd0305444bc394a9f479ed72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44d195e4797ea230928b3ba1c4e8cd4d') in 0.195623 seconds 
+  Import took 0.204063 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.443401 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.55 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.806 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1807ms)
+		BeginReloadAssembly (208ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (53ms)
+		EndReloadAssembly (1481ms)
+			LoadAssemblies (208ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (524ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (67ms)
+			SetupLoadedEditorAssemblies (560ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (130ms)
+				ProcessInitializeOnLoadAttributes (388ms)
+				ProcessInitializeOnLoadMethodAttributes (21ms)
+				AfterProcessingInitializeOnLoad (12ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.75 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1683 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 172.8 MB.
+System memory in use after: 172.9 MB.
+
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 2207.
+Total: 4.607700 ms (FindLiveObjects: 0.287100 ms CreateObjectMapping: 0.067200 ms MarkObjects: 4.218500 ms  DeleteObjects: 0.032800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 91.002137 seconds.
+  path: Assets/Sprites/Acabamentos/Botões_Puzzle1
+  artifactKey: Guid(2422e3c88b4b59a4aa37ed930f02184f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Acabamentos/Botões_Puzzle1 using Guid(2422e3c88b4b59a4aa37ed930f02184f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91c2c8487b1ffae410cc30935256beec') in 0.018043 seconds 
+  Import took 0.025094 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 332.025509 seconds.
+  path: Assets/Sprites/Acabamentos/Botões_Puzzle1/pixil-frame-0 (11).png
+  artifactKey: Guid(fb9027cb0814f2d4fa5e7170fbb732be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Acabamentos/Botões_Puzzle1/pixil-frame-0 (11).png using Guid(fb9027cb0814f2d4fa5e7170fbb732be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '061c250fa7ef1ef6ee990def2b921972') in 0.079028 seconds 
+  Import took 0.084359 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.735843 seconds.
+  path: Assets/Sprites/Acabamentos/Botões_Puzzle1/pixil-frame-0 (11).png
+  artifactKey: Guid(fb9027cb0814f2d4fa5e7170fbb732be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Acabamentos/Botões_Puzzle1/pixil-frame-0 (11).png using Guid(fb9027cb0814f2d4fa5e7170fbb732be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5392ea6aae0bb3ecd45e60991d57029') in 0.075895 seconds 
+  Import took 0.084169 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 433.346254 seconds.
+  path: Assets/Sprites/Acabamentos/Botões_Puzzle1/New Piskel.png
+  artifactKey: Guid(63d927f538312ad4dbb434321b0faeb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Acabamentos/Botões_Puzzle1/New Piskel.png using Guid(63d927f538312ad4dbb434321b0faeb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a29425d7f15620c852b19a3e8bbddb3') in 0.039338 seconds 
+  Import took 0.045142 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.173467 seconds.
+  path: Assets/Sprites/Acabamentos/Botões_Puzzle1/New Piskel.png
+  artifactKey: Guid(63d927f538312ad4dbb434321b0faeb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Acabamentos/Botões_Puzzle1/New Piskel.png using Guid(63d927f538312ad4dbb434321b0faeb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '066c989202fd9035abaa79bddbf68bd8') in 0.053153 seconds 
+  Import took 0.059713 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.225567 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.71 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.058 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2064ms)
+		BeginReloadAssembly (498ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (42ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (245ms)
+		EndReloadAssembly (1452ms)
+			LoadAssemblies (197ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (484ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (96ms)
+			SetupLoadedEditorAssemblies (530ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (8ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (139ms)
+				ProcessInitializeOnLoadAttributes (357ms)
+				ProcessInitializeOnLoadMethodAttributes (13ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.02 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1683 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 172.9 MB.
+System memory in use after: 173.0 MB.
+
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 2211.
+Total: 6.091000 ms (FindLiveObjects: 0.280800 ms CreateObjectMapping: 0.093000 ms MarkObjects: 5.674400 ms  DeleteObjects: 0.040500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 233.003300 seconds.
+  path: Assets/Sprites/Acabamentos/Botões_Puzzle1/New Piskel (1).png
+  artifactKey: Guid(c62de160f07a2994f920bc78712ec1a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Acabamentos/Botões_Puzzle1/New Piskel (1).png using Guid(c62de160f07a2994f920bc78712ec1a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ffd5a77f15fce7b8d160836f92b5354') in 0.099688 seconds 
+  Import took 0.105529 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 85.916370 seconds.
+  path: Assets/Sprites/Acabamentos/Botões_Puzzle1/New Piskel (2).png
+  artifactKey: Guid(c0aa1ec276161a147b2b2c845efab1be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Acabamentos/Botões_Puzzle1/New Piskel (2).png using Guid(c0aa1ec276161a147b2b2c845efab1be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bf2a5a593f6cf62c44c7c3f74c2d158') in 0.044162 seconds 
+  Import took 0.050755 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.725574 seconds.
+  path: Assets/Sprites/Acabamentos/Botões_Puzzle1/New Piskel (2).png
+  artifactKey: Guid(c0aa1ec276161a147b2b2c845efab1be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Acabamentos/Botões_Puzzle1/New Piskel (2).png using Guid(c0aa1ec276161a147b2b2c845efab1be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fe414882ec9f6fa1815dc0ccc71b2a1') in 0.037611 seconds 
+  Import took 0.044389 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 86.074800 seconds.
+  path: Assets/Sprites/Acabamentos/Botões_Puzzle1/New Piskel (3).png
+  artifactKey: Guid(b3414a85f6df32a4cb638803eceba821) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Acabamentos/Botões_Puzzle1/New Piskel (3).png using Guid(b3414a85f6df32a4cb638803eceba821) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f27f091e87a28f7faad783e7253a9db6') in 0.039784 seconds 
+  Import took 0.047803 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.962183 seconds.
+  path: Assets/Sprites/Acabamentos/Botões_Puzzle1/New Piskel (3).png
+  artifactKey: Guid(b3414a85f6df32a4cb638803eceba821) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Acabamentos/Botões_Puzzle1/New Piskel (3).png using Guid(b3414a85f6df32a4cb638803eceba821) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76dfd5f50df17086d60946a7f450ee60') in 0.037842 seconds 
+  Import took 0.047417 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.017261 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.75 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.595 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1596ms)
+		BeginReloadAssembly (172ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (49ms)
+		EndReloadAssembly (1327ms)
+			LoadAssemblies (147ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (432ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (71ms)
+			SetupLoadedEditorAssemblies (515ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (137ms)
+				ProcessInitializeOnLoadAttributes (343ms)
+				ProcessInitializeOnLoadMethodAttributes (16ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.85 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1683 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 172.9 MB.
+System memory in use after: 173.0 MB.
+
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 2214.
+Total: 5.426400 ms (FindLiveObjects: 0.295200 ms CreateObjectMapping: 0.093400 ms MarkObjects: 4.998200 ms  DeleteObjects: 0.037600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 133.656439 seconds.
+  path: Assets/Sprites/Acabamentos/Botões_Puzzle1/Red.png
+  artifactKey: Guid(c62de160f07a2994f920bc78712ec1a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Acabamentos/Botões_Puzzle1/Red.png using Guid(c62de160f07a2994f920bc78712ec1a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79d5cc94fd1d6c77543cc07e338ddc7d') in 0.102352 seconds 
+  Import took 0.107870 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.097321 seconds.
+  path: Assets/Sprites/Acabamentos/Botões_Puzzle1/Green.png
+  artifactKey: Guid(63d927f538312ad4dbb434321b0faeb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Acabamentos/Botões_Puzzle1/Green.png using Guid(63d927f538312ad4dbb434321b0faeb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd234ddf2daadcfa3272e72746726ade') in 0.035395 seconds 
+  Import took 0.042553 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.338958 seconds.
+  path: Assets/Sprites/Acabamentos/Botões_Puzzle1/Purple.png
+  artifactKey: Guid(c0aa1ec276161a147b2b2c845efab1be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Acabamentos/Botões_Puzzle1/Purple.png using Guid(c0aa1ec276161a147b2b2c845efab1be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1f17284bf548b739f7b89de262143a7') in 0.031950 seconds 
+  Import took 0.038968 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.130031 seconds.
+  path: Assets/Sprites/Acabamentos/Botões_Puzzle1/Blue.png
+  artifactKey: Guid(b3414a85f6df32a4cb638803eceba821) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Acabamentos/Botões_Puzzle1/Blue.png using Guid(b3414a85f6df32a4cb638803eceba821) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '206db5a1e2a3b136293c8e6992f58ba4') in 0.025800 seconds 
+  Import took 0.030926 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
