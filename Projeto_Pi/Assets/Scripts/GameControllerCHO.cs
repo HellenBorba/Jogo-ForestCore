@@ -18,7 +18,7 @@ public class GameControllerCHO : MonoBehaviour
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
-        IC = GameObject.Find("Poço").GetComponent<ItemCollect>();
+        IC = GameObject.Find("Glicose").GetComponent<ItemCollect>();
         GC = GameObject.Find("GameController").GetComponent<GameContoller>();
         NC = GameObject.Find("Núcleo").GetComponent<Núcleo>();
         //----------------------------------------------------------------------------------------------------------------------------------------
@@ -67,6 +67,7 @@ public class GameControllerCHO : MonoBehaviour
                     }
                 }
                 else
+                if(valor == 1 || valor == 3)
                 {
                     StartCoroutine(OrdemErrada());
                     Erro();
