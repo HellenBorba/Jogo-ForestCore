@@ -8,6 +8,8 @@ TagManager:
   - CirculoStart
   - Senha
   - FiosFim
+  - PlayerL
+  - FinalL
   layers:
   - Default
   - TransparentFX
