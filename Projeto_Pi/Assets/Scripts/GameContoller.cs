@@ -15,13 +15,11 @@ public class GameContoller : MonoBehaviour
     private int click, quantidade, contagem, numeroCirculos;
     private string sequencia, valor, codigo;
     private ItemCollect IC;
-    private Núcleo NC;
     private Player PY;
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
-        IC = GameObject.Find("Default_poço").GetComponent<ItemCollect>();
-        NC = GameObject.Find("Núcleo").GetComponent<Núcleo>();
+        IC = GameObject.Find("poço").GetComponent<ItemCollect>();
         PY = GameObject.Find("Player").GetComponent<Player>();
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
@@ -58,7 +56,6 @@ public class GameContoller : MonoBehaviour
         if (codigo == "3021")
         {
             buton[0].SetActive(true);
-            NC.barraVida.value += 10;
             puzzles[0].SetActive(false);
             puzzles[1].SetActive(true);
             PY.textoAvisoPuzzle2.SetActive(false);
@@ -174,7 +171,6 @@ public class GameContoller : MonoBehaviour
                     texto_puzzle_2.text = "Parabéns!";
                     slider.value += 1;
                     buton[1].SetActive(true);
-                    NC.barraVida.value += 10;
                     puzzles[2].SetActive(false);
                     puzzles[3].SetActive(true);
                 }
@@ -289,9 +285,9 @@ public class GameContoller : MonoBehaviour
     //---------------------------------------------------------------------------------------------------------------------------------------- 
     public void Panel()
     {
-        IC.panel0.SetActive(false);
-        IC.panel1.SetActive(false);
-        IC.panel2.SetActive(false);
+        IC.panel[0].SetActive(false);
+        IC.panel[1].SetActive(false);
+        IC.panel[2].SetActive(false);
         Camera[0].SetActive(true);
         Camera[1].SetActive(false);
         Camera[2].SetActive(false);
@@ -302,7 +298,7 @@ public class GameContoller : MonoBehaviour
     IEnumerator Vitória()
     {
         yield return new WaitForSeconds(0f);
-        IC.panelV.SetActive(true);
+        IC.panel[6].SetActive(true);
         yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(0);
     }

@@ -416,16 +416,16 @@ public class GameControllerCHO : MonoBehaviour
     IEnumerator OrdemErrada()
     {
         yield return new WaitForSeconds(0f);
-        IC.panel2P.SetActive(true);
+        IC.panel[3].SetActive(true);
         yield return new WaitForSeconds(3f);
-        IC.panel2P.SetActive(false);
+        IC.panel[3].SetActive(false);
     }
     IEnumerator Final()
     {
         yield return new WaitForSeconds(0f);
-        IC.panel2F.SetActive(true);
+        IC.panel[4].SetActive(true);
         yield return new WaitForSeconds(2f);
-        IC.panel2F.SetActive(false);
+        IC.panel[4].SetActive(false);
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void Erro()

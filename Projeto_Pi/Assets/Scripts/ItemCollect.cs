@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemCollect : MonoBehaviour
 {
-    public GameObject panel0, panel1, panel2, panel2P, panel2F, panelV;
+    public GameObject[] panel;
     public int Itemtipo;
 
     private GameContoller GC;
@@ -24,7 +24,7 @@ public class ItemCollect : MonoBehaviour
                     if (Input.GetKey(KeyCode.E))
                     {
                         Cursor.visible = true;
-                        panel0.SetActive(true);
+                        panel[0].SetActive(true);
                     }
                     break;
                 case 1:
@@ -34,7 +34,7 @@ public class ItemCollect : MonoBehaviour
                         GC.Camera[0].SetActive(false);
                         GC.Camera[1].SetActive(false);
                         Cursor.visible = true;
-                        panel1.SetActive(true);
+                        panel[1].SetActive(true);
                     }
                     break;
                 case 2:
@@ -44,7 +44,7 @@ public class ItemCollect : MonoBehaviour
                         GC.Camera[0].SetActive(false);
                         GC.Camera[1].SetActive(false);
                         Cursor.visible = true;
-                        panel2.SetActive(true);
+                        panel[2].SetActive(true);
                     }
                     break;
                 case 3:

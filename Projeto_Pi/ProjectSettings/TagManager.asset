@@ -10,6 +10,7 @@ TagManager:
   - FiosFim
   - PlayerL
   - FinalL
+  - Casa
   layers:
   - Default
   - TransparentFX
