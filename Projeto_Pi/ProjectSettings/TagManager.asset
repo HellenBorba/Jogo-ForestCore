@@ -11,6 +11,7 @@ TagManager:
   - PlayerL
   - FinalL
   - Casa
+  - Coluna
   layers:
   - Default
   - TransparentFX
