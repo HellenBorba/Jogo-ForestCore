@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game_PuzzleLabirinto.unity
     guid: 2ad45c46c72d43c4d94c5523449e7aa7
+  - enabled: 1
+    path: Assets/Scenes/MultiPlayer/Loading.unity
+    guid: c79e9a94b50fe164a9f41c5dcc16941c
+  - enabled: 1
+    path: Assets/Scenes/MultiPlayer/Lobby.unity
+    guid: 18c29579cc53f234b9c942eac734dfa1
   m_configObjects: {}
