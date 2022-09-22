@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class Player : MonoBehaviour
 {
@@ -9,9 +10,13 @@ public class Player : MonoBehaviour
     private GameContoller GC;
     private Vector3 forward, strafe, vertical;
     private float forwardSpeed = 5, strafeSpeed = 5, gravity, jumpSpeed, maxJumpHeight = 2, timeToMaxHeight = 0.5f, minZ, minX, minY, maxY, maxX, maxZ;
+
+    PhotonView view;
+
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
+        view = gameObject.GetComponent<PhotonView>();
         GC = GameObject.Find("GameController").GetComponent<GameContoller>();
         //----------------------------------------------------------------------------------------------------------------------------------------
         Cursor.visible = false;
@@ -22,15 +27,18 @@ public class Player : MonoBehaviour
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Update()
     {
-        float forwardInput = Input.GetAxisRaw("Vertical");
-        float strafeInput = Input.GetAxisRaw("Horizontal");
+        if(view.IsMine)
+        {
+            float forwardInput = Input.GetAxisRaw("Vertical");
+            float strafeInput = Input.GetAxisRaw("Horizontal");
 
-        forward = forwardInput * forwardSpeed * transform.forward;
-        strafe = strafeInput * strafeSpeed * transform.right;
+            forward = forwardInput * forwardSpeed * transform.forward;
+            strafe = strafeInput * strafeSpeed * transform.right;
 
-        transform.position += new Vector3(strafeInput * strafeSpeed, 0, forwardInput * forwardSpeed) * Time.deltaTime;
-        
-        vertical += gravity * Time.deltaTime * Vector3.up;
+            transform.position += new Vector3(strafeInput * strafeSpeed, 0, forwardInput * forwardSpeed) * Time.deltaTime;
+
+            vertical += gravity * Time.deltaTime * Vector3.up;
+        }
         //----------------------------------------------------------------------------------------------------------------------------------------
         minZ = -26.647f;
         maxZ = -2.833f;
