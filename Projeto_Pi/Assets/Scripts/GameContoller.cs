@@ -58,7 +58,7 @@ public class GameContoller : MonoBehaviour
             buton[0].SetActive(true);
             puzzles[0].SetActive(false);
             puzzles[1].SetActive(true);
-            PY.textoAvisoPuzzle2.SetActive(false);
+            PY.textoAvisoPuzzle0.SetActive(false);
         }
         //----------------------------------------------------------------------------------------------------------------------------------------
         switch (numBotao)

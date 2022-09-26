@@ -55,6 +55,7 @@ public class ItemCollect : MonoBehaviour
             }
         }
     }
+    //----------------------------------------------------------------------------------------------------------------------------------------
     private void OnTriggerExit(Collider other)
     {
         GC.Camera[0].SetActive(true);

@@ -5,11 +5,12 @@ using Photon.Pun;
 
 public class Player : MonoBehaviour
 {
-    public GameObject SenhaPuzzle2, textoAvisoPuzzle2; 
+    public GameObject SenhaPuzzle0, textoAvisoPuzzle0; 
 
     private GameContoller GC;
     private Vector3 forward, strafe, vertical;
     private float forwardSpeed = 5, strafeSpeed = 5, gravity, jumpSpeed, maxJumpHeight = 2, timeToMaxHeight = 0.5f, minZ, minX, minY, maxY, maxX, maxZ;
+    private int efs;
 
     PhotonView view;
 
@@ -17,6 +18,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         view = gameObject.GetComponent<PhotonView>();
+        //----------------------------------------------------------------------------------------------------------------------------------------
         GC = GameObject.Find("GameController").GetComponent<GameContoller>();
         //----------------------------------------------------------------------------------------------------------------------------------------
         Cursor.visible = false;
@@ -53,19 +55,24 @@ public class Player : MonoBehaviour
                                         Mathf.Clamp(transform.position.y, minY, maxY),
                                         Mathf.Clamp(transform.position.z, minZ, maxZ));
         //----------------------------------------------------------------------------------------------------------------------------------------
-        if(Input.GetKeyDown(KeyCode.W))
+        if(efs == 1)
         {
             GC.Camera[0].SetActive(true);
             GC.Camera[1].SetActive(false);
-        }
-        if(Input.GetKeyDown(KeyCode.S))
+        }else
+        if(efs == 2)
         {
-            GC.Camera[1].SetActive(true);
             GC.Camera[0].SetActive(false);
+            GC.Camera[1].SetActive(true);
+            efs = 0;
+        }
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            efs += 1;
         }
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
-    #region Puzzle2
+    #region Puzzle0
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.CompareTag("Senha"))
@@ -83,18 +90,18 @@ public class Player : MonoBehaviour
     IEnumerator Senha()
     {
         yield return new WaitForSeconds(0f);
-        SenhaPuzzle2.SetActive(true);
+        SenhaPuzzle0.SetActive(true);
         yield return new WaitForSeconds(3f);
-        SenhaPuzzle2.SetActive(false);
+        SenhaPuzzle0.SetActive(false);
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     IEnumerator AvisoPuzzle2()
     {
         yield return new WaitForSeconds(0f);
-        textoAvisoPuzzle2.SetActive(true);
+        textoAvisoPuzzle0.SetActive(true);
         yield return new WaitForSeconds(5f);
-        textoAvisoPuzzle2.SetActive(false);
-        Object.Destroy(textoAvisoPuzzle2);
+        textoAvisoPuzzle0.SetActive(false);
+        Object.Destroy(textoAvisoPuzzle0);
     }
     #endregion
     //----------------------------------------------------------------------------------------------------------------------------------------

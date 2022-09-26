@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 2484983331158818578}
   - component: {fileID: 2484983331158818579}
   - component: {fileID: 2484983331158818580}
-  - component: {fileID: 5774152954076210256}
   - component: {fileID: 1343714636693727671}
+  - component: {fileID: 6856123623917924868}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -96,31 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 973bb1deb1e162746bdf5d5580aef2dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SenhaPuzzle2: {fileID: 0}
-  textoAvisoPuzzle2: {fileID: 0}
---- !u!114 &5774152954076210256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2484983331158818577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents:
-  - {fileID: 1343714636693727671}
-  sceneViewId: 0
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
+  SenhaPuzzle0: {fileID: 0}
+  textoAvisoPuzzle0: {fileID: 0}
 --- !u!114 &1343714636693727671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,3 +131,25 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &6856123623917924868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2484983331158818577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
