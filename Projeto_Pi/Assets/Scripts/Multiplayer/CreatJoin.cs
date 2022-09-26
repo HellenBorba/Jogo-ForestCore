@@ -24,4 +24,14 @@ public class CreatJoin : MonoBehaviourPunCallbacks
         PhotonNetwork.LoadLevel("MultiPlayer_Game");
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
+    public override void OnMasterClientSwitched(Photon.Realtime.Player newMasterClient)
+    {
+        base.OnMasterClientSwitched(newMasterClient);
+        /* Novo host
+        if (PhotonNetwork.LocalPlayer.ActorNumber == newMasterClient.ActorNumber)
+        {
+
+        }
+        */
+    }
 }
