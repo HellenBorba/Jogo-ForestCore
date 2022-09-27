@@ -2215,7 +2215,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barraVida: {fileID: 0}
   PanelDerrota: {fileID: 896052058}
-  tempo: {fileID: 1930666227}
 --- !u!4 &312084488
 Transform:
   m_ObjectHideFlags: 0
@@ -13624,7 +13623,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b77bf1fa5f1980a4dbcd845c76a501ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerPrefabs: {fileID: 2484983331158818577, guid: 1a786a76c515a074dbb23e17231a7402, type: 3}
+  PlayerPrefabs1: {fileID: 2484983331158818577, guid: 7e9e801dabf3ca740910e3fc23f1b993, type: 3}
+  PlayerPrefabs2: {fileID: 2484983331158818577, guid: 1a786a76c515a074dbb23e17231a7402, type: 3}
   Spawn: {fileID: 1854055661}
   MaxX: -12
   MaxY: 1
@@ -14020,7 +14020,7 @@ GameObject:
   - component: {fileID: 1922599013}
   - component: {fileID: 1922599012}
   m_Layer: 0
-  m_Name: WaterBlock
+  m_Name: "\xC1gua"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

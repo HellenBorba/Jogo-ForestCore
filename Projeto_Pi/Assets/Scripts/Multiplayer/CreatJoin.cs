@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
+using Photon.Realtime;
 
 public class CreatJoin : MonoBehaviourPunCallbacks
 {
@@ -24,14 +25,9 @@ public class CreatJoin : MonoBehaviourPunCallbacks
         PhotonNetwork.LoadLevel("MultiPlayer_Game");
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
-    public override void OnMasterClientSwitched(Photon.Realtime.Player newMasterClient)
+    public override void OnConnectedToMaster()
     {
-        base.OnMasterClientSwitched(newMasterClient);
-        /* Novo host
-        if (PhotonNetwork.LocalPlayer.ActorNumber == newMasterClient.ActorNumber)
-        {
-
-        }
-        */
+        base.OnConnectedToMaster();
+        Debug.Log("Master");
     }
 }

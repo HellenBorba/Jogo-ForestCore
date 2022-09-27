@@ -1014,7 +1014,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 23.1
-  field of view: 90
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1556,6 +1556,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9715bf1e661b47842977d36abed88781, type: 3}
+--- !u!1 &351945760
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 8808214653859070342, guid: da915fba24b5e3446ba5c23ae9243acc, type: 3}
+  m_PrefabInstance: {fileID: 1802347095}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1802347096}
+  m_Layer: 0
+  m_Name: 'Vaso (Missing Prefab with guid: da915fba24b5e3446ba5c23ae9243acc)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1001 &353408008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2590,11 +2606,11 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 130
+    FieldOfView: 60
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 23.1
-    Dutch: -4
+    Dutch: 0
     LensShift: {x: 0, y: 0}
   m_Transitions:
     m_BlendHint: 0
@@ -3649,7 +3665,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: -0.67999935, y: 4.82, z: -2.5540009}
+  m_FollowOffset: {x: -18.16, y: 4.357, z: -14}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -3766,11 +3782,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7de4ed2e68b8f6b41bf83021ed49741e, type: 3}
---- !u!4 &962846559 stripped
+--- !u!4 &962846559
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 4000011301605272, guid: 7de4ed2e68b8f6b41bf83021ed49741e, type: 3}
   m_PrefabInstance: {fileID: 962846558}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736527527}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 137963591}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &976600239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6262,6 +6287,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9715bf1e661b47842977d36abed88781, type: 3}
+--- !u!1 &1736527527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1000011901478696, guid: 7de4ed2e68b8f6b41bf83021ed49741e, type: 3}
+  m_PrefabInstance: {fileID: 962846558}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 962846559}
+  m_Layer: 0
+  m_Name: 'Planta_Vaso (Missing Prefab with guid: 7de4ed2e68b8f6b41bf83021ed49741e)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1001 &1758436686
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6566,11 +6607,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da915fba24b5e3446ba5c23ae9243acc, type: 3}
---- !u!4 &1802347096 stripped
+--- !u!4 &1802347096
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 8808214653859437990, guid: da915fba24b5e3446ba5c23ae9243acc, type: 3}
   m_PrefabInstance: {fileID: 1802347095}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351945760}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 137963591}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1807511874 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: 116ac80ed25a6844e93de955d00f5706, type: 3}
@@ -6705,7 +6755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: -0.5432936, y: 4.86, z: 2.0748339}
+  m_FollowOffset: {x: -0.6210004, y: 2.22, z: -2.625}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -8040,7 +8090,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 90
+    FieldOfView: 60
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 23.1
@@ -10307,7 +10357,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3198442588696993283}
         m_TargetAssemblyTypeName: MenuScene, Assembly-CSharp
         m_MethodName: MultiPlayer
         m_Mode: 1
@@ -10778,7 +10828,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3198442588696993283}
         m_TargetAssemblyTypeName: MenuScene, Assembly-CSharp
         m_MethodName: Exit
         m_Mode: 1
@@ -10790,9 +10840,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3198442588696993280}
         m_TargetAssemblyTypeName: MenuScene, Assembly-CSharp
-        m_MethodName: toca
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13506,9 +13556,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3198442588696993283}
         m_TargetAssemblyTypeName: MenuScene, Assembly-CSharp
-        m_MethodName: toca
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

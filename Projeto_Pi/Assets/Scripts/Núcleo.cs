@@ -8,7 +8,6 @@ public class Núcleo : MonoBehaviour
 {
     public Slider barraVida;
     public GameObject PanelDerrota;
-    public Text tempo;
 
     private float timer, tempoFeito;
     private MenuScene MS;
@@ -32,8 +31,6 @@ public class Núcleo : MonoBehaviour
         {
             StartCoroutine(Derrota());
         }
-        //----------------------------------------------------------------------------------------------------------------------------------------
-        tempo.text = "Tempo de Jogo: " + (Mathf.Round(tempoFeito));
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     IEnumerator Derrota()
