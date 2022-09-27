@@ -8,15 +8,22 @@ public class MenuScene : MonoBehaviour
 {
     public AudioSource musica;
     public AudioSource SomM;
-    public GameObject som;
-    public int valVida;
+    public GameObject som, panel, cam0, cam1;
 
-    private Núcleo NC;
+    private int valVida;
+
     private int id, id2;
     //----------------------------------------------------------------------------------------------------------------------------------------
     private void Start()
     {
-        NC = GameObject.Find("Núcleo").GetComponent<Núcleo>();
+
+    }
+    //----------------------------------------------------------------------------------------------------------------------------------------
+    public void Update()
+    {
+        cam0.SetActive(false);
+        cam1.SetActive(true);
+        panel.SetActive(true);
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void Play()

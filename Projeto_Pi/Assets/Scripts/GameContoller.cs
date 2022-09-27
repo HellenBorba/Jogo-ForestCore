@@ -20,7 +20,7 @@ public class GameContoller : MonoBehaviour
     void Start()
     {
         IC = GameObject.Find("poço").GetComponent<ItemCollect>();
-        PY = GameObject.Find("Player").GetComponent<Player>();
+        PY = GameObject.Find("Player_Game").GetComponent<Player>();
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void Update()
