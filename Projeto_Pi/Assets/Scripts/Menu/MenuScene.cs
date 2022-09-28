@@ -8,22 +8,17 @@ public class MenuScene : MonoBehaviour
 {
     public AudioSource musica;
     public AudioSource SomM;
-    public GameObject som, panel, cam0, cam1;
+    public GameObject som, panel1, panel2, cam0, cam1, cam2;
 
     private int valVida;
 
     private int id, id2;
     //----------------------------------------------------------------------------------------------------------------------------------------
-    private void Start()
-    {
-
-    }
-    //----------------------------------------------------------------------------------------------------------------------------------------
-    public void Update()
+    public void Start()
     {
         cam0.SetActive(false);
         cam1.SetActive(true);
-        panel.SetActive(true);
+        panel1.SetActive(true);
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void Play()
@@ -39,6 +34,22 @@ public class MenuScene : MonoBehaviour
     public void MultiPlayer()
     {
         SceneManager.LoadScene("Loading");
+    }
+    //----------------------------------------------------------------------------------------------------------------------------------------
+    public void opções()
+    {
+        cam0.SetActive(false);
+        cam2.SetActive(true);
+        panel1.SetActive(false);
+        panel2.SetActive(true);
+    }
+    //----------------------------------------------------------------------------------------------------------------------------------------
+    public void voltar()
+    {
+        cam2.SetActive(false);
+        cam1.SetActive(true);
+        panel1.SetActive(true);
+        panel2.SetActive(false);
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void MuteM()
