@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 8428309820394883499}
   - component: {fileID: 2484983331158818578}
   - component: {fileID: 2484983331158818579}
-  - component: {fileID: 2484983331158818580}
   - component: {fileID: -4095333131425439807}
   - component: {fileID: 1343714636693727671}
+  - component: {fileID: -2974518396983188511}
   m_Layer: 0
   m_Name: Player 2
   m_TagString: Player
@@ -116,20 +116,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2484983331158818580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2484983331158818577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 973bb1deb1e162746bdf5d5580aef2dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SenhaPuzzle0: {fileID: 0}
-  textoAvisoPuzzle0: {fileID: 0}
 --- !u!114 &-4095333131425439807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,3 +172,17 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &-2974518396983188511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2484983331158818577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d51b1451162b1a94d8887bc73243af0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SenhaPuzzle0: {fileID: 0}
+  textoAvisoPuzzle0: {fileID: 0}

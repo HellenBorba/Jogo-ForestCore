@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.54439956, g: 0.5070023, b: 0.5242686, a: 1}
+  m_IndirectSpecularColor: {r: 0.54441214, g: 0.50701094, b: 0.52426976, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2133,7 +2133,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.03575, y: 0.8035852}
   m_AnchorMax: {x: 0.1895, y: 1}
-  m_AnchoredPosition: {x: -14.640076, y: 2.4999695}
+  m_AnchoredPosition: {x: -14.639893, y: 2.5}
   m_SizeDelta: {x: 1.8400002, y: 1.7299995}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &304574018
@@ -8603,7 +8603,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 2f66e97a51d037549a47f250801979de, type: 3}
 --- !u!23 &1304091787
@@ -9440,7 +9440,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -137.97, y: -68.14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1366259395
@@ -9932,7 +9932,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.84725004, y: 0}
   m_AnchorMax: {x: 1, y: 0.16900001}
-  m_AnchoredPosition: {x: 71, y: -46.000015}
+  m_AnchoredPosition: {x: 71, y: -46}
   m_SizeDelta: {x: 21.309998, y: 42.42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1366259410
@@ -10086,7 +10086,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.86225, y: 0}
   m_AnchorMax: {x: 1, y: 0.17033333}
-  m_AnchoredPosition: {x: 30, y: -30.000534}
+  m_AnchoredPosition: {x: 30, y: -30.000458}
   m_SizeDelta: {x: 60.630005, y: 27.589996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1366259415
@@ -10317,7 +10317,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6992499, y: 0.04666667}
   m_AnchorMax: {x: 0.92600006, y: 0.26188895}
-  m_AnchoredPosition: {x: -16.940002, y: 18.099976}
+  m_AnchoredPosition: {x: -16.940063, y: 18.099976}
   m_SizeDelta: {x: -42.85, y: -22.099998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1366259422
@@ -11554,7 +11554,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.73875004, y: 0.8724295}
   m_AnchorMax: {x: 0.9875, y: 1}
-  m_AnchoredPosition: {x: -9.26001, y: -7.1700134}
+  m_AnchoredPosition: {x: -9.26001, y: -7.170044}
   m_SizeDelta: {x: 24.189999, y: -3.6599998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1545857023
@@ -11898,7 +11898,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.549, y: 0.21445546}
   m_AnchorMax: {x: 0.804, y: 0.32417822}
-  m_AnchoredPosition: {x: -2.5, y: -49.00009}
+  m_AnchoredPosition: {x: -2.5, y: -49.00007}
   m_SizeDelta: {x: -2.3300018, y: 0.8999939}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1573196535
@@ -13216,7 +13216,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5924999, y: 0.041392066}
   m_AnchorMax: {x: 0.924, y: 0.46136478}
-  m_AnchoredPosition: {x: -1.7999878, y: -1.4999695}
+  m_AnchoredPosition: {x: -1.7999878, y: -1.5}
   m_SizeDelta: {x: 3.9899998, y: -1.9700012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1796920356
@@ -13854,7 +13854,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.30781427, y: 0.39567703}
   m_AnchorMax: {x: 0.70000005, y: 0.59226006}
-  m_AnchoredPosition: {x: -0.8049774, y: 1.9700012}
+  m_AnchoredPosition: {x: -0.8049927, y: 1.9700012}
   m_SizeDelta: {x: 1.61, y: 5.49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1915916327
@@ -15879,10 +15879,10 @@ GameObject:
   - component: {fileID: 2484983330729668464}
   - component: {fileID: 2484983330729668471}
   - component: {fileID: 2484983330729668470}
-  - component: {fileID: 2484983330729668465}
   - component: {fileID: 2484983330729668469}
-  - component: {fileID: 2484983330729668472}
   - component: {fileID: 2484983330729668473}
+  - component: {fileID: 2484983330729668465}
+  - component: {fileID: 2484983330729668472}
   m_Layer: 0
   m_Name: Player_Game
   m_TagString: Player
