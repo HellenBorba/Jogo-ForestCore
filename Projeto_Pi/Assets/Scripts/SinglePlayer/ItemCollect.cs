@@ -1,23 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ItemCollect : MonoBehaviour
 {
     public GameObject[] panel;
     public int Itemtipo;
+    public Text TextoDoJogo;
+    public GameObject TextoDoJog;
+    public GameObject Player;
 
     private GameContoller GC;
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
         GC = GameObject.Find("GameController").GetComponent<GameContoller>();
+        //----------------------------------------------------------------------------------------------------------------------------------------
+        StartCoroutine(Informação());
+        //----------------------------------------------------------------------------------------------------------------------------------------
+        Cursor.visible = true;
+
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     private void OnTriggerStay(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            StartCoroutine(TempoTextoDoJogo());
             switch (Itemtipo)
             {
                 case 0:
@@ -26,6 +36,7 @@ public class ItemCollect : MonoBehaviour
                         Cursor.visible = true;
                         panel[0].SetActive(true);
                         StartCoroutine(Tutorial0());
+                        Player.SetActive(false);
                     }
                     break;
                 case 1:
@@ -37,6 +48,7 @@ public class ItemCollect : MonoBehaviour
                         Cursor.visible = true;
                         panel[1].SetActive(true);
                         StartCoroutine(Tutorial1());
+                        Player.SetActive(false);
                     }
                     break;
                 case 2:
@@ -48,6 +60,7 @@ public class ItemCollect : MonoBehaviour
                         Cursor.visible = true;
                         panel[2].SetActive(true);
                         StartCoroutine(Tutorial2());
+                        Player.SetActive(false);
                     }
                     break;
                 case 3:
@@ -65,6 +78,22 @@ public class ItemCollect : MonoBehaviour
         GC.Camera[1].SetActive(false);
         GC.Camera[2].SetActive(false);
         GC.Camera[3].SetActive(false);
+    }
+    //----------------------------------------------------------------------------------------------------------------------------------------
+    IEnumerator TempoTextoDoJogo()
+    {
+        yield return new WaitForSeconds(0f);
+        TextoDoJogo.text = "Click E";
+        yield return new WaitForSeconds(5f);
+        TextoDoJogo.text = "";
+    }
+    //----------------------------------------------------------------------------------------------------------------------------------------
+    IEnumerator Informação()
+    {
+        yield return new WaitForSeconds(4f);
+        TextoDoJogo.text = "-Poço para trás-" + " -Glicose para frente-";
+        yield return new WaitForSeconds(5f);
+        TextoDoJogo.text = "";
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     #region Tutoriais

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameContoller : MonoBehaviour
 {
-    public GameObject[] buton, Camera, puzzles, PaneisTutoriais;
+    public GameObject[] buton, Camera, puzzles, PaneisTutoriais, information;
     public Button[] interact, circulo;
     public Button CirculoStart;
     public Text texto_puzzle_2, texto_puzzle_1, texto_puzzle2_1;
@@ -21,10 +21,20 @@ public class GameContoller : MonoBehaviour
     {
         IC = GameObject.Find("poço").GetComponent<ItemCollect>();
         PY = GameObject.Find("Player_Game").GetComponent<Player>();
+        //----------------------------------------------------------------------------------------------------------------------------------------
+        Cursor.visible = true;
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Camera[3].SetActive(true);
+            Camera[0].SetActive(false);
+            Camera[1].SetActive(false);
+            information[0].SetActive(true);
+            IC.Player.SetActive(false);
+        }
         #region Vitória
         if (contagem == 3)
         {
@@ -292,6 +302,12 @@ public class GameContoller : MonoBehaviour
         Camera[1].SetActive(false);
         Camera[2].SetActive(false);
         Camera[3].SetActive(false);
+        IC.Player.SetActive(true);
+    }
+    //----------------------------------------------------------------------------------------------------------------------------------------
+    public void VoltaMenu()
+    {
+        SceneManager.LoadScene("Menu_Game");
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     #region Vitória

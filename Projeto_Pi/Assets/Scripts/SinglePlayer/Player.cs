@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
         //----------------------------------------------------------------------------------------------------------------------------------------
         GC = GameObject.Find("GameController").GetComponent<GameContoller>();
         //----------------------------------------------------------------------------------------------------------------------------------------
-        Cursor.visible = false;
+        Cursor.visible = true;        
         //----------------------------------------------------------------------------------------------------------------------------------------
         gravity = (-2 * maxJumpHeight) / (timeToMaxHeight * timeToMaxHeight);
         jumpSpeed = (2 * maxJumpHeight) / timeToMaxHeight;
@@ -29,19 +29,6 @@ public class Player : MonoBehaviour
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Update()
     {
-        if(view.IsMine)
-        {
-            float forwardInput = Input.GetAxisRaw("Vertical");
-            float strafeInput = Input.GetAxisRaw("Horizontal");
-
-            forward = forwardInput * forwardSpeed * transform.forward;
-            strafe = strafeInput * strafeSpeed * transform.right;
-
-            transform.position += new Vector3(strafeInput * strafeSpeed, 0, forwardInput * forwardSpeed) * Time.deltaTime;
-
-            vertical += gravity * Time.deltaTime * Vector3.up;
-        }
-        //----------------------------------------------------------------------------------------------------------------------------------------
         minZ = -26.647f;
         maxZ = -2.833f;
 
@@ -55,15 +42,49 @@ public class Player : MonoBehaviour
                                         Mathf.Clamp(transform.position.y, minY, maxY),
                                         Mathf.Clamp(transform.position.z, minZ, maxZ));
         //----------------------------------------------------------------------------------------------------------------------------------------
-        if(efs == 1)
+        if(efs == 0)
         {
-            GC.Camera[0].SetActive(true);
-            GC.Camera[1].SetActive(false);
-        }else
-        if(efs == 2)
+            float forwardInput = Input.GetAxisRaw("Vertical");
+            float strafeInput = Input.GetAxisRaw("Horizontal");
+
+            forward = forwardInput * forwardSpeed * transform.forward;
+            strafe = strafeInput * strafeSpeed * transform.right;
+
+            transform.position += new Vector3(strafeInput * strafeSpeed, 0, forwardInput * forwardSpeed) * Time.deltaTime;
+
+            vertical += gravity * Time.deltaTime * Vector3.up;
+        }
+        if(efs == 1)
         {
             GC.Camera[0].SetActive(false);
             GC.Camera[1].SetActive(true);
+
+            float forwardInput = Input.GetAxisRaw("VerticalCam");
+            float strafeInput = Input.GetAxisRaw("HorizontalCam");
+
+            forward = forwardInput * forwardSpeed * transform.forward;
+            strafe = strafeInput * strafeSpeed * transform.right;
+
+            transform.position += new Vector3(strafeInput * strafeSpeed, 0, forwardInput * forwardSpeed) * Time.deltaTime;
+
+            vertical += gravity * Time.deltaTime * Vector3.up;
+        }
+        else
+        if(efs == 2)
+        {
+            GC.Camera[0].SetActive(true);
+            GC.Camera[1].SetActive(false);
+
+            float forwardInput = Input.GetAxisRaw("Vertical");
+            float strafeInput = Input.GetAxisRaw("Horizontal");
+
+            forward = forwardInput * forwardSpeed * transform.forward;
+            strafe = strafeInput * strafeSpeed * transform.right;
+
+            transform.position += new Vector3(strafeInput * strafeSpeed, 0, forwardInput * forwardSpeed) * Time.deltaTime;
+
+            vertical += gravity * Time.deltaTime * Vector3.up;
+
             efs = 0;
         }
         if(Input.GetKeyDown(KeyCode.F))
