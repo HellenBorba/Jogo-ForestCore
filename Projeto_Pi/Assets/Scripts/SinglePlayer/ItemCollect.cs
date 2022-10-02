@@ -25,6 +25,7 @@ public class ItemCollect : MonoBehaviour
                     {
                         Cursor.visible = true;
                         panel[0].SetActive(true);
+                        StartCoroutine(Tutorial0());
                     }
                     break;
                 case 1:
@@ -35,6 +36,7 @@ public class ItemCollect : MonoBehaviour
                         GC.Camera[1].SetActive(false);
                         Cursor.visible = true;
                         panel[1].SetActive(true);
+                        StartCoroutine(Tutorial1());
                     }
                     break;
                 case 2:
@@ -45,6 +47,7 @@ public class ItemCollect : MonoBehaviour
                         GC.Camera[1].SetActive(false);
                         Cursor.visible = true;
                         panel[2].SetActive(true);
+                        StartCoroutine(Tutorial2());
                     }
                     break;
                 case 3:
@@ -64,4 +67,21 @@ public class ItemCollect : MonoBehaviour
         GC.Camera[3].SetActive(false);
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
+    #region Tutoriais
+    IEnumerator Tutorial0()
+    {
+        yield return new WaitForSeconds(1f);
+        GC.PaneisTutoriais[0].SetActive(true);
+    }
+    IEnumerator Tutorial1()
+    {
+        yield return new WaitForSeconds(1f);
+        GC.PaneisTutoriais[1].SetActive(true);
+    }
+    IEnumerator Tutorial2()
+    {
+        yield return new WaitForSeconds(1f);
+        GC.PaneisTutoriais[2].SetActive(true);
+    }
+    #endregion
 }

@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class GameContoller : MonoBehaviour
 {
-    public GameObject[] buton, Camera, puzzles;
+    public GameObject[] buton, Camera, puzzles, PaneisTutoriais;
     public Button[] interact, circulo;
-    public Text texto_puzzle_2, texto_puzzle_1, texto_puzzle2_1;
     public Button CirculoStart;
+    public Text texto_puzzle_2, texto_puzzle_1, texto_puzzle2_1;
     public Slider slider;
 
     private int click, quantidade, contagem, numeroCirculos;
