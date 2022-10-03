@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class Player_Multiplayer : MonoBehaviour
+public class Player_Multiplayer : MonoBehaviourPunCallbacks
 {
-    public GameObject SenhaPuzzle0, textoAvisoPuzzle0; 
+    //public GameObject SenhaPuzzle0, textoAvisoPuzzle0; 
 
     private GameContoller_Multiplayer GCM;
     private Vector3 forward, strafe, vertical;
@@ -19,7 +19,7 @@ public class Player_Multiplayer : MonoBehaviour
     {
         view = gameObject.GetComponent<PhotonView>();
         //----------------------------------------------------------------------------------------------------------------------------------------
-        GCM = GameObject.Find("GameController").GetComponent<GameContoller_Multiplayer>();
+        GCM = GameObject.Find("GameController_Multiplayer").GetComponent<GameContoller_Multiplayer>();
         //----------------------------------------------------------------------------------------------------------------------------------------
         Cursor.visible = true;
         //----------------------------------------------------------------------------------------------------------------------------------------
@@ -29,7 +29,7 @@ public class Player_Multiplayer : MonoBehaviour
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Update()
     {
-        if(view.IsMine)
+        if (view.IsMine)
         {
             float forwardInput = Input.GetAxisRaw("Vertical_Multiplayer");
             float strafeInput = Input.GetAxisRaw("Horizontal_Multiplayer");
@@ -40,20 +40,20 @@ public class Player_Multiplayer : MonoBehaviour
             transform.position += new Vector3(strafeInput * strafeSpeed, 0, forwardInput * forwardSpeed) * Time.deltaTime;
 
             vertical += gravity * Time.deltaTime * Vector3.up;
+            //----------------------------------------------------------------------------------------------------------------------------------------
+            minZ = -26.647f;
+            maxZ = -2.833f;
+
+            minX = -17.957f;
+            maxX = -2.38f;
+
+            minY = 0.308f;
+            maxY = 0.926f;
+
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, minX, maxX),
+                                            Mathf.Clamp(transform.position.y, minY, maxY),
+                                            Mathf.Clamp(transform.position.z, minZ, maxZ));
         }
-        //----------------------------------------------------------------------------------------------------------------------------------------
-        minZ = -26.647f;
-        maxZ = -2.833f;
-
-        minX = -17.957f;
-        maxX = -2.38f;
-
-        minY = 0.308f;
-        maxY = 0.926f;
-
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, minX, maxX),
-                                        Mathf.Clamp(transform.position.y, minY, maxY),
-                                        Mathf.Clamp(transform.position.z, minZ, maxZ));
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     #region Puzzle0
@@ -74,18 +74,18 @@ public class Player_Multiplayer : MonoBehaviour
     IEnumerator Senha()
     {
         yield return new WaitForSeconds(0f);
-        SenhaPuzzle0.SetActive(true);
+        //SenhaPuzzle0.SetActive(true);
         yield return new WaitForSeconds(3f);
-        SenhaPuzzle0.SetActive(false);
+        //SenhaPuzzle0.SetActive(false);
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     IEnumerator AvisoPuzzle2()
     {
         yield return new WaitForSeconds(0f);
-        textoAvisoPuzzle0.SetActive(true);
+        //textoAvisoPuzzle0.SetActive(true);
         yield return new WaitForSeconds(5f);
-        textoAvisoPuzzle0.SetActive(false);
-        Object.Destroy(textoAvisoPuzzle0);
+        //textoAvisoPuzzle0.SetActive(false);
+        //Object.Destroy(textoAvisoPuzzle0);
     }
     #endregion
     //----------------------------------------------------------------------------------------------------------------------------------------

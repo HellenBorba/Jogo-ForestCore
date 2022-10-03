@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Photon.Pun;
 
-public class GameContoller_Multiplayer : MonoBehaviour
+public class GameContoller_Multiplayer : MonoBehaviourPunCallbacks
 {
-    public GameObject[] buton, Camera, puzzles;
+    public GameObject[] buton, Camera, puzzles, panel;
     public Button[] interact, circulo;
     public Text texto_puzzle_2, texto_puzzle_1, texto_puzzle2_1;
     public Button CirculoStart;
@@ -14,13 +15,13 @@ public class GameContoller_Multiplayer : MonoBehaviour
 
     private int click, quantidade, contagem, numeroCirculos;
     private string sequencia, valor, codigo;
-    private ItemCollect_Multiplayer ICM;
     private Player_Multiplayer PYM;
+    private GameContoller_Multiplayer GCM;
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
-        ICM = GameObject.Find("poço").GetComponent<ItemCollect_Multiplayer>();
-        PYM = GameObject.Find("Player1").GetComponent<Player_Multiplayer>();
+        PYM = GameObject.Find("Player_Multiplayer").GetComponent<Player_Multiplayer>();
+        GCM = GameObject.Find("GameController_Multiplayer").GetComponent<GameContoller_Multiplayer>();
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void Update()
@@ -58,7 +59,7 @@ public class GameContoller_Multiplayer : MonoBehaviour
             buton[0].SetActive(true);
             puzzles[0].SetActive(false);
             puzzles[1].SetActive(true);
-            PYM.textoAvisoPuzzle0.SetActive(false);
+            //PYM.textoAvisoPuzzle0.SetActive(false);
         }
         //----------------------------------------------------------------------------------------------------------------------------------------
         switch (numBotao)
@@ -285,16 +286,16 @@ public class GameContoller_Multiplayer : MonoBehaviour
     //---------------------------------------------------------------------------------------------------------------------------------------- 
     public void Panel()
     {
-        ICM.panel[0].SetActive(false);
-        ICM.panel[1].SetActive(false);
-        ICM.panel[2].SetActive(false);
+        GCM.panel[0].SetActive(false);
+        GCM.panel[1].SetActive(false);
+        GCM.panel[2].SetActive(false);
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     #region Vitória
     IEnumerator Vitória()
     {
         yield return new WaitForSeconds(0f);
-        ICM.panel[6].SetActive(true);
+        GCM.panel[6].SetActive(true);
         yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(0);
     }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.54441214, g: 0.50701094, b: 0.52426976, a: 1}
+  m_IndirectSpecularColor: {r: 0.54439956, g: 0.5070023, b: 0.5242686, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1433,7 +1433,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &207619314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1615,7 +1615,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 23.1
-  field of view: 60
+  field of view: 63
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1640,8 +1640,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226772744}
-  m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
-  m_LocalPosition: {x: -9.94, y: 5.42, z: -19.69}
+  m_LocalRotation: {x: 0.4999794, y: 0.004537756, z: -0.007859618, w: 0.86598974}
+  m_LocalPosition: {x: -9.75, y: 4.66, z: -19.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6726,7 +6726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: -0.67999935, y: 4.82, z: -2.5540009}
+  m_FollowOffset: {x: -0.48999977, y: 4.06, z: -2.7340012}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -7555,7 +7555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: -7.41, y: 2.26, z: 7.396}
+  m_FollowOffset: {x: -0.6210004, y: 2.22, z: -2.625}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -8006,7 +8006,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.7038359, y: 0}
   m_AnchorMax: {x: 1, y: 0.124000005}
-  m_AnchoredPosition: {x: 206.99995, y: 15.999985}
+  m_AnchoredPosition: {x: 206.99994, y: 16}
   m_SizeDelta: {x: 10.679993, y: -16.07}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1164019354
@@ -11055,7 +11055,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.86225, y: 0}
   m_AnchorMax: {x: 1, y: 0.17033333}
-  m_AnchoredPosition: {x: 30, y: -30.000458}
+  m_AnchoredPosition: {x: 30, y: -30.000488}
   m_SizeDelta: {x: 60.630005, y: 27.589996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1366259415
@@ -17036,11 +17036,11 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 2484983330729668464}
   m_Lens:
-    FieldOfView: 60
+    FieldOfView: 63
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 23.1
-    Dutch: 0
+    Dutch: 88
     LensShift: {x: 0, y: 0}
   m_Transitions:
     m_BlendHint: 0
@@ -17057,14 +17057,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2125475758}
-  m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
-  m_LocalPosition: {x: -9.94, y: 5.42, z: -19.69}
+  m_LocalRotation: {x: 0.3565029, y: 0.35057908, z: -0.60722077, w: 0.6174811}
+  m_LocalPosition: {x: -9.75, y: 4.66, z: -19.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 924776609}
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 60, y: 0, z: -89.04}
 --- !u!1 &2130967001
 GameObject:
   m_ObjectHideFlags: 0
@@ -17204,17 +17204,17 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2139544429}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -120}
+  m_LocalPosition: {x: 0, y: 0, z: -146.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1259903994}
   m_Father: {fileID: 2130967002}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.023750002, y: 0.053333335}
-  m_AnchorMax: {x: 0.19900002, y: 0.127}
-  m_AnchoredPosition: {x: 85.859985, y: 41.52002}
-  m_SizeDelta: {x: -35.04001, y: -7.3200073}
+  m_AnchorMin: {x: 0.135, y: 0.34}
+  m_AnchorMax: {x: 0.41150004, y: 0.49777776}
+  m_AnchoredPosition: {x: -3.2999878, y: -81.7}
+  m_SizeDelta: {x: -116.04001, y: -45.320007}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2139544431
 MonoBehaviour:

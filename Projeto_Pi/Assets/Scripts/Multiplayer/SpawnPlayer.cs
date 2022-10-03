@@ -5,13 +5,19 @@ using Photon.Pun;
 
 public class SpawnPlayer : MonoBehaviour
 {
-    public GameObject PlayerPrefabs1, PlayerPrefabs2;
+    public GameObject PlayerPrefabs1, PlayerPrefabs2, Glicose, Poço;
     public GameObject Spawn;
     public GameObject spawnPosition;
     public float MaxX, MaxY, MaxZ, MinX, MinY, MinZ;
     //----------------------------------------------------------------------------------------------------------------------------------------
     private void Start()
     {
+        Vector3 a = new Vector3(-16.785f, -1.17f, -8.156908f);
+        PhotonNetwork.Instantiate(Glicose.name, a, Quaternion.identity);
+
+        Vector3 b = new Vector3(-15.372f, -0.53f, -27.052f);
+        PhotonNetwork.Instantiate(Poço.name, b, Quaternion.identity);
+        //----------------------------------------------------------------------------------------------------------------------------------------
         if (PhotonNetwork.IsMasterClient)
         {
             PhotonNetwork.NickName = ("Player1");

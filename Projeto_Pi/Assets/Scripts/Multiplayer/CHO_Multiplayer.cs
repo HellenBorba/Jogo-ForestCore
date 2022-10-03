@@ -12,15 +12,12 @@ public class CHO_Multiplayer : MonoBehaviour
     public Text perdeu, tempo;
 
     public float timer;
-    private ItemCollect_Multiplayer ICM;
     private GameContoller_Multiplayer GCM;
     private Núcleo_Multiplayer NCM;
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
-        ICM = GameObject.Find("Glicose").GetComponent<ItemCollect_Multiplayer>();
-        GCM = GameObject.Find("GameController").GetComponent<GameContoller_Multiplayer>();
-        NCM = GameObject.Find("Núcleo").GetComponent<Núcleo_Multiplayer>();
+        GCM = GameObject.Find("GameController_Multiplayer").GetComponent<GameContoller_Multiplayer>();
         //----------------------------------------------------------------------------------------------------------------------------------------
         timer = 40;
     }
@@ -163,7 +160,6 @@ public class CHO_Multiplayer : MonoBehaviour
                         Hidrogenio.transform.position = pontoFixoH.transform.position;
                         StartCoroutine(Final());
                         GCM.buton[2].SetActive(true);
-                        NCM.barraVida.value += 10;
                         GCM.puzzles[4].SetActive(false);
                         GCM.puzzles[5].SetActive(true);
                     }
@@ -416,16 +412,16 @@ public class CHO_Multiplayer : MonoBehaviour
     IEnumerator OrdemErrada()
     {
         yield return new WaitForSeconds(0f);
-        ICM.panel[3].SetActive(true);
+        GCM.panel[3].SetActive(true);
         yield return new WaitForSeconds(3f);
-        ICM.panel[3].SetActive(false);
+        GCM.panel[3].SetActive(false);
     }
     IEnumerator Final()
     {
         yield return new WaitForSeconds(0f);
-        ICM.panel[4].SetActive(true);
+        GCM.panel[4].SetActive(true);
         yield return new WaitForSeconds(2f);
-        ICM.panel[4].SetActive(false);
+        GCM.panel[4].SetActive(false);
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void Erro()
