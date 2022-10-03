@@ -35,6 +35,14 @@ public class GameContoller : MonoBehaviour
             information[0].SetActive(true);
             IC.Player.SetActive(false);
         }
+        if(Input.GetKeyDown(KeyCode.G))
+        {
+            Camera[3].SetActive(true);
+            Camera[0].SetActive(false);
+            Camera[1].SetActive(false);
+            information[1].SetActive(true);
+            IC.Player.SetActive(false);
+        }
         #region Vitória
         if (contagem == 3)
         {

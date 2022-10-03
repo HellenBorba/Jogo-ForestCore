@@ -21,7 +21,7 @@ public class Player_Multiplayer : MonoBehaviour
         //----------------------------------------------------------------------------------------------------------------------------------------
         GCM = GameObject.Find("GameController").GetComponent<GameContoller_Multiplayer>();
         //----------------------------------------------------------------------------------------------------------------------------------------
-        Cursor.visible = false;
+        Cursor.visible = true;
         //----------------------------------------------------------------------------------------------------------------------------------------
         gravity = (-2 * maxJumpHeight) / (timeToMaxHeight * timeToMaxHeight);
         jumpSpeed = (2 * maxJumpHeight) / timeToMaxHeight;

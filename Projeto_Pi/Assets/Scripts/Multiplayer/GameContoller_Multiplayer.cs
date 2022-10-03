@@ -288,10 +288,6 @@ public class GameContoller_Multiplayer : MonoBehaviour
         ICM.panel[0].SetActive(false);
         ICM.panel[1].SetActive(false);
         ICM.panel[2].SetActive(false);
-        Camera[0].SetActive(true);
-        Camera[1].SetActive(false);
-        Camera[2].SetActive(false);
-        Camera[3].SetActive(false);
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     #region Vitória

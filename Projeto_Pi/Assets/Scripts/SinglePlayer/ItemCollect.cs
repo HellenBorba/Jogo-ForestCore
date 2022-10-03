@@ -17,8 +17,6 @@ public class ItemCollect : MonoBehaviour
     {
         GC = GameObject.Find("GameController").GetComponent<GameContoller>();
         //----------------------------------------------------------------------------------------------------------------------------------------
-        StartCoroutine(Informação());
-        //----------------------------------------------------------------------------------------------------------------------------------------
         Cursor.visible = true;
 
     }
@@ -84,14 +82,6 @@ public class ItemCollect : MonoBehaviour
     {
         yield return new WaitForSeconds(0f);
         TextoDoJogo.text = "Click E";
-        yield return new WaitForSeconds(5f);
-        TextoDoJogo.text = "";
-    }
-    //----------------------------------------------------------------------------------------------------------------------------------------
-    IEnumerator Informação()
-    {
-        yield return new WaitForSeconds(4f);
-        TextoDoJogo.text = "-Poço para trás-" + " -Glicose para frente-";
         yield return new WaitForSeconds(5f);
         TextoDoJogo.text = "";
     }

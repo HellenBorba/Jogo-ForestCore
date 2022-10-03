@@ -25,10 +25,6 @@ public class MenuScene : MonoBehaviour
     {
         SceneManager.LoadScene("AvisoJogadores");
     }
-    public void Game()
-    {
-        SceneManager.LoadScene("Game");
-    }
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void Exit()
     {
