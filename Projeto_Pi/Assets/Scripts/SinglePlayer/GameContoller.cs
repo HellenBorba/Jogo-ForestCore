@@ -27,22 +27,38 @@ public class GameContoller : MonoBehaviour
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        #region ESC e G
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
+            IC.panel[1].SetActive(false);
+            IC.panel[2].SetActive(false);
+            IC.panel[3].SetActive(false);
+            IC.panel[4].SetActive(false);
+            IC.panel[5].SetActive(false);
+            IC.panel[6].SetActive(false);
             Camera[3].SetActive(true);
             Camera[0].SetActive(false);
             Camera[1].SetActive(false);
+            Camera[2].SetActive(false);
             information[0].SetActive(true);
             IC.Player.SetActive(false);
         }
         if(Input.GetKeyDown(KeyCode.G))
         {
+            IC.panel[1].SetActive(false);
+            IC.panel[2].SetActive(false);
+            IC.panel[3].SetActive(false);
+            IC.panel[4].SetActive(false);
+            IC.panel[5].SetActive(false);
+            IC.panel[6].SetActive(false);
             Camera[3].SetActive(true);
             Camera[0].SetActive(false);
             Camera[1].SetActive(false);
+            Camera[2].SetActive(false);
             information[1].SetActive(true);
             IC.Player.SetActive(false);
         }
+        #endregion
         #region Vitória
         if (contagem == 3)
         {
@@ -205,7 +221,7 @@ public class GameContoller : MonoBehaviour
         }
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
-    #region Corrotina Case
+    #region Corrotina Case1
     IEnumerator Case(int bla)
     {
         yield return new WaitForSeconds(0.5f);
@@ -213,11 +229,11 @@ public class GameContoller : MonoBehaviour
         circulo[1].interactable = false;
         circulo[2].interactable = false;
         circulo[3].interactable = false;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
         numeroCirculos++;
         circulo[bla].interactable = true;
         texto_puzzle2_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
         circulo[0].interactable = true;
         circulo[1].interactable = true;
         circulo[2].interactable = true;
@@ -235,11 +251,11 @@ public class GameContoller : MonoBehaviour
         circulo[1].interactable = false;
         circulo[2].interactable = false;
         circulo[3].interactable = false;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
         numeroCirculos++;
         circulo[bla].interactable = true;
         texto_puzzle2_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
         circulo[0].interactable = true;
         circulo[1].interactable = true;
         circulo[2].interactable = true;
@@ -257,11 +273,11 @@ public class GameContoller : MonoBehaviour
         circulo[1].interactable = false;
         circulo[2].interactable = false;
         circulo[3].interactable = false;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
         numeroCirculos++;
         circulo[bla].interactable = true;
         texto_puzzle2_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
         circulo[0].interactable = true;
         circulo[1].interactable = true;
         circulo[2].interactable = true;
@@ -279,11 +295,11 @@ public class GameContoller : MonoBehaviour
         circulo[1].interactable = false;
         circulo[2].interactable = false;
         circulo[3].interactable = false;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
         numeroCirculos++;
         circulo[bla].interactable = true;
         texto_puzzle2_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
         circulo[0].interactable = true;
         circulo[1].interactable = true;
         circulo[2].interactable = true;
@@ -301,22 +317,23 @@ public class GameContoller : MonoBehaviour
     }
     #endregion
     //---------------------------------------------------------------------------------------------------------------------------------------- 
+    #region Saida de Puzzles
     public void Panel()
     {
         IC.panel[0].SetActive(false);
         IC.panel[1].SetActive(false);
         IC.panel[2].SetActive(false);
+        IC.panel[3].SetActive(false);
+        IC.panel[4].SetActive(false);
+        IC.panel[5].SetActive(false);
+        IC.panel[6].SetActive(false);
         Camera[0].SetActive(true);
         Camera[1].SetActive(false);
         Camera[2].SetActive(false);
         Camera[3].SetActive(false);
         IC.Player.SetActive(true);
     }
-    //----------------------------------------------------------------------------------------------------------------------------------------
-    public void VoltaMenu()
-    {
-        SceneManager.LoadScene("Menu_Game");
-    }
+    #endregion
     //----------------------------------------------------------------------------------------------------------------------------------------
     #region Vitória
     IEnumerator Vitória()
@@ -331,5 +348,10 @@ public class GameContoller : MonoBehaviour
         contagem += num;
     }
     #endregion
+    //----------------------------------------------------------------------------------------------------------------------------------------
+    public void VoltaMenu()
+    {
+        SceneManager.LoadScene("Menu_Game");
+    }
     //----------------------------------------------------------------------------------------------------------------------------------------
 }

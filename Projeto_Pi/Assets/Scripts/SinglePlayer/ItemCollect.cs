@@ -12,15 +12,17 @@ public class ItemCollect : MonoBehaviour
     public GameObject Player;
 
     private GameContoller GC;
+    private Player PL;
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
         GC = GameObject.Find("GameController").GetComponent<GameContoller>();
+        PL = GameObject.Find("Player_Game").GetComponent<Player>();
         //----------------------------------------------------------------------------------------------------------------------------------------
         Cursor.visible = true;
-
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
+    #region Item Tipo
     private void OnTriggerStay(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -31,6 +33,9 @@ public class ItemCollect : MonoBehaviour
                 case 0:
                     if (Input.GetKey(KeyCode.E))
                     {
+                        GC.Camera[3].SetActive(true);
+                        GC.Camera[0].SetActive(false);
+                        GC.Camera[1].SetActive(false);
                         Cursor.visible = true;
                         panel[0].SetActive(true);
                         StartCoroutine(Tutorial0());
@@ -62,22 +67,19 @@ public class ItemCollect : MonoBehaviour
                     }
                     break;
                 case 3:
-                    GC.Camera[2].SetActive(true);
-                    GC.Camera[0].SetActive(false);
-                    GC.Camera[1].SetActive(false);
+                    PL.efs = 3;
                     break;
             }
         }
     }
+    #endregion
     //----------------------------------------------------------------------------------------------------------------------------------------
     private void OnTriggerExit(Collider other)
     {
-        GC.Camera[0].SetActive(true);
-        GC.Camera[1].SetActive(false);
-        GC.Camera[2].SetActive(false);
-        GC.Camera[3].SetActive(false);
+        PL.efs = 4;
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
+    #region Texto do Jogo
     IEnumerator TempoTextoDoJogo()
     {
         yield return new WaitForSeconds(0f);
@@ -85,6 +87,7 @@ public class ItemCollect : MonoBehaviour
         yield return new WaitForSeconds(5f);
         TextoDoJogo.text = "";
     }
+    #endregion
     //----------------------------------------------------------------------------------------------------------------------------------------
     #region Tutoriais
     IEnumerator Tutorial0()

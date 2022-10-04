@@ -5,20 +5,15 @@ using Photon.Pun;
 
 public class Player : MonoBehaviour
 {
-    public GameObject SenhaPuzzle0, textoAvisoPuzzle0; 
+    public GameObject SenhaPuzzle0, textoAvisoPuzzle0;
+    public int efs;
 
     private GameContoller GC;
     private Vector3 forward, strafe, vertical;
     private float forwardSpeed = 5, strafeSpeed = 5, gravity, jumpSpeed, maxJumpHeight = 2, timeToMaxHeight = 0.5f, minZ, minX, minY, maxY, maxX, maxZ;
-    private int efs;
-
-    PhotonView view;
-
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
-        view = gameObject.GetComponent<PhotonView>();
-        //----------------------------------------------------------------------------------------------------------------------------------------
         GC = GameObject.Find("GameController").GetComponent<GameContoller>();
         //----------------------------------------------------------------------------------------------------------------------------------------
         Cursor.visible = true;        
@@ -29,6 +24,7 @@ public class Player : MonoBehaviour
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Update()
     {
+        #region Limite Mapa
         minZ = -26.647f;
         maxZ = -2.833f;
 
@@ -41,8 +37,10 @@ public class Player : MonoBehaviour
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, minX, maxX),
                                         Mathf.Clamp(transform.position.y, minY, maxY),
                                         Mathf.Clamp(transform.position.z, minZ, maxZ));
+        #endregion
         //----------------------------------------------------------------------------------------------------------------------------------------
-        if(efs == 0)
+        #region F
+        if (efs == 0)
         {
             float forwardInput = Input.GetAxisRaw("Vertical");
             float strafeInput = Input.GetAxisRaw("Horizontal");
@@ -86,11 +84,47 @@ public class Player : MonoBehaviour
             vertical += gravity * Time.deltaTime * Vector3.up;
 
             efs = 0;
+        }else
+        if(efs == 3)
+        {
+            float forwardInput = Input.GetAxisRaw("Vertical");
+            float strafeInput = Input.GetAxisRaw("Horizontal");
+
+            forward = forwardInput * forwardSpeed * transform.forward;
+            strafe = strafeInput * strafeSpeed * transform.right;
+
+            transform.position += new Vector3(strafeInput * strafeSpeed, 0, forwardInput * forwardSpeed) * Time.deltaTime;
+
+            vertical += gravity * Time.deltaTime * Vector3.up;
+            //----------------------------------------------------------------------------------------------------------------------------------------
+            GC.Camera[2].SetActive(true);
+            GC.Camera[0].SetActive(false);
+            GC.Camera[1].SetActive(false);
+            GC.Camera[3].SetActive(false);
+        }else
+        if(efs == 4)
+        {
+            float forwardInput = Input.GetAxisRaw("Vertical");
+            float strafeInput = Input.GetAxisRaw("Horizontal");
+
+            forward = forwardInput * forwardSpeed * transform.forward;
+            strafe = strafeInput * strafeSpeed * transform.right;
+
+            transform.position += new Vector3(strafeInput * strafeSpeed, 0, forwardInput * forwardSpeed) * Time.deltaTime;
+
+            vertical += gravity * Time.deltaTime * Vector3.up;
+            //----------------------------------------------------------------------------------------------------------------------------------------
+            GC.Camera[0].SetActive(true);
+            GC.Camera[1].SetActive(false);
+            GC.Camera[2].SetActive(false);
+            GC.Camera[3].SetActive(false);
+            efs = 0;
         }
         if(Input.GetKeyDown(KeyCode.F))
         {
             efs += 1;
         }
+        #endregion
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     #region Puzzle0
