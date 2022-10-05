@@ -12,7 +12,9 @@ public class GameContoller : MonoBehaviour
     public Text texto_puzzle_2, texto_puzzle_1, texto_puzzle2_1;
     public Slider slider;
 
+    [SerializeField]
     private int click, quantidade, contagem, numeroCirculos;
+    [SerializeField]
     private string sequencia, valor, codigo;
     private ItemCollect IC;
     private Player PY;
@@ -148,7 +150,7 @@ public class GameContoller : MonoBehaviour
                 if(valor == sequencia)
                 {
                     numeroCirculos = 0;
-                    StartCoroutine(Case((int)Random.Range(0, 4)));
+                    StartCoroutine(Case1((int)Random.Range(0, 4)));
                     texto_puzzle_2.text = "Espere os 2 círculos brilharem, e depois click nos 2 que brilharem!";
                     texto_puzzle2_1.text = "2° onda";
                     slider.value += 1;
@@ -221,7 +223,7 @@ public class GameContoller : MonoBehaviour
         }
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
-    #region Corrotina Case1
+    #region Corrotina CaseP1-1
     IEnumerator Case(int bla)
     {
         yield return new WaitForSeconds(0.5f);
@@ -239,54 +241,43 @@ public class GameContoller : MonoBehaviour
         circulo[2].interactable = true;
         circulo[3].interactable = true;
         sequencia = sequencia + bla;
-        if(click >= 2)
-        {
-            StartCoroutine(Case1((int)Random.Range(0,4)));
-        }
     }
     IEnumerator Case1(int bla)
     {
-        yield return new WaitForSeconds(0.5f);
-        circulo[0].interactable = false;
-        circulo[1].interactable = false;
-        circulo[2].interactable = false;
-        circulo[3].interactable = false;
-        yield return new WaitForSeconds(0.5f);
-        numeroCirculos++;
-        circulo[bla].interactable = true;
-        texto_puzzle2_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
-        yield return new WaitForSeconds(0.5f);
-        circulo[0].interactable = true;
-        circulo[1].interactable = true;
-        circulo[2].interactable = true;
-        circulo[3].interactable = true;
-        sequencia = sequencia + bla;
-        if (click >= 4)
+        if (click >= 2)
+        {
+            yield return new WaitForSeconds(0.5f);
+            circulo[0].interactable = false;
+            circulo[1].interactable = false;
+            circulo[2].interactable = false;
+            circulo[3].interactable = false;
+            yield return new WaitForSeconds(0.5f);
+            numeroCirculos++;
+            circulo[bla].interactable = true;
+            texto_puzzle2_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
+        }
+        if(click >= 2)
         {
             StartCoroutine(Case2((int)Random.Range(0, 4)));
         }
     }
     IEnumerator Case2(int bla)
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
         circulo[0].interactable = false;
         circulo[1].interactable = false;
         circulo[2].interactable = false;
         circulo[3].interactable = false;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
         numeroCirculos++;
         circulo[bla].interactable = true;
         texto_puzzle2_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
         circulo[0].interactable = true;
         circulo[1].interactable = true;
         circulo[2].interactable = true;
         circulo[3].interactable = true;
         sequencia = sequencia + bla;
-        if (click >= 7)
-        {
-            StartCoroutine(Case3((int)Random.Range(0, 4)));
-        }
     }
     IEnumerator Case3(int bla)
     {
