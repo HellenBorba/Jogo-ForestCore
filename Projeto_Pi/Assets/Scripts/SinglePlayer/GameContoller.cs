@@ -168,7 +168,7 @@ public class GameContoller : MonoBehaviour
                 if(valor == sequencia)
                 {
                     numeroCirculos = 0;
-                    StartCoroutine(Case((int)Random.Range(0, 4)));
+                    StartCoroutine(Case2_1((int)Random.Range(0, 4)));
                     texto_puzzle_2.text = "Espere os 3 círculos brilharem, e depois click nos 3 que brilharem!";
                     texto_puzzle2_1.text = "3° onda";
                     slider.value += 1;
@@ -186,7 +186,7 @@ public class GameContoller : MonoBehaviour
                 if(valor == sequencia)
                 {
                     numeroCirculos = 0;
-                    StartCoroutine(Case((int)Random.Range(0, 4)));
+                    StartCoroutine(Case3_1((int)Random.Range(0, 4)));
                     texto_puzzle_2.text = "Espere os 4 círculos brilharem, e depois click nos 4 que brilharem!";
                     texto_puzzle2_1.text = "4° onda";
                     slider.value += 1;
@@ -205,7 +205,7 @@ public class GameContoller : MonoBehaviour
                 {
                     texto_puzzle2_1.text = "Fim!";
                     texto_puzzle_2.text = "Parabéns!";
-                    slider.value += 1;
+                    slider.value += 2;
                     buton[1].SetActive(true);
                     puzzles[2].SetActive(false);
                     puzzles[3].SetActive(true);
@@ -222,8 +222,8 @@ public class GameContoller : MonoBehaviour
                 break;
         }
     }
-    //----------------------------------------------------------------------------------------------------------------------------------------
-    #region Corrotina CaseP1-1
+    //-----------------------------------------------Corrotinas-------------------------------------------------------------------------------
+    #region CaseP1-1
     IEnumerator Case(int bla)
     {
         yield return new WaitForSeconds(0.5f);
@@ -235,35 +235,119 @@ public class GameContoller : MonoBehaviour
         numeroCirculos++;
         circulo[bla].interactable = true;
         texto_puzzle2_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
+        sequencia = sequencia + bla;
         yield return new WaitForSeconds(0.5f);
         circulo[0].interactable = true;
         circulo[1].interactable = true;
         circulo[2].interactable = true;
         circulo[3].interactable = true;
-        sequencia = sequencia + bla;
     }
+    #endregion
+    #region CaseP1-2
     IEnumerator Case1(int bla)
     {
+        yield return new WaitForSeconds(0.4f);
+        circulo[0].interactable = false;
+        circulo[1].interactable = false;
+        circulo[2].interactable = false;
+        circulo[3].interactable = false;
+        yield return new WaitForSeconds(0.4f);
+        numeroCirculos++;
+        circulo[bla].interactable = true;
+        texto_puzzle2_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
+        sequencia = sequencia + bla;
         if (click >= 2)
         {
-            yield return new WaitForSeconds(0.5f);
-            circulo[0].interactable = false;
-            circulo[1].interactable = false;
-            circulo[2].interactable = false;
-            circulo[3].interactable = false;
-            yield return new WaitForSeconds(0.5f);
-            numeroCirculos++;
-            circulo[bla].interactable = true;
-            texto_puzzle2_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
-        }
-        if(click >= 2)
-        {
-            StartCoroutine(Case2((int)Random.Range(0, 4)));
+            StartCoroutine(Case1_2((int)Random.Range(0, 4)));
         }
     }
-    IEnumerator Case2(int bla)
+    IEnumerator Case1_2(int bla)
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.4f);
+        circulo[0].interactable = false;
+        circulo[1].interactable = false;
+        circulo[2].interactable = false;
+        circulo[3].interactable = false;
+        yield return new WaitForSeconds(0.4f);
+        numeroCirculos++;
+        circulo[bla].interactable = true;
+        texto_puzzle2_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
+        sequencia = sequencia + bla;
+        yield return new WaitForSeconds(0.4f);
+        circulo[0].interactable = true;
+        circulo[1].interactable = true;
+        circulo[2].interactable = true;
+        circulo[3].interactable = true;
+    }
+    #endregion
+    #region CaseP1-3
+    IEnumerator Case2_1(int bla)
+    {
+        yield return new WaitForSeconds(0.3f);
+        circulo[0].interactable = false;
+        circulo[1].interactable = false;
+        circulo[2].interactable = false;
+        circulo[3].interactable = false;
+        yield return new WaitForSeconds(0.3f);
+        numeroCirculos++;
+        circulo[bla].interactable = true;
+        texto_puzzle2_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
+        sequencia = sequencia + bla;
+        yield return new WaitForSeconds(0.3f);
+        circulo[0].interactable = false;
+        circulo[1].interactable = false;
+        circulo[2].interactable = false;
+        circulo[3].interactable = false;
+        if (click >= 4)
+        {
+            StartCoroutine(Case2_2((int)Random.Range(0, 4)));
+        }
+    }
+    IEnumerator Case2_2(int bla)
+    {
+        yield return new WaitForSeconds(0.3f);
+        circulo[0].interactable = false;
+        circulo[1].interactable = false;
+        circulo[2].interactable = false;
+        circulo[3].interactable = false;
+        yield return new WaitForSeconds(0.3f);
+        numeroCirculos++;
+        circulo[bla].interactable = true;
+        texto_puzzle2_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
+        sequencia = sequencia + bla;
+        yield return new WaitForSeconds(0.3f);
+        circulo[0].interactable = false;
+        circulo[1].interactable = false;
+        circulo[2].interactable = false;
+        circulo[3].interactable = false;
+        if (click >= 4)
+        {
+            StartCoroutine(Case2_3((int)Random.Range(0, 4)));
+        }
+    }
+    IEnumerator Case2_3(int bla)
+    {
+        yield return new WaitForSeconds(0.3f);
+        circulo[0].interactable = false;
+        circulo[1].interactable = false;
+        circulo[2].interactable = false;
+        circulo[3].interactable = false;
+        yield return new WaitForSeconds(0.3f);
+        numeroCirculos++;
+        circulo[bla].interactable = true;
+        texto_puzzle2_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
+        sequencia = sequencia + bla;
+        yield return new WaitForSeconds(0.3f);
+        circulo[0].interactable = true;
+        circulo[1].interactable = true;
+        circulo[2].interactable = true;
+        circulo[3].interactable = true;
+    }
+    #endregion
+    #region CaseP1-4
+    IEnumerator Case3_1(int bla)
+    {
+        yield return new WaitForSeconds(0.2f);
         circulo[0].interactable = false;
         circulo[1].interactable = false;
         circulo[2].interactable = false;
@@ -272,30 +356,78 @@ public class GameContoller : MonoBehaviour
         numeroCirculos++;
         circulo[bla].interactable = true;
         texto_puzzle2_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
-        yield return new WaitForSeconds(0.3f);
-        circulo[0].interactable = true;
-        circulo[1].interactable = true;
-        circulo[2].interactable = true;
-        circulo[3].interactable = true;
         sequencia = sequencia + bla;
-    }
-    IEnumerator Case3(int bla)
-    {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
         circulo[0].interactable = false;
         circulo[1].interactable = false;
         circulo[2].interactable = false;
         circulo[3].interactable = false;
-        yield return new WaitForSeconds(0.5f);
+        if (click >= 4)
+        {
+            StartCoroutine(Case3_2((int)Random.Range(0, 4)));
+        }
+    }
+    IEnumerator Case3_2(int bla)
+    {
+        yield return new WaitForSeconds(0.2f);
+        circulo[0].interactable = false;
+        circulo[1].interactable = false;
+        circulo[2].interactable = false;
+        circulo[3].interactable = false;
+        yield return new WaitForSeconds(0.2f);
         numeroCirculos++;
         circulo[bla].interactable = true;
         texto_puzzle2_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
-        yield return new WaitForSeconds(0.5f);
+        sequencia = sequencia + bla;
+        yield return new WaitForSeconds(0.2f);
+        circulo[0].interactable = false;
+        circulo[1].interactable = false;
+        circulo[2].interactable = false;
+        circulo[3].interactable = false;
+        if (click >= 4)
+        {
+            StartCoroutine(Case3_3((int)Random.Range(0, 4)));
+        }
+    }
+    IEnumerator Case3_3(int bla)
+    {
+        yield return new WaitForSeconds(0.2f);
+        circulo[0].interactable = false;
+        circulo[1].interactable = false;
+        circulo[2].interactable = false;
+        circulo[3].interactable = false;
+        yield return new WaitForSeconds(0.2f);
+        numeroCirculos++;
+        circulo[bla].interactable = true;
+        texto_puzzle2_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
+        sequencia = sequencia + bla;
+        yield return new WaitForSeconds(0.2f);
+        circulo[0].interactable = false;
+        circulo[1].interactable = false;
+        circulo[2].interactable = false;
+        circulo[3].interactable = false;
+        if (click >= 4)
+        {
+            StartCoroutine(Case3_4((int)Random.Range(0, 4)));
+        }
+    }
+    IEnumerator Case3_4(int bla)
+    {
+        yield return new WaitForSeconds(0.2f);
+        circulo[0].interactable = false;
+        circulo[1].interactable = false;
+        circulo[2].interactable = false;
+        circulo[3].interactable = false;
+        yield return new WaitForSeconds(0.2f);
+        numeroCirculos++;
+        circulo[bla].interactable = true;
+        texto_puzzle2_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
+        sequencia = sequencia + bla;
+        yield return new WaitForSeconds(0.2f);
         circulo[0].interactable = true;
         circulo[1].interactable = true;
         circulo[2].interactable = true;
         circulo[3].interactable = true;
-        sequencia = sequencia + bla;
     }
     #endregion
     //----------------------------------------------------------------------------------------------------------------------------------------
