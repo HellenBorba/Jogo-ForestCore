@@ -27,7 +27,7 @@ public class ItemCollect : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            StartCoroutine(TempoTextoDoJogo());
+            TextoDoJogo.text = "Click E";
             switch (Itemtipo)
             {
                 case 0:
@@ -77,17 +77,8 @@ public class ItemCollect : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         PL.efs = 4;
-    }
-    //----------------------------------------------------------------------------------------------------------------------------------------
-    #region Texto do Jogo
-    IEnumerator TempoTextoDoJogo()
-    {
-        yield return new WaitForSeconds(0f);
-        TextoDoJogo.text = "Click E";
-        yield return new WaitForSeconds(5f);
         TextoDoJogo.text = "";
     }
-    #endregion
     //----------------------------------------------------------------------------------------------------------------------------------------
     #region Tutoriais
     IEnumerator Tutorial0()
