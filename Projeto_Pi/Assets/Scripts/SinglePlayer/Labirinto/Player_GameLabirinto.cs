@@ -27,7 +27,7 @@ public class Player_GameLabirinto : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("FinalL"))
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(0);
         }
     }
     //----------------------------------------------------------------------------------------------------------------------------------------

@@ -33,6 +33,7 @@ public class ItemCollect : MonoBehaviour
                 case 0:
                     if (Input.GetKey(KeyCode.E))
                     {
+                        TextoDoJogo.text = "";
                         GC.Camera[3].SetActive(true);
                         GC.Camera[0].SetActive(false);
                         GC.Camera[1].SetActive(false);
@@ -45,6 +46,7 @@ public class ItemCollect : MonoBehaviour
                 case 1:
                     if (Input.GetKey(KeyCode.E))
                     {
+                        TextoDoJogo.text = "";
                         GC.Camera[3].SetActive(true);
                         GC.Camera[0].SetActive(false);
                         GC.Camera[1].SetActive(false);
@@ -57,6 +59,7 @@ public class ItemCollect : MonoBehaviour
                 case 2:
                     if (Input.GetKey(KeyCode.E))
                     {
+                        TextoDoJogo.text = "";
                         GC.Camera[3].SetActive(true);
                         GC.Camera[0].SetActive(false);
                         GC.Camera[1].SetActive(false);

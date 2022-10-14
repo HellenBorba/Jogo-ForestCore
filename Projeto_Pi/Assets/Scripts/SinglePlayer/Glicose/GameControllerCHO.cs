@@ -101,8 +101,6 @@ public class GameControllerCHO : MonoBehaviour
                     StartCoroutine(Final());
                     GC.buton[2].SetActive(true);
                     NC.barraVida.value += 10;
-                    GC.puzzles[4].SetActive(false);
-                    GC.puzzles[5].SetActive(true);
                 }
                 else
                 {

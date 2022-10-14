@@ -133,8 +133,6 @@ public class Player : MonoBehaviour
         if(collision.gameObject.CompareTag("Senha"))
         {
             StartCoroutine(Senha());
-            GC.puzzles[0].SetActive(true);
-            GC.puzzles[1].SetActive(false);
         }
         if(collision.gameObject.CompareTag("FiosFim"))
         {

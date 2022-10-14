@@ -6,15 +6,13 @@ using UnityEngine.UI;
 
 public class GameContoller : MonoBehaviour
 {
-    public GameObject[] buton, Camera, puzzles, PaneisTutoriais, information;
+    public GameObject[] buton, Camera, PaneisTutoriais, information;
     public Button[] interact, circulo;
     public Button CirculoStart;
     public Text texto_puzzle_2, texto_puzzle_1, texto_puzzle2_1;
     public Slider slider;
 
-    [SerializeField]
     private int click, quantidade, contagem, numeroCirculos;
-    [SerializeField]
     private string sequencia, valor, codigo;
     private ItemCollect IC;
     private Player PY;
@@ -92,8 +90,6 @@ public class GameContoller : MonoBehaviour
         if (codigo == "3021")
         {
             buton[0].SetActive(true);
-            puzzles[0].SetActive(false);
-            puzzles[1].SetActive(true);
             PY.textoAvisoPuzzle0.SetActive(false);
         }
         //----------------------------------------------------------------------------------------------------------------------------------------
@@ -207,8 +203,6 @@ public class GameContoller : MonoBehaviour
                     texto_puzzle_2.text = "Parabéns!";
                     slider.value += 2;
                     buton[1].SetActive(true);
-                    puzzles[2].SetActive(false);
-                    puzzles[3].SetActive(true);
                 }
                 else
                 {
