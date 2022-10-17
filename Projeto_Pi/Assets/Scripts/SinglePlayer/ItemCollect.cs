@@ -11,6 +11,7 @@ public class ItemCollect : MonoBehaviour
     public GameObject TextoDoJog;
     public GameObject Player;
 
+    private Animator amin;
     private GameContoller GC;
     private Player PL;
     //----------------------------------------------------------------------------------------------------------------------------------------
@@ -18,6 +19,11 @@ public class ItemCollect : MonoBehaviour
     {
         GC = GameObject.Find("GameController").GetComponent<GameContoller>();
         PL = GameObject.Find("Player_Game").GetComponent<Player>();
+        //----------------------------------------------------------------------------------------------------------------------------------------
+        if (gameObject.GetComponent<Animator>())
+        {
+            amin = GetComponent<Animator>();
+        }
         //----------------------------------------------------------------------------------------------------------------------------------------
         Cursor.visible = true;
     }
@@ -72,6 +78,12 @@ public class ItemCollect : MonoBehaviour
                 case 3:
                     PL.efs = 3;
                     break;
+                case 4:
+                    if (Input.GetKey(KeyCode.E))
+                    {
+                        amin.SetFloat("Habilita", 1);
+                    }
+                    break; 
             }
         }
     }
