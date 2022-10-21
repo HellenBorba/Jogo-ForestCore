@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class GameContoller : MonoBehaviour
 {
     public GameObject[] buton, Camera, PaneisTutoriais, information;
+    public GameObject fios;
     public Button[] interact, circulo;
     public Button CirculoStart;
     public Text texto_puzzle_2, texto_puzzle_1, texto_puzzle2_1;
@@ -79,6 +80,10 @@ public class GameContoller : MonoBehaviour
                 codigo = null;
                 quantidade = 0;
             }
+        }
+        if(buton[0] == true)
+        {
+            Destroy(fios);
         }
         #endregion
     }

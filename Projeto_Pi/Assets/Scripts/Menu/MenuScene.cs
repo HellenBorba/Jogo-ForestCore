@@ -69,34 +69,6 @@ public class MenuScene : MonoBehaviour
         id += num;
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
-    public void MuteS()
-    {
-        if (id2 == 1)
-        {
-            SomM.mute = true;
-        }
-        if (id2 == 2)
-        {
-            SomM.mute = false;
-            id2 = 0;
-        }
-    }
-    public void toca()
-    {
-        StartCoroutine(tocaS());
-    }
-    IEnumerator tocaS()
-    {
-        yield return new WaitForSeconds(0f);
-        som.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
-        som.SetActive(false);
-    }
-    public void valorS(int num)
-    {
-        id2 += num;
-    }
-    //----------------------------------------------------------------------------------------------------------------------------------------
     public void DificuldadeF()
     {
         valVida = 2;
