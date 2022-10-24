@@ -6,13 +6,13 @@ using UnityEngine.UI;
 
 public class GameContoller : MonoBehaviour
 {
-    public GameObject[] buton, Camera, PaneisTutoriais, information;
+    public GameObject[] buton, Camera, PaneisTutoriais, information, panel, portas;
     public GameObject fios;
     public Button[] interact, circulo;
     public Button CirculoStart;
     public Text texto_puzzle_2, texto_puzzle_1, texto_puzzle2_1;
     public Slider slider;
-
+    [SerializeField]
     private int click, quantidade, contagem, numeroCirculos;
     private string sequencia, valor, codigo;
     private ItemCollect IC;
@@ -28,15 +28,21 @@ public class GameContoller : MonoBehaviour
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void Update()
     {
+        if(quantidade == 3)
+        {
+            fios.SetActive(false);
+            portas[0].GetComponent<ItemCollect>().enabled = true;
+            portas[1].GetComponent<ItemCollect>().enabled = true;
+        }
         #region ESC e G
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            IC.panel[1].SetActive(false);
-            IC.panel[2].SetActive(false);
-            IC.panel[3].SetActive(false);
-            IC.panel[4].SetActive(false);
-            IC.panel[5].SetActive(false);
-            IC.panel[6].SetActive(false);
+            panel[1].SetActive(false);
+            panel[2].SetActive(false);
+            panel[3].SetActive(false);
+            panel[4].SetActive(false);
+            panel[5].SetActive(false);
+            panel[6].SetActive(false);
             Camera[3].SetActive(true);
             Camera[0].SetActive(false);
             Camera[1].SetActive(false);
@@ -46,12 +52,12 @@ public class GameContoller : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.G))
         {
-            IC.panel[1].SetActive(false);
-            IC.panel[2].SetActive(false);
-            IC.panel[3].SetActive(false);
-            IC.panel[4].SetActive(false);
-            IC.panel[5].SetActive(false);
-            IC.panel[6].SetActive(false);
+            panel[1].SetActive(false);
+            panel[2].SetActive(false);
+            panel[3].SetActive(false);
+            panel[4].SetActive(false);
+            panel[5].SetActive(false);
+            panel[6].SetActive(false);
             Camera[3].SetActive(true);
             Camera[0].SetActive(false);
             Camera[1].SetActive(false);
@@ -80,10 +86,6 @@ public class GameContoller : MonoBehaviour
                 codigo = null;
                 quantidade = 0;
             }
-        }
-        if(buton[0] == true)
-        {
-            Destroy(fios);
         }
         #endregion
     }
@@ -442,13 +444,13 @@ public class GameContoller : MonoBehaviour
     #region Saida de Puzzles
     public void Panel()
     {
-        IC.panel[0].SetActive(false);
-        IC.panel[1].SetActive(false);
-        IC.panel[2].SetActive(false);
-        IC.panel[3].SetActive(false);
-        IC.panel[4].SetActive(false);
-        IC.panel[5].SetActive(false);
-        IC.panel[6].SetActive(false);
+        panel[0].SetActive(false);
+        panel[1].SetActive(false);
+        panel[2].SetActive(false);
+        panel[3].SetActive(false);
+        panel[4].SetActive(false);
+        panel[5].SetActive(false);
+        panel[6].SetActive(false);
         Camera[0].SetActive(true);
         Camera[1].SetActive(false);
         Camera[2].SetActive(false);
@@ -461,7 +463,7 @@ public class GameContoller : MonoBehaviour
     IEnumerator Vitória()
     {
         yield return new WaitForSeconds(0f);
-        IC.panel[6].SetActive(true);
+        panel[6].SetActive(true);
         yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(0);
     }
@@ -477,3 +479,4 @@ public class GameContoller : MonoBehaviour
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
 }
+

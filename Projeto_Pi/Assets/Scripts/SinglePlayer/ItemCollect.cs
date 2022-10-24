@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class ItemCollect : MonoBehaviour
 {
-    public GameObject[] panel;
     public int Itemtipo;
     public Text TextoDoJogo;
     public GameObject TextoDoJog;
@@ -44,7 +43,7 @@ public class ItemCollect : MonoBehaviour
                         GC.Camera[0].SetActive(false);
                         GC.Camera[1].SetActive(false);
                         Cursor.visible = true;
-                        panel[0].SetActive(true);
+                        GC.panel[0].SetActive(true);
                         StartCoroutine(Tutorial0());
                         Player.SetActive(false);
                     }
@@ -57,7 +56,7 @@ public class ItemCollect : MonoBehaviour
                         GC.Camera[0].SetActive(false);
                         GC.Camera[1].SetActive(false);
                         Cursor.visible = true;
-                        panel[1].SetActive(true);
+                        GC.panel[1].SetActive(true);
                         StartCoroutine(Tutorial1());
                         Player.SetActive(false);
                     }
@@ -70,7 +69,7 @@ public class ItemCollect : MonoBehaviour
                         GC.Camera[0].SetActive(false);
                         GC.Camera[1].SetActive(false);
                         Cursor.visible = true;
-                        panel[2].SetActive(true);
+                        GC.panel[2].SetActive(true);
                         StartCoroutine(Tutorial2());
                         Player.SetActive(false);
                     }

@@ -5265,8 +5265,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.97965765, y: 0.98020244, z: 0.6797948}
-  m_Center: {x: 0.094477415, y: -0.009898782, z: 0.54605985}
+  m_Size: {x: 0.97965765, y: 0.98020244, z: 0.862514}
+  m_Center: {x: 0.094477415, y: -0.009898782, z: 0.45470023}
 --- !u!114 &475210770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5279,14 +5279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9bc50e04040474f8987fb3f11750e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel:
-  - {fileID: 1366259386}
-  - {fileID: 1366259385}
-  - {fileID: 1366259384}
-  - {fileID: 1366259383}
-  - {fileID: 1366259382}
-  - {fileID: 896052058}
-  - {fileID: 1366259381}
   Itemtipo: 0
   TextoDoJogo: {fileID: 2147001729}
   TextoDoJog: {fileID: 2147001726}
@@ -8529,6 +8521,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: 338cccec2e956624986704a68c00a868, type: 3}
   m_PrefabInstance: {fileID: 1234313059}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &772663333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772663332}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e9bc50e04040474f8987fb3f11750e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Itemtipo: 4
+  TextoDoJogo: {fileID: 2147001729}
+  TextoDoJog: {fileID: 2147001726}
+  Player: {fileID: 2484983330729668468}
 --- !u!95 &772663334
 Animator:
   serializedVersion: 3
@@ -8548,31 +8556,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &772663337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 772663332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e9bc50e04040474f8987fb3f11750e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel:
-  - {fileID: 1366259386}
-  - {fileID: 1366259385}
-  - {fileID: 1366259384}
-  - {fileID: 1366259383}
-  - {fileID: 1366259382}
-  - {fileID: 896052058}
-  - {fileID: 1366259381}
-  Itemtipo: 4
-  TextoDoJogo: {fileID: 2147001729}
-  TextoDoJog: {fileID: 2147001726}
-  Player: {fileID: 2484983330729668468}
---- !u!65 &772663338
+--- !u!65 &772663335
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8580,11 +8564,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 772663332}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
+  m_IsTrigger: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.6334883, y: 0.6684697, z: 1.7568873}
-  m_Center: {x: -0.85774195, y: 0.51014036, z: -3.121554}
+  m_Size: {x: 0.4704765, y: 3.0999994, z: 0.90000004}
+  m_Center: {x: -0.96476495, y: 1.9499999, z: -3.549998}
 --- !u!64 &772663339
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9239,14 +9223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9bc50e04040474f8987fb3f11750e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel:
-  - {fileID: 1366259386}
-  - {fileID: 1366259385}
-  - {fileID: 1366259384}
-  - {fileID: 1366259383}
-  - {fileID: 1366259382}
-  - {fileID: 896052058}
-  - {fileID: 1366259381}
   Itemtipo: 3
   TextoDoJogo: {fileID: 2147001729}
   TextoDoJog: {fileID: 2147001726}
@@ -18669,14 +18645,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9bc50e04040474f8987fb3f11750e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel:
-  - {fileID: 1366259386}
-  - {fileID: 1366259385}
-  - {fileID: 1366259384}
-  - {fileID: 1366259383}
-  - {fileID: 1366259382}
-  - {fileID: 896052058}
-  - {fileID: 1366259381}
   Itemtipo: 2
   TextoDoJogo: {fileID: 2147001729}
   TextoDoJog: {fileID: 2147001726}
@@ -18947,6 +18915,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Porta_default_1
       objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 746e19bb80da58d47949d2d398da1dbb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 746e19bb80da58d47949d2d398da1dbb, type: 3}
 --- !u!1 &1598204885 stripped
@@ -18973,7 +18945,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!65 &1598204890
+--- !u!114 &1598204888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598204885}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e9bc50e04040474f8987fb3f11750e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Itemtipo: 4
+  TextoDoJogo: {fileID: 2147001729}
+  TextoDoJog: {fileID: 2147001726}
+  Player: {fileID: 2484983330729668468}
+--- !u!65 &1598204891
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18982,34 +18970,10 @@ BoxCollider:
   m_GameObject: {fileID: 1598204885}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.8735724, y: 0.5099252, z: 1.8045825}
-  m_Center: {x: -0.7470749, y: 0.47103718, z: -3.00229}
---- !u!114 &1598204891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1598204885}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e9bc50e04040474f8987fb3f11750e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel:
-  - {fileID: 1366259386}
-  - {fileID: 1366259385}
-  - {fileID: 1366259384}
-  - {fileID: 1366259383}
-  - {fileID: 1366259382}
-  - {fileID: 896052058}
-  - {fileID: 1366259381}
-  Itemtipo: 4
-  TextoDoJogo: {fileID: 2147001729}
-  TextoDoJog: {fileID: 2147001726}
-  Player: {fileID: 2484983330729668468}
+  serializedVersion: 2
+  m_Size: {x: 0.44961104, y: 3.0999994, z: 0.9000002}
+  m_Center: {x: -0.9751977, y: 1.9499999, z: -2.5499988}
 --- !u!64 &1598204892
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -25886,14 +25850,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9bc50e04040474f8987fb3f11750e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel:
-  - {fileID: 1366259386}
-  - {fileID: 1366259385}
-  - {fileID: 1366259384}
-  - {fileID: 1366259383}
-  - {fileID: 1366259382}
-  - {fileID: 896052058}
-  - {fileID: 1366259381}
   Itemtipo: 1
   TextoDoJogo: {fileID: 2147001729}
   TextoDoJog: {fileID: 2147001726}
@@ -25996,6 +25952,17 @@ MonoBehaviour:
   information:
   - {fileID: 1695648225}
   - {fileID: 789889091}
+  panel:
+  - {fileID: 1366259386}
+  - {fileID: 1366259385}
+  - {fileID: 1366259384}
+  - {fileID: 1366259383}
+  - {fileID: 1366259382}
+  - {fileID: 896052058}
+  - {fileID: 1366259381}
+  portas:
+  - {fileID: 0}
+  - {fileID: 0}
   fios: {fileID: 475210768}
   interact:
   - {fileID: 1366259399}
@@ -26012,6 +25979,10 @@ MonoBehaviour:
   texto_puzzle_1: {fileID: 1366259390}
   texto_puzzle2_1: {fileID: 1366259389}
   slider: {fileID: 1366259387}
+  click: 0
+  quantidade: 0
+  contagem: 0
+  numeroCirculos: 0
 --- !u!1 &1266052455542083308
 GameObject:
   m_ObjectHideFlags: 0
