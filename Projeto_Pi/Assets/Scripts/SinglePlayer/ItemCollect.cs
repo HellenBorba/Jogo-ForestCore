@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ItemCollect : MonoBehaviour
 {
-    public int Itemtipo;
+    public int Itemtipo, casa;
     public Text TextoDoJogo;
     public GameObject TextoDoJog;
     public GameObject Player;
@@ -44,7 +44,6 @@ public class ItemCollect : MonoBehaviour
                         GC.Camera[1].SetActive(false);
                         Cursor.visible = true;
                         GC.panel[0].SetActive(true);
-                        StartCoroutine(Tutorial0());
                         Player.SetActive(false);
                     }
                     break;
@@ -74,15 +73,13 @@ public class ItemCollect : MonoBehaviour
                         Player.SetActive(false);
                     }
                     break;
-                case 3:
-                    PL.efs = 3;
-                    break;
                 case 4:
                     if (Input.GetKey(KeyCode.E))
                     {
                         amin.SetFloat("Habilita", 1);
+                        StartCoroutine(AnimaçãoPortas());
                     }
-                    break; 
+                    break;
             }
         }
     }
@@ -90,25 +87,26 @@ public class ItemCollect : MonoBehaviour
     //----------------------------------------------------------------------------------------------------------------------------------------
     private void OnTriggerExit(Collider other)
     {
-        PL.efs = 4;
         TextoDoJogo.text = "";
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     #region Tutoriais
-    IEnumerator Tutorial0()
+    IEnumerator Tutorial1()
     {
         yield return new WaitForSeconds(1f);
         GC.PaneisTutoriais[0].SetActive(true);
     }
-    IEnumerator Tutorial1()
+    IEnumerator Tutorial2()
     {
         yield return new WaitForSeconds(1f);
         GC.PaneisTutoriais[1].SetActive(true);
     }
-    IEnumerator Tutorial2()
+    #endregion
+    IEnumerator AnimaçãoPortas()
     {
         yield return new WaitForSeconds(1f);
-        GC.PaneisTutoriais[2].SetActive(true);
+        GC.portas[0].GetComponent<BoxCollider>().enabled = false;
+        GC.portas[1].GetComponent<BoxCollider>().enabled = false;
+        TextoDoJogo.text = "";
     }
-    #endregion
 }

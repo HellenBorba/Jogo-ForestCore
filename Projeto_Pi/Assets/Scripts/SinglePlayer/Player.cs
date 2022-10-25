@@ -5,7 +5,7 @@ using Photon.Pun;
 
 public class Player : MonoBehaviour
 {
-    public GameObject SenhaPuzzle0, textoAvisoPuzzle0;
+    public GameObject SenhaPuzzle0;
     public int efs;
 
     private GameContoller GC;
@@ -132,29 +132,29 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Senha"))
         {
-            StartCoroutine(Senha());
+            GC.texto_puzzle_0.text = "";
+            //----------------------------------------------------------------------------------------------------------------------------------------
+            GC.interact[0].interactable = true;
+            GC.interact[1].interactable = true;
+            GC.interact[2].interactable = true;
+            GC.interact[3].interactable = true;
+            //----------------------------------------------------------------------------------------------------------------------------------------
+            GC.Puzzle0_Fios[1].SetActive(false);
         }
-        if(collision.gameObject.CompareTag("FiosFim"))
+    }
+    #endregion
+    //----------------------------------------------------------------------------------------------------------------------------------------
+    #region Puzzle2
+    private void OnTriggerStay(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("Casa"))
         {
-            StartCoroutine(AvisoPuzzle2());
+            efs = 3;
         }
     }
-    //----------------------------------------------------------------------------------------------------------------------------------------
-    IEnumerator Senha()
+    private void OnTriggerExit(Collider other)
     {
-        yield return new WaitForSeconds(0f);
-        SenhaPuzzle0.SetActive(true);
-        yield return new WaitForSeconds(3f);
-        SenhaPuzzle0.SetActive(false);
-    }
-    //----------------------------------------------------------------------------------------------------------------------------------------
-    IEnumerator AvisoPuzzle2()
-    {
-        yield return new WaitForSeconds(0f);
-        textoAvisoPuzzle0.SetActive(true);
-        yield return new WaitForSeconds(5f);
-        textoAvisoPuzzle0.SetActive(false);
-        Object.Destroy(textoAvisoPuzzle0);
+        efs = 4;
     }
     #endregion
     //----------------------------------------------------------------------------------------------------------------------------------------

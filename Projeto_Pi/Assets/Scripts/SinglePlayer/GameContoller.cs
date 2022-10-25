@@ -6,13 +6,12 @@ using UnityEngine.UI;
 
 public class GameContoller : MonoBehaviour
 {
-    public GameObject[] buton, Camera, PaneisTutoriais, information, panel, portas;
-    public GameObject fios;
+    public GameObject[] buton, Camera, PaneisTutoriais, information, panel, portas, Puzzle0_Fios, Puzzle1_Poço, Puzzle2_Glicose;
     public Button[] interact, circulo;
     public Button CirculoStart;
-    public Text texto_puzzle_2, texto_puzzle_1, texto_puzzle2_1;
+    public Text texto_puzzle_1, texto_puzzle_0, texto_puzzle1_1;
     public Slider slider;
-    [SerializeField]
+    
     private int click, quantidade, contagem, numeroCirculos;
     private string sequencia, valor, codigo;
     private ItemCollect IC;
@@ -24,15 +23,20 @@ public class GameContoller : MonoBehaviour
         PY = GameObject.Find("Player_Game").GetComponent<Player>();
         //----------------------------------------------------------------------------------------------------------------------------------------
         Cursor.visible = true;
+        //----------------------------------------------------------------------------------------------------------------------------------------
+        interact[0].interactable = false;
+        interact[1].interactable = false;
+        interact[2].interactable = false;
+        interact[3].interactable = false;
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void Update()
     {
         if(quantidade == 3)
         {
-            fios.SetActive(false);
-            portas[0].GetComponent<ItemCollect>().enabled = true;
-            portas[1].GetComponent<ItemCollect>().enabled = true;
+            Puzzle0_Fios[0].SetActive(false);
+            portas[0].GetComponent<BoxCollider>().enabled = true;
+            portas[1].GetComponent<BoxCollider>().enabled = true;
         }
         #region ESC e G
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -97,7 +101,6 @@ public class GameContoller : MonoBehaviour
         if (codigo == "3021")
         {
             buton[0].SetActive(true);
-            PY.textoAvisoPuzzle0.SetActive(false);
         }
         //----------------------------------------------------------------------------------------------------------------------------------------
         switch (numBotao)
@@ -125,11 +128,11 @@ public class GameContoller : MonoBehaviour
     IEnumerator Puzzle1Final()
     {
         yield return new WaitForSeconds(0f);
-        texto_puzzle_1.text = "Código incorreto!";
+        texto_puzzle_0.text = "Código incorreto!";
         yield return new WaitForSeconds(1.5f);
-        texto_puzzle_1.text = "Reinicie!";
+        texto_puzzle_0.text = "Reinicie!";
         yield return new WaitForSeconds(3f);
-        texto_puzzle_1.text = "";
+        texto_puzzle_0.text = "";
     }
     #endregion
     //----------------------------------------------------------------------------------------------------------------------------------------
@@ -146,16 +149,16 @@ public class GameContoller : MonoBehaviour
         {
             case 1:
                 StartCoroutine(Case((int)Random.Range(0, 4)));
-                texto_puzzle_2.text = "Espere o círculo brilhar, e depois click no que brilhar!";
-                texto_puzzle2_1.text = "1° onda";
+                texto_puzzle_1.text = "Espere o círculo brilhar, e depois click no que brilhar!";
+                texto_puzzle1_1.text = "1° onda";
                 break;
             case 2:
                 if(valor == sequencia)
                 {
                     numeroCirculos = 0;
                     StartCoroutine(Case1((int)Random.Range(0, 4)));
-                    texto_puzzle_2.text = "Espere os 2 círculos brilharem, e depois click nos 2 que brilharem!";
-                    texto_puzzle2_1.text = "2° onda";
+                    texto_puzzle_1.text = "Espere os 2 círculos brilharem, e depois click nos 2 que brilharem!";
+                    texto_puzzle1_1.text = "2° onda";
                     slider.value += 1;
                 }else
                 {
@@ -172,8 +175,8 @@ public class GameContoller : MonoBehaviour
                 {
                     numeroCirculos = 0;
                     StartCoroutine(Case2_1((int)Random.Range(0, 4)));
-                    texto_puzzle_2.text = "Espere os 3 círculos brilharem, e depois click nos 3 que brilharem!";
-                    texto_puzzle2_1.text = "3° onda";
+                    texto_puzzle_1.text = "Espere os 3 círculos brilharem, e depois click nos 3 que brilharem!";
+                    texto_puzzle1_1.text = "3° onda";
                     slider.value += 1;
                 }else
                 {
@@ -190,8 +193,8 @@ public class GameContoller : MonoBehaviour
                 {
                     numeroCirculos = 0;
                     StartCoroutine(Case3_1((int)Random.Range(0, 4)));
-                    texto_puzzle_2.text = "Espere os 4 círculos brilharem, e depois click nos 4 que brilharem!";
-                    texto_puzzle2_1.text = "4° onda";
+                    texto_puzzle_1.text = "Espere os 4 círculos brilharem, e depois click nos 4 que brilharem!";
+                    texto_puzzle1_1.text = "4° onda";
                     slider.value += 1;
                 }else
                 {
@@ -206,10 +209,11 @@ public class GameContoller : MonoBehaviour
             case 11:
                 if(valor == sequencia)
                 {
-                    texto_puzzle2_1.text = "Fim!";
-                    texto_puzzle_2.text = "Parabéns!";
+                    texto_puzzle1_1.text = "Fim!";
+                    texto_puzzle_1.text = "Parabéns!";
                     slider.value += 2;
                     buton[1].SetActive(true);
+                    Puzzle1_Poço[0].GetComponent<BoxCollider>().enabled = false;
                 }
                 else
                 {
@@ -235,7 +239,7 @@ public class GameContoller : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         numeroCirculos++;
         circulo[bla].interactable = true;
-        texto_puzzle2_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
+        texto_puzzle1_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
         sequencia = sequencia + bla;
         yield return new WaitForSeconds(0.5f);
         circulo[0].interactable = true;
@@ -255,7 +259,7 @@ public class GameContoller : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
         numeroCirculos++;
         circulo[bla].interactable = true;
-        texto_puzzle2_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
+        texto_puzzle1_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
         sequencia = sequencia + bla;
         if (click >= 2)
         {
@@ -272,7 +276,7 @@ public class GameContoller : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
         numeroCirculos++;
         circulo[bla].interactable = true;
-        texto_puzzle2_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
+        texto_puzzle1_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
         sequencia = sequencia + bla;
         yield return new WaitForSeconds(0.4f);
         circulo[0].interactable = true;
@@ -292,7 +296,7 @@ public class GameContoller : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         numeroCirculos++;
         circulo[bla].interactable = true;
-        texto_puzzle2_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
+        texto_puzzle1_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
         sequencia = sequencia + bla;
         yield return new WaitForSeconds(0.3f);
         circulo[0].interactable = false;
@@ -314,7 +318,7 @@ public class GameContoller : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         numeroCirculos++;
         circulo[bla].interactable = true;
-        texto_puzzle2_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
+        texto_puzzle1_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
         sequencia = sequencia + bla;
         yield return new WaitForSeconds(0.3f);
         circulo[0].interactable = false;
@@ -336,7 +340,7 @@ public class GameContoller : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         numeroCirculos++;
         circulo[bla].interactable = true;
-        texto_puzzle2_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
+        texto_puzzle1_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
         sequencia = sequencia + bla;
         yield return new WaitForSeconds(0.3f);
         circulo[0].interactable = true;
@@ -356,7 +360,7 @@ public class GameContoller : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         numeroCirculos++;
         circulo[bla].interactable = true;
-        texto_puzzle2_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
+        texto_puzzle1_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
         sequencia = sequencia + bla;
         yield return new WaitForSeconds(0.2f);
         circulo[0].interactable = false;
@@ -378,7 +382,7 @@ public class GameContoller : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         numeroCirculos++;
         circulo[bla].interactable = true;
-        texto_puzzle2_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
+        texto_puzzle1_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
         sequencia = sequencia + bla;
         yield return new WaitForSeconds(0.2f);
         circulo[0].interactable = false;
@@ -400,7 +404,7 @@ public class GameContoller : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         numeroCirculos++;
         circulo[bla].interactable = true;
-        texto_puzzle2_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
+        texto_puzzle1_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
         sequencia = sequencia + bla;
         yield return new WaitForSeconds(0.2f);
         circulo[0].interactable = false;
@@ -422,7 +426,7 @@ public class GameContoller : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         numeroCirculos++;
         circulo[bla].interactable = true;
-        texto_puzzle2_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
+        texto_puzzle1_1.text = "Contagem de círculos que brilharam: " + numeroCirculos;
         sequencia = sequencia + bla;
         yield return new WaitForSeconds(0.2f);
         circulo[0].interactable = true;
@@ -435,9 +439,9 @@ public class GameContoller : MonoBehaviour
     IEnumerator OrdemIncorreta()
     {
         yield return new WaitForSeconds(0f);
-        texto_puzzle_2.text = "Ordem errada! click novamente em start para recomeçar!";
+        texto_puzzle_1.text = "Ordem errada! click novamente em start para recomeçar!";
         yield return new WaitForSeconds(5f);
-        texto_puzzle_2.text = null;
+        texto_puzzle_1.text = null;
     }
     #endregion
     //---------------------------------------------------------------------------------------------------------------------------------------- 

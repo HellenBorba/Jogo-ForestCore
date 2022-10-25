@@ -274,6 +274,7 @@ public class GameControllerCHO : MonoBehaviour
     {
         yield return new WaitForSeconds(0f);
         GC.panel[4].SetActive(true);
+        GC.Puzzle2_Glicose[0].GetComponent<BoxCollider>().enabled = false;
         yield return new WaitForSeconds(2f);
         GC.panel[4].SetActive(false);
     }
