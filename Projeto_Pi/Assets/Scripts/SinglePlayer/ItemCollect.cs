@@ -45,6 +45,7 @@ public class ItemCollect : MonoBehaviour
                         Cursor.visible = true;
                         StartCoroutine(Puzzle0());
                         Player.SetActive(false);
+                        GC.PaneisTutoriais[2].SetActive(false);
                     }
                     break;
                 case 1:
@@ -58,6 +59,7 @@ public class ItemCollect : MonoBehaviour
                         StartCoroutine(Puzzle1());
                         StartCoroutine(Tutorial1());
                         Player.SetActive(false);
+                        GC.PaneisTutoriais[2].SetActive(false);
                     }
                     break;
                 case 2:
@@ -71,6 +73,7 @@ public class ItemCollect : MonoBehaviour
                         StartCoroutine(Puzzle2());
                         StartCoroutine(Tutorial2());
                         Player.SetActive(false);
+                        GC.PaneisTutoriais[2].SetActive(false);
                     }
                     break;
                 case 4:
@@ -78,6 +81,7 @@ public class ItemCollect : MonoBehaviour
                     {
                         amin.SetFloat("Habilita", 1);
                         StartCoroutine(AnimaçãoPortas());
+                        GC.PaneisTutoriais[2].SetActive(false);
                     }
                     break;
             }
@@ -88,6 +92,7 @@ public class ItemCollect : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         TextoDoJogo.text = "";
+        GC.PaneisTutoriais[2].SetActive(true);
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     #region Tutoriais
