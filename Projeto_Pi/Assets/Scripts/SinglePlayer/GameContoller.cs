@@ -32,12 +32,6 @@ public class GameContoller : MonoBehaviour
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void Update()
     {
-        if(quantidade == 3)
-        {
-            Puzzle0_Fios[0].SetActive(false);
-            portas[0].GetComponent<BoxCollider>().enabled = true;
-            portas[1].GetComponent<BoxCollider>().enabled = true;
-        }
         #region ESC e G
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -51,6 +45,7 @@ public class GameContoller : MonoBehaviour
             Camera[0].SetActive(false);
             Camera[1].SetActive(false);
             Camera[2].SetActive(false);
+            Camera[4].SetActive(false);
             information[0].SetActive(true);
             IC.Player.SetActive(false);
         }
@@ -66,6 +61,7 @@ public class GameContoller : MonoBehaviour
             Camera[0].SetActive(false);
             Camera[1].SetActive(false);
             Camera[2].SetActive(false);
+            Camera[4].SetActive(false);
             information[1].SetActive(true);
             IC.Player.SetActive(false);
         }
@@ -90,6 +86,13 @@ public class GameContoller : MonoBehaviour
                 codigo = null;
                 quantidade = 0;
             }
+        }
+        //----------------------------------------------------------------------------------------------------------------------------------------
+        if (quantidade == 3)
+        {
+            Puzzle0_Fios[0].SetActive(false);
+            portas[0].GetComponent<BoxCollider>().enabled = true;
+            portas[1].GetComponent<BoxCollider>().enabled = true;
         }
         #endregion
     }
@@ -459,6 +462,7 @@ public class GameContoller : MonoBehaviour
         Camera[1].SetActive(false);
         Camera[2].SetActive(false);
         Camera[3].SetActive(false);
+        Camera[4].SetActive(false);
         IC.Player.SetActive(true);
     }
     #endregion

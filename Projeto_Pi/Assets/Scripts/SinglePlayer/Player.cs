@@ -101,6 +101,7 @@ public class Player : MonoBehaviour
             GC.Camera[0].SetActive(false);
             GC.Camera[1].SetActive(false);
             GC.Camera[3].SetActive(false);
+            GC.Camera[4].SetActive(false);
         }else
         if(efs == 4)
         {
@@ -118,7 +119,26 @@ public class Player : MonoBehaviour
             GC.Camera[1].SetActive(false);
             GC.Camera[2].SetActive(false);
             GC.Camera[3].SetActive(false);
+            GC.Camera[4].SetActive(false);
             efs = 0;
+        }else
+        if(efs == 5)
+        {
+            float forwardInput = Input.GetAxisRaw("Vertical");
+            float strafeInput = Input.GetAxisRaw("Horizontal");
+
+            forward = forwardInput * forwardSpeed * transform.forward;
+            strafe = strafeInput * strafeSpeed * transform.right;
+
+            transform.position += new Vector3(strafeInput * strafeSpeed, 0, forwardInput * forwardSpeed) * Time.deltaTime;
+
+            vertical += gravity * Time.deltaTime * Vector3.up;
+            //----------------------------------------------------------------------------------------------------------------------------------------
+            GC.Camera[4].SetActive(true);
+            GC.Camera[0].SetActive(false);
+            GC.Camera[1].SetActive(false);
+            GC.Camera[3].SetActive(false);
+            GC.Camera[2].SetActive(false);
         }
         if(Input.GetKeyDown(KeyCode.F))
         {
@@ -127,13 +147,13 @@ public class Player : MonoBehaviour
         #endregion
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
-    #region Puzzle0
+    #region Puzzles
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.CompareTag("Senha"))
         {
             GC.texto_puzzle_0.text = "";
-            //----------------------------------------------------------------------------------------------------------------------------------------
+            //---------------------------------------------------------Puzzle0-------------------------------------------------------------------------------
             GC.interact[0].interactable = true;
             GC.interact[1].interactable = true;
             GC.interact[2].interactable = true;
@@ -142,16 +162,20 @@ public class Player : MonoBehaviour
             GC.Puzzle0_Fios[1].SetActive(false);
         }
     }
-    #endregion
-    //----------------------------------------------------------------------------------------------------------------------------------------
-    #region Puzzle2
+    //----------------------------------------------------Puzzle0------------------------------------------------------------------------------------
     private void OnTriggerStay(Collider collision)
     {
+        if(collision.gameObject.CompareTag("EntrouEstufa"))
+        {
+            efs = 5;
+        }
+        //----------------------------------------------------Puzzle2------------------------------------------------------------------------------------
         if (collision.gameObject.CompareTag("Casa"))
         {
             efs = 3;
         }
     }
+    //----------------------------------------------------------------------------------------------------------------------------------------
     private void OnTriggerExit(Collider other)
     {
         efs = 4;

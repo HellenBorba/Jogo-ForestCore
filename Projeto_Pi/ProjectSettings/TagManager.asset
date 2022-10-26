@@ -14,6 +14,8 @@ TagManager:
   - Coluna
   - Player1
   - Player2
+  - EntrouEstufa
+  - "N\xFAcleo"
   layers:
   - Default
   - TransparentFX

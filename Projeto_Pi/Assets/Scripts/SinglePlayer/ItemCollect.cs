@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ItemCollect : MonoBehaviour
 {
-    public int Itemtipo, casa;
+    public int Itemtipo;
     public Text TextoDoJogo;
     public GameObject TextoDoJog;
     public GameObject Player;
@@ -43,7 +43,7 @@ public class ItemCollect : MonoBehaviour
                         GC.Camera[0].SetActive(false);
                         GC.Camera[1].SetActive(false);
                         Cursor.visible = true;
-                        GC.panel[0].SetActive(true);
+                        StartCoroutine(Puzzle0());
                         Player.SetActive(false);
                     }
                     break;
@@ -55,7 +55,7 @@ public class ItemCollect : MonoBehaviour
                         GC.Camera[0].SetActive(false);
                         GC.Camera[1].SetActive(false);
                         Cursor.visible = true;
-                        GC.panel[1].SetActive(true);
+                        StartCoroutine(Puzzle1());
                         StartCoroutine(Tutorial1());
                         Player.SetActive(false);
                     }
@@ -68,7 +68,7 @@ public class ItemCollect : MonoBehaviour
                         GC.Camera[0].SetActive(false);
                         GC.Camera[1].SetActive(false);
                         Cursor.visible = true;
-                        GC.panel[2].SetActive(true);
+                        StartCoroutine(Puzzle2());
                         StartCoroutine(Tutorial2());
                         Player.SetActive(false);
                     }
@@ -109,4 +109,21 @@ public class ItemCollect : MonoBehaviour
         GC.portas[1].GetComponent<BoxCollider>().enabled = false;
         TextoDoJogo.text = "";
     }
+    #region PuzzlesPaineis
+    IEnumerator Puzzle0()
+    {
+        yield return new WaitForSeconds(1.5f);
+        GC.panel[0].SetActive(true);
+    }
+    IEnumerator Puzzle1()
+    {
+        yield return new WaitForSeconds(1.5f);
+        GC.panel[1].SetActive(true);
+    }
+    IEnumerator Puzzle2()
+    {
+        yield return new WaitForSeconds(1.5f);
+        GC.panel[2].SetActive(true);
+    }
+    #endregion
 }
