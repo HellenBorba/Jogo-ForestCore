@@ -9,11 +9,11 @@ public class GameContoller : MonoBehaviour
     public GameObject[] buton, Camera, PaneisTutoriais, information, panel, portas, Puzzle0_Fios, Puzzle1_Poço, Puzzle2_Glicose;
     public Button[] interact, circulo;
     public Button CirculoStart;
-    public Text texto_puzzle_1, texto_puzzle_0, texto_puzzle1_1;
+    public Text texto_puzzle_1, texto_puzzle1_1, texto_puzzle_0, texto_puzzle0_1;
     public Slider slider;
     
-    private int click, quantidade, contagem, numeroCirculos;
-    private string sequencia, valor, codigo;
+    public int click, quantidade, contagem, numeroCirculos;
+    public string sequencia, valor, codigo;
     private ItemCollect IC;
     private Player PY;
     //----------------------------------------------------------------------------------------------------------------------------------------
@@ -23,11 +23,6 @@ public class GameContoller : MonoBehaviour
         PY = GameObject.Find("Player_Game").GetComponent<Player>();
         //----------------------------------------------------------------------------------------------------------------------------------------
         Cursor.visible = true;
-        //----------------------------------------------------------------------------------------------------------------------------------------
-        interact[0].interactable = false;
-        interact[1].interactable = false;
-        interact[2].interactable = false;
-        interact[3].interactable = false;
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void Update()
@@ -48,6 +43,7 @@ public class GameContoller : MonoBehaviour
             Camera[4].SetActive(false);
             information[0].SetActive(true);
             IC.Player.SetActive(false);
+            PaneisTutoriais[2].SetActive(false);
         }
         if(Input.GetKeyDown(KeyCode.G))
         {
@@ -64,6 +60,7 @@ public class GameContoller : MonoBehaviour
             Camera[4].SetActive(false);
             information[1].SetActive(true);
             IC.Player.SetActive(false);
+            PaneisTutoriais[2].SetActive(false);
         }
         #endregion
         #region Vitória
@@ -76,7 +73,7 @@ public class GameContoller : MonoBehaviour
         #region Puzzle0
         if (quantidade == 4)
         {
-            if (codigo != "3021")
+            if (codigo != "4132")
             {
                 StartCoroutine(Puzzle1Final());
                 interact[0].interactable = true;
@@ -101,29 +98,30 @@ public class GameContoller : MonoBehaviour
     public void Seleciono(int numBotao)
     {
         codigo = codigo + numBotao;
-        if (codigo == "3021")
+        if (codigo == "4132")
         {
             buton[0].SetActive(true);
         }
+        texto_puzzle0_1.text = "" + codigo;
         //----------------------------------------------------------------------------------------------------------------------------------------
         switch (numBotao)
         {
-            // 3 - 0 - 2 - 1 = 4 - 1 - 3 - 2
-            case 0:
-                quantidade += 1;
-                interact[0].interactable = false;
-                break;
+            // 4 - 1 - 3 - 2
             case 1:
                 quantidade += 1;
-                interact[1].interactable = false;
+                interact[0].interactable = true;
                 break;
             case 2:
                 quantidade += 1;
-                interact[2].interactable = false;
+                interact[1].interactable = true;
                 break;
             case 3:
                 quantidade += 1;
-                interact[3].interactable = false;
+                interact[2].interactable = true;
+                break;
+            case 4:
+                quantidade += 1;
+                interact[3].interactable = true;
                 break;
         }
     }
@@ -464,6 +462,7 @@ public class GameContoller : MonoBehaviour
         Camera[3].SetActive(false);
         Camera[4].SetActive(false);
         IC.Player.SetActive(true);
+        Puzzle0_Fios[1].SetActive(false);
     }
     #endregion
     //----------------------------------------------------------------------------------------------------------------------------------------

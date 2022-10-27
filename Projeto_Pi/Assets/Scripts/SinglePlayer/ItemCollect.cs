@@ -24,7 +24,7 @@ public class ItemCollect : MonoBehaviour
             amin = GetComponent<Animator>();
         }
         //----------------------------------------------------------------------------------------------------------------------------------------
-        Cursor.visible = true;
+        Cursor.visible = false;
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     #region Item Tipo
@@ -82,6 +82,15 @@ public class ItemCollect : MonoBehaviour
                         amin.SetFloat("Habilita", 1);
                         StartCoroutine(AnimaçãoPortas());
                         GC.PaneisTutoriais[2].SetActive(false);
+                    }
+                    break;
+                case 5:
+                    if (Input.GetKey(KeyCode.E))
+                    {
+                        TextoDoJogo.text = "";
+                        GC.Puzzle0_Fios[1].SetActive(true);
+                        Player.SetActive(false);
+                        Cursor.visible = true;
                     }
                     break;
             }
