@@ -102,6 +102,10 @@ public class Player : MonoBehaviour
             GC.Camera[1].SetActive(false);
             GC.Camera[3].SetActive(false);
             GC.Camera[4].SetActive(false);
+            if(Input.GetKeyDown(KeyCode.G))
+            {
+                GC.Puzzle0_Fios[1].SetActive(false);
+            }
         }else
         if(efs == 4)
         {

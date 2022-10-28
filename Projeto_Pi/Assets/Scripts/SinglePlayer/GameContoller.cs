@@ -10,9 +10,9 @@ public class GameContoller : MonoBehaviour
     public Button[] interact, circulo;
     public Button CirculoStart;
     public Text texto_puzzle_1, texto_puzzle1_1, texto_puzzle_0, texto_puzzle0_1;
-    public Slider slider;
+    public Slider slider, Glicose, Água;
     
-    public int click, quantidade, contagem, numeroCirculos;
+    public int click, quantidade, contagemG, contagemA, numeroCirculos;
     public string sequencia, valor, codigo;
     private ItemCollect IC;
     private Player PY;
@@ -23,11 +23,14 @@ public class GameContoller : MonoBehaviour
         PY = GameObject.Find("Player_Game").GetComponent<Player>();
         //----------------------------------------------------------------------------------------------------------------------------------------
         Cursor.visible = true;
+        //----------------------------------------------------------------------------------------------------------------------------------------
+        Puzzle2_Glicose[0].GetComponent<BoxCollider>().enabled = false;
+        Puzzle1_Poço[0].GetComponent<BoxCollider>().enabled = false;
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void Update()
     {
-        #region ESC e G
+        #region ESC, M e G
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             panel[1].SetActive(false);
@@ -45,7 +48,7 @@ public class GameContoller : MonoBehaviour
             IC.Player.SetActive(false);
             PaneisTutoriais[2].SetActive(false);
         }
-        if(Input.GetKeyDown(KeyCode.G))
+        if(Input.GetKeyDown(KeyCode.M))
         {
             panel[1].SetActive(false);
             panel[2].SetActive(false);
@@ -62,11 +65,16 @@ public class GameContoller : MonoBehaviour
             IC.Player.SetActive(false);
             PaneisTutoriais[2].SetActive(false);
         }
-        #endregion
-        #region Vitória
-        if (contagem == 3)
+        if(Input.GetKeyDown(KeyCode.G))
         {
-            StartCoroutine(Vitória());
+            panel[1].SetActive(false);
+            panel[2].SetActive(false);
+            panel[3].SetActive(false);
+            panel[4].SetActive(false);
+            panel[5].SetActive(false);
+            panel[6].SetActive(false);
+            Puzzle0_Fios[1].SetActive(true);
+            PaneisTutoriais[2].SetActive(false);
         }
         #endregion
         //----------------------------------------------------------------------------------------------------------------------------------------
@@ -92,6 +100,9 @@ public class GameContoller : MonoBehaviour
             portas[1].GetComponent<BoxCollider>().enabled = true;
         }
         #endregion
+        //----------------------------------------------------------------------------------------------------------------------------------------
+        Glicose.value = contagemG;
+        Água.value = contagemA;
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     #region Puzzle0
@@ -101,6 +112,8 @@ public class GameContoller : MonoBehaviour
         if (codigo == "4132")
         {
             buton[0].SetActive(true);
+            Puzzle2_Glicose[0].GetComponent<BoxCollider>().enabled = true;
+            Puzzle1_Poço[0].GetComponent<BoxCollider>().enabled = true;
         }
         texto_puzzle0_1.text = "" + codigo;
         //----------------------------------------------------------------------------------------------------------------------------------------
@@ -214,7 +227,11 @@ public class GameContoller : MonoBehaviour
                     texto_puzzle_1.text = "Parabéns!";
                     slider.value += 2;
                     buton[1].SetActive(true);
-                    Puzzle1_Poço[0].GetComponent<BoxCollider>().enabled = false;
+                    click = 0;
+                    sequencia = null;
+                    valor = null;
+                    slider.value = 0;
+                    numeroCirculos = 0;
                 }
                 else
                 {
@@ -466,7 +483,7 @@ public class GameContoller : MonoBehaviour
     }
     #endregion
     //----------------------------------------------------------------------------------------------------------------------------------------
-    #region Vitória
+    #region Vitória/ContagemPontos
     IEnumerator Vitória()
     {
         yield return new WaitForSeconds(0f);
@@ -474,9 +491,13 @@ public class GameContoller : MonoBehaviour
         yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(0);
     }
-    public void vitoria(int num)
+    public void ContagemGlicose(int num)
     {
-        contagem += num;
+        contagemG += num;
+    }
+    public void ContagemÁgua(int num)
+    {
+        contagemA += num;
     }
     #endregion
     //----------------------------------------------------------------------------------------------------------------------------------------

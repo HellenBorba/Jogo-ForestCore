@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class ItemCollect : MonoBehaviour
 {
     public int Itemtipo;
-    public Text TextoDoJogo;
     public GameObject TextoDoJog;
     public GameObject Player;
 
@@ -32,13 +31,13 @@ public class ItemCollect : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            TextoDoJogo.text = "Click E";
+            TextoDoJog.SetActive(true);
             switch (Itemtipo)
             {
                 case 0:
                     if (Input.GetKey(KeyCode.E))
                     {
-                        TextoDoJogo.text = "";
+                        TextoDoJog.SetActive(false);
                         GC.Camera[3].SetActive(true);
                         GC.Camera[0].SetActive(false);
                         GC.Camera[1].SetActive(false);
@@ -51,7 +50,7 @@ public class ItemCollect : MonoBehaviour
                 case 1:
                     if (Input.GetKey(KeyCode.E))
                     {
-                        TextoDoJogo.text = "";
+                        TextoDoJog.SetActive(false);
                         GC.Camera[3].SetActive(true);
                         GC.Camera[0].SetActive(false);
                         GC.Camera[1].SetActive(false);
@@ -65,7 +64,7 @@ public class ItemCollect : MonoBehaviour
                 case 2:
                     if (Input.GetKey(KeyCode.E))
                     {
-                        TextoDoJogo.text = "";
+                        TextoDoJog.SetActive(false);
                         GC.Camera[3].SetActive(true);
                         GC.Camera[0].SetActive(false);
                         GC.Camera[1].SetActive(false);
@@ -87,7 +86,7 @@ public class ItemCollect : MonoBehaviour
                 case 5:
                     if (Input.GetKey(KeyCode.E))
                     {
-                        TextoDoJogo.text = "";
+                        TextoDoJog.SetActive(false);
                         GC.Puzzle0_Fios[1].SetActive(true);
                         Player.SetActive(false);
                         Cursor.visible = true;
@@ -100,7 +99,7 @@ public class ItemCollect : MonoBehaviour
     //----------------------------------------------------------------------------------------------------------------------------------------
     private void OnTriggerExit(Collider other)
     {
-        TextoDoJogo.text = "";
+        TextoDoJog.SetActive(false);
         GC.PaneisTutoriais[2].SetActive(true);
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
@@ -121,7 +120,7 @@ public class ItemCollect : MonoBehaviour
         yield return new WaitForSeconds(1f);
         GC.portas[0].GetComponent<BoxCollider>().enabled = false;
         GC.portas[1].GetComponent<BoxCollider>().enabled = false;
-        TextoDoJogo.text = "";
+        TextoDoJog.SetActive(false);
     }
     #region PuzzlesPaineis
     IEnumerator Puzzle0()

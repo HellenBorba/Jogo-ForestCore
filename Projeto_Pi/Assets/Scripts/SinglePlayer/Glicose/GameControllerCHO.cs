@@ -99,8 +99,10 @@ public class GameControllerCHO : MonoBehaviour
                 {
                     Objeto[17].GetComponent<SpriteRenderer>().color = Color.green;
                     StartCoroutine(Final());
+                    vl = 0;
+                    valor = 0;
+                    Erro();
                     GC.buton[2].SetActive(true);
-                    NC.barraVida.value += 10;
                 }
                 else
                 {
@@ -274,7 +276,6 @@ public class GameControllerCHO : MonoBehaviour
     {
         yield return new WaitForSeconds(0f);
         GC.panel[4].SetActive(true);
-        GC.Puzzle2_Glicose[0].GetComponent<BoxCollider>().enabled = false;
         yield return new WaitForSeconds(2f);
         GC.panel[4].SetActive(false);
     }
