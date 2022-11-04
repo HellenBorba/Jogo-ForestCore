@@ -9,10 +9,10 @@ public class GameContoller : MonoBehaviour
     public GameObject[] buton, Camera, PaneisTutoriais, information, panel, portas, Puzzle0_Fios, Puzzle1_Poço, Puzzle2_Glicose;
     public Button[] interact, circulo;
     public Button CirculoStart;
-    public Text texto_puzzle_1, texto_puzzle1_1, texto_puzzle_0, texto_puzzle0_1;
+    public Text texto_puzzle_1, texto_puzzle1_1, texto_puzzle_0, texto_puzzle0_1, InformaçãoPontos;
     public Slider slider, Glicose, Água;
-    
-    public int click, quantidade, contagemG, contagemA, numeroCirculos;
+
+    public int click, quantidade, contagemG, contagemA, numeroCirculos, idEsc, idM, idG;
     public string sequencia, valor, codigo;
     private ItemCollect IC;
     private Player PY;
@@ -24,6 +24,9 @@ public class GameContoller : MonoBehaviour
         //----------------------------------------------------------------------------------------------------------------------------------------
         Cursor.visible = true;
         //----------------------------------------------------------------------------------------------------------------------------------------
+        contagemA = 40;
+        contagemG = 40;
+        //----------------------------------------------------------------------------------------------------------------------------------------
         Puzzle2_Glicose[0].GetComponent<BoxCollider>().enabled = false;
         Puzzle1_Poço[0].GetComponent<BoxCollider>().enabled = false;
     }
@@ -33,6 +36,7 @@ public class GameContoller : MonoBehaviour
         #region ESC, M e G
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            idEsc += 1;
             panel[1].SetActive(false);
             panel[2].SetActive(false);
             panel[3].SetActive(false);
@@ -44,12 +48,16 @@ public class GameContoller : MonoBehaviour
             Camera[1].SetActive(false);
             Camera[2].SetActive(false);
             Camera[4].SetActive(false);
-            information[0].SetActive(true);
             IC.Player.SetActive(false);
             PaneisTutoriais[2].SetActive(false);
+            if (idEsc == 1)
+            {
+                StartCoroutine(Esc());
+            }
         }
-        if(Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.M))
         {
+            idM += 1;
             panel[1].SetActive(false);
             panel[2].SetActive(false);
             panel[3].SetActive(false);
@@ -61,20 +69,40 @@ public class GameContoller : MonoBehaviour
             Camera[1].SetActive(false);
             Camera[2].SetActive(false);
             Camera[4].SetActive(false);
-            information[1].SetActive(true);
             IC.Player.SetActive(false);
             PaneisTutoriais[2].SetActive(false);
+            if (idM == 1)
+            {
+                StartCoroutine(M());
+            }
         }
-        if(Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.G))
         {
+            idG += 1;
             panel[1].SetActive(false);
             panel[2].SetActive(false);
             panel[3].SetActive(false);
             panel[4].SetActive(false);
             panel[5].SetActive(false);
             panel[6].SetActive(false);
+            PaneisTutoriais[2].SetActive(false);
             Puzzle0_Fios[1].SetActive(true);
-            PaneisTutoriais[2].SetActive(false);
+
+        }
+        if (idEsc == 2)
+        {
+            Panel();
+            idEsc = 0;
+        }
+        if (idM == 2)
+        {
+            Panel();
+            idM = 0;
+        }
+        if (idG == 2)
+        {
+            Panel();
+            idG = 0;
         }
         #endregion
         //----------------------------------------------------------------------------------------------------------------------------------------
@@ -90,14 +118,10 @@ public class GameContoller : MonoBehaviour
                 interact[3].interactable = true;
                 codigo = null;
                 quantidade = 0;
+                contagemA -= 10;
+                contagemG -= 10;
+                StartCoroutine(Puzzle0_Informação());
             }
-        }
-        //----------------------------------------------------------------------------------------------------------------------------------------
-        if (quantidade == 3)
-        {
-            Puzzle0_Fios[0].SetActive(false);
-            portas[0].GetComponent<BoxCollider>().enabled = true;
-            portas[1].GetComponent<BoxCollider>().enabled = true;
         }
         #endregion
         //----------------------------------------------------------------------------------------------------------------------------------------
@@ -112,8 +136,13 @@ public class GameContoller : MonoBehaviour
         if (codigo == "4132")
         {
             buton[0].SetActive(true);
+
             Puzzle2_Glicose[0].GetComponent<BoxCollider>().enabled = true;
             Puzzle1_Poço[0].GetComponent<BoxCollider>().enabled = true;
+            Puzzle0_Fios[0].GetComponent<BoxCollider>().enabled = false;
+
+            portas[0].GetComponent<BoxCollider>().enabled = true;
+            portas[1].GetComponent<BoxCollider>().enabled = true;
         }
         texto_puzzle0_1.text = "" + codigo;
         //----------------------------------------------------------------------------------------------------------------------------------------
@@ -167,14 +196,15 @@ public class GameContoller : MonoBehaviour
                 texto_puzzle1_1.text = "1° onda";
                 break;
             case 2:
-                if(valor == sequencia)
+                if (valor == sequencia)
                 {
                     numeroCirculos = 0;
                     StartCoroutine(Case1((int)Random.Range(0, 4)));
                     texto_puzzle_1.text = "Espere os 2 círculos brilharem, e depois click nos 2 que brilharem!";
                     texto_puzzle1_1.text = "2° onda";
                     slider.value += 1;
-                }else
+                }
+                else
                 {
                     StartCoroutine(OrdemIncorreta());
                     click = 0;
@@ -185,14 +215,15 @@ public class GameContoller : MonoBehaviour
                 }
                 break;
             case 4:
-                if(valor == sequencia)
+                if (valor == sequencia)
                 {
                     numeroCirculos = 0;
                     StartCoroutine(Case2_1((int)Random.Range(0, 4)));
                     texto_puzzle_1.text = "Espere os 3 círculos brilharem, e depois click nos 3 que brilharem!";
                     texto_puzzle1_1.text = "3° onda";
                     slider.value += 1;
-                }else
+                }
+                else
                 {
                     StartCoroutine(OrdemIncorreta());
                     click = 0;
@@ -203,14 +234,15 @@ public class GameContoller : MonoBehaviour
                 }
                 break;
             case 7:
-                if(valor == sequencia)
+                if (valor == sequencia)
                 {
                     numeroCirculos = 0;
                     StartCoroutine(Case3_1((int)Random.Range(0, 4)));
                     texto_puzzle_1.text = "Espere os 4 círculos brilharem, e depois click nos 4 que brilharem!";
                     texto_puzzle1_1.text = "4° onda";
                     slider.value += 1;
-                }else
+                }
+                else
                 {
                     StartCoroutine(OrdemIncorreta());
                     click = 0;
@@ -221,7 +253,7 @@ public class GameContoller : MonoBehaviour
                 }
                 break;
             case 11:
-                if(valor == sequencia)
+                if (valor == sequencia)
                 {
                     texto_puzzle1_1.text = "Fim!";
                     texto_puzzle_1.text = "Parabéns!";
@@ -480,6 +512,8 @@ public class GameContoller : MonoBehaviour
         Camera[4].SetActive(false);
         IC.Player.SetActive(true);
         Puzzle0_Fios[1].SetActive(false);
+        information[0].SetActive(false);
+        information[1].SetActive(false);
     }
     #endregion
     //----------------------------------------------------------------------------------------------------------------------------------------
@@ -506,5 +540,41 @@ public class GameContoller : MonoBehaviour
         SceneManager.LoadScene("Menu_Game");
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
+    #region Paineis Aparecem
+    IEnumerator Esc()
+    {
+        yield return new WaitForSeconds(1.5f);
+        information[0].SetActive(true);
+    }
+    IEnumerator M()
+    {
+        yield return new WaitForSeconds(1.5f);
+        information[1].SetActive(true);
+    }
+    IEnumerator Puzzle0_Informação()
+    {
+        yield return new WaitForSeconds(0f);
+        PaneisTutoriais[2].SetActive(true);
+        InformaçãoPontos.text = "-20 de vida";
+        yield return new WaitForSeconds(1.5f);
+        PaneisTutoriais[2].SetActive(false);
+    }
+    IEnumerator Puzzle1_Informações()
+    {
+        yield return new WaitForSeconds(0f);
+        PaneisTutoriais[2].SetActive(true);
+        InformaçãoPontos.text = "-10 de Água";
+        yield return new WaitForSeconds(1.5f);
+        PaneisTutoriais[2].SetActive(false);
+    }
+    IEnumerator Puzzle2_Informações()
+    {
+        yield return new WaitForSeconds(0f);
+        PaneisTutoriais[2].SetActive(true);
+        InformaçãoPontos.text = "-10 de glicose";
+        yield return new WaitForSeconds(1.5f);
+        PaneisTutoriais[2].SetActive(false);
+    }
+    #endregion
 }
-
+    //----------------------------------------------------------------------------------------------------------------------------------------

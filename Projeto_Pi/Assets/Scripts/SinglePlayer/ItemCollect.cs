@@ -76,21 +76,9 @@ public class ItemCollect : MonoBehaviour
                     }
                     break;
                 case 4:
-                    if (Input.GetKey(KeyCode.E))
-                    {
-                        amin.SetFloat("Habilita", 1);
-                        StartCoroutine(AnimaçãoPortas());
-                        GC.PaneisTutoriais[2].SetActive(false);
-                    }
-                    break;
-                case 5:
-                    if (Input.GetKey(KeyCode.E))
-                    {
-                        TextoDoJog.SetActive(false);
-                        GC.Puzzle0_Fios[1].SetActive(true);
-                        Player.SetActive(false);
-                        Cursor.visible = true;
-                    }
+                    amin.SetFloat("Habilita", 1);
+                    StartCoroutine(AnimaçãoPortas());
+                    GC.PaneisTutoriais[2].SetActive(false);
                     break;
             }
         }
@@ -100,7 +88,6 @@ public class ItemCollect : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         TextoDoJog.SetActive(false);
-        GC.PaneisTutoriais[2].SetActive(true);
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     #region Tutoriais

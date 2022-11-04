@@ -7,10 +7,14 @@ public class Controller_Construções : MonoBehaviour
     public int C_E;
 
     private Player PY;
+    private ItemCollect IC;
+    private GameContoller GC;
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
         PY = GameObject.Find("Player_Game").GetComponent<Player>();
+        IC = GameObject.Find("poço").GetComponent<ItemCollect>();
+        GC = GameObject.Find("GameController").GetComponent<GameContoller>();
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     private void OnTriggerStay(Collider collision)
@@ -25,6 +29,10 @@ public class Controller_Construções : MonoBehaviour
                 case 2: //Puzzle2
                     PY.efs = 3;
                     break;
+                case 3: //Puzzle0
+                    GC.PaneisTutoriais[2].SetActive(true);
+                    GC.InformaçãoPontos.text = "Click G para dados da árvore";
+                    break;
             }
         }
     }
@@ -32,6 +40,7 @@ public class Controller_Construções : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         PY.efs = 4;
+        GC.PaneisTutoriais[2].SetActive(false);
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
 }
