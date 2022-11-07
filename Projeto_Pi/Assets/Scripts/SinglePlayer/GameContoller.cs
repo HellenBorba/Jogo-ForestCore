@@ -37,72 +37,69 @@ public class GameContoller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             idEsc += 1;
-            panel[1].SetActive(false);
-            panel[2].SetActive(false);
-            panel[3].SetActive(false);
-            panel[4].SetActive(false);
-            panel[5].SetActive(false);
-            panel[6].SetActive(false);
-            Camera[3].SetActive(true);
-            Camera[0].SetActive(false);
-            Camera[1].SetActive(false);
-            Camera[2].SetActive(false);
-            Camera[4].SetActive(false);
-            IC.Player.SetActive(false);
-            PaneisTutoriais[2].SetActive(false);
+            if (idEsc == 2)
+            {
+                information[0].SetActive(false);
+                panel[1].SetActive(false);
+                panel[2].SetActive(false);
+                panel[3].SetActive(false);
+                panel[4].SetActive(false);
+                panel[5].SetActive(false);
+                panel[6].SetActive(false);
+                Camera[0].SetActive(true);
+                Camera[1].SetActive(false);
+                Camera[2].SetActive(false);
+                Camera[3].SetActive(false);
+                Camera[4].SetActive(false);
+                IC.Player.SetActive(true);
+                PaneisTutoriais[2].SetActive(false);
+                idEsc = 0;
+            }
             if (idEsc == 1)
             {
+                Camera[3].SetActive(true);
                 StartCoroutine(Esc());
             }
         }
         if (Input.GetKeyDown(KeyCode.M))
         {
             idM += 1;
-            panel[1].SetActive(false);
-            panel[2].SetActive(false);
-            panel[3].SetActive(false);
-            panel[4].SetActive(false);
-            panel[5].SetActive(false);
-            panel[6].SetActive(false);
-            Camera[3].SetActive(true);
-            Camera[0].SetActive(false);
-            Camera[1].SetActive(false);
-            Camera[2].SetActive(false);
-            Camera[4].SetActive(false);
-            IC.Player.SetActive(false);
-            PaneisTutoriais[2].SetActive(false);
+            if (idM == 2)
+            {
+                information[1].SetActive(false);
+                panel[1].SetActive(false);
+                panel[2].SetActive(false);
+                panel[3].SetActive(false);
+                panel[4].SetActive(false);
+                panel[5].SetActive(false);
+                panel[6].SetActive(false);
+                Camera[3].SetActive(false);
+                Camera[0].SetActive(true);
+                Camera[1].SetActive(false);
+                Camera[2].SetActive(false);
+                Camera[4].SetActive(false);
+                IC.Player.SetActive(true);
+                PaneisTutoriais[2].SetActive(false);
+                idM = 0;
+            }
             if (idM == 1)
             {
+                Camera[3].SetActive(true);
                 StartCoroutine(M());
             }
         }
         if (Input.GetKeyDown(KeyCode.G))
         {
             idG += 1;
-            panel[1].SetActive(false);
-            panel[2].SetActive(false);
-            panel[3].SetActive(false);
-            panel[4].SetActive(false);
-            panel[5].SetActive(false);
-            panel[6].SetActive(false);
-            PaneisTutoriais[2].SetActive(false);
-            Puzzle0_Fios[1].SetActive(true);
-
-        }
-        if (idEsc == 2)
-        {
-            Panel();
-            idEsc = 0;
-        }
-        if (idM == 2)
-        {
-            Panel();
-            idM = 0;
-        }
-        if (idG == 2)
-        {
-            Panel();
-            idG = 0;
+            if (idG == 1)
+            {
+                Puzzle0_Fios[1].SetActive(true);
+            }
+            if (idG == 2)
+            {
+                Puzzle0_Fios[1].SetActive(false);
+                idG = 0;
+            }
         }
         #endregion
         //----------------------------------------------------------------------------------------------------------------------------------------
@@ -120,7 +117,7 @@ public class GameContoller : MonoBehaviour
                 quantidade = 0;
                 contagemA -= 10;
                 contagemG -= 10;
-                StartCoroutine(Puzzle0_Informação());
+                StartCoroutine(Puzzle0_InformaçãoD());
             }
         }
         #endregion
@@ -134,7 +131,7 @@ public class GameContoller : MonoBehaviour
     {
         codigo = codigo + numBotao;
         if (codigo == "4132")
-        {
+        { 
             buton[0].SetActive(true);
 
             Puzzle2_Glicose[0].GetComponent<BoxCollider>().enabled = true;
@@ -143,6 +140,8 @@ public class GameContoller : MonoBehaviour
 
             portas[0].GetComponent<BoxCollider>().enabled = true;
             portas[1].GetComponent<BoxCollider>().enabled = true;
+
+            StartCoroutine(Puzzle0_InformaçãoV());
         }
         texto_puzzle0_1.text = "" + codigo;
         //----------------------------------------------------------------------------------------------------------------------------------------
@@ -212,6 +211,7 @@ public class GameContoller : MonoBehaviour
                     valor = null;
                     slider.value = 0;
                     numeroCirculos = 0;
+                    StartCoroutine(Puzzle1_InformaçõesD());
                 }
                 break;
             case 4:
@@ -231,6 +231,7 @@ public class GameContoller : MonoBehaviour
                     valor = null;
                     slider.value = 0;
                     numeroCirculos = 0;
+                    StartCoroutine(Puzzle1_InformaçõesD());
                 }
                 break;
             case 7:
@@ -250,6 +251,7 @@ public class GameContoller : MonoBehaviour
                     valor = null;
                     slider.value = 0;
                     numeroCirculos = 0;
+                    StartCoroutine(Puzzle1_InformaçõesD());
                 }
                 break;
             case 11:
@@ -264,6 +266,7 @@ public class GameContoller : MonoBehaviour
                     valor = null;
                     slider.value = 0;
                     numeroCirculos = 0;
+                    StartCoroutine(Puzzle1_InformaçõesV());
                 }
                 else
                 {
@@ -273,6 +276,7 @@ public class GameContoller : MonoBehaviour
                     valor = null;
                     slider.value = 0;
                     numeroCirculos = 0;
+                    StartCoroutine(Puzzle1_InformaçõesD());
                 }
                 break;
         }
@@ -489,6 +493,7 @@ public class GameContoller : MonoBehaviour
     IEnumerator OrdemIncorreta()
     {
         yield return new WaitForSeconds(0f);
+        contagemA -= 10;
         texto_puzzle_1.text = "Ordem errada! click novamente em start para recomeçar!";
         yield return new WaitForSeconds(5f);
         texto_puzzle_1.text = null;
@@ -545,13 +550,37 @@ public class GameContoller : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         information[0].SetActive(true);
+        panel[1].SetActive(false);
+        panel[2].SetActive(false);
+        panel[3].SetActive(false);
+        panel[4].SetActive(false);
+        panel[5].SetActive(false);
+        panel[6].SetActive(false);
+        Camera[0].SetActive(false);
+        Camera[1].SetActive(false);
+        Camera[2].SetActive(false);
+        Camera[4].SetActive(false);
+        IC.Player.SetActive(false);
+        PaneisTutoriais[2].SetActive(false);
     }
     IEnumerator M()
     {
         yield return new WaitForSeconds(1.5f);
         information[1].SetActive(true);
+        panel[1].SetActive(false);
+        panel[2].SetActive(false);
+        panel[3].SetActive(false);
+        panel[4].SetActive(false);
+        panel[5].SetActive(false);
+        panel[6].SetActive(false);
+        Camera[0].SetActive(false);
+        Camera[1].SetActive(false);
+        Camera[2].SetActive(false);
+        Camera[4].SetActive(false);
+        IC.Player.SetActive(false);
+        PaneisTutoriais[2].SetActive(false);
     }
-    IEnumerator Puzzle0_Informação()
+    IEnumerator Puzzle0_InformaçãoD()
     {
         yield return new WaitForSeconds(0f);
         PaneisTutoriais[2].SetActive(true);
@@ -559,7 +588,15 @@ public class GameContoller : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         PaneisTutoriais[2].SetActive(false);
     }
-    IEnumerator Puzzle1_Informações()
+    IEnumerator Puzzle0_InformaçãoV()
+    {
+        yield return new WaitForSeconds(0f);
+        PaneisTutoriais[2].SetActive(true);
+        InformaçãoPontos.text = "+30 de vida";
+        yield return new WaitForSeconds(1.5f);
+        PaneisTutoriais[2].SetActive(false);
+    }
+    IEnumerator Puzzle1_InformaçõesD()
     {
         yield return new WaitForSeconds(0f);
         PaneisTutoriais[2].SetActive(true);
@@ -567,14 +604,38 @@ public class GameContoller : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         PaneisTutoriais[2].SetActive(false);
     }
-    IEnumerator Puzzle2_Informações()
+    IEnumerator Puzzle1_InformaçõesV()
     {
         yield return new WaitForSeconds(0f);
         PaneisTutoriais[2].SetActive(true);
-        InformaçãoPontos.text = "-10 de glicose";
+        InformaçãoPontos.text = "+20 de Água";
         yield return new WaitForSeconds(1.5f);
         PaneisTutoriais[2].SetActive(false);
     }
+    public void Puzzle2_Informações2D()
+    {
+        StartCoroutine(Puzzle2_InformaçõesD());
+        IEnumerator Puzzle2_InformaçõesD()
+        {
+            yield return new WaitForSeconds(0f);
+            PaneisTutoriais[2].SetActive(true);
+            InformaçãoPontos.text = "-20 de glicose";
+            yield return new WaitForSeconds(1.5f);
+            PaneisTutoriais[2].SetActive(false);
+        }
+    }
+    public void Puzzle2_Informações2V()
+    {
+        StartCoroutine(Puzzle2_InformaçõesV());
+        IEnumerator Puzzle2_InformaçõesV()
+        {
+            yield return new WaitForSeconds(0f);
+            PaneisTutoriais[2].SetActive(true);
+            InformaçãoPontos.text = "+10 de glicose";
+            yield return new WaitForSeconds(1.5f);
+            PaneisTutoriais[2].SetActive(false);
+        }
+    }
     #endregion
-}
     //----------------------------------------------------------------------------------------------------------------------------------------
+}

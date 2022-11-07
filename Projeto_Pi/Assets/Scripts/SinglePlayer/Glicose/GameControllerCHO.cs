@@ -103,6 +103,7 @@ public class GameControllerCHO : MonoBehaviour
                     valor = 0;
                     Erro();
                     GC.buton[2].SetActive(true);
+                    GC.Puzzle2_Informações2V();
                 }
                 else
                 {
@@ -282,6 +283,8 @@ public class GameControllerCHO : MonoBehaviour
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void Erro()
     {
+        GC.contagemG -= 10;
+        GC.Puzzle2_Informações2D();
         Objeto[0].GetComponent<SpriteRenderer>().color = Color.blue;
         Objeto[1].GetComponent<SpriteRenderer>().color = Color.red;
         Objeto[2].GetComponent<SpriteRenderer>().color = Color.white;
