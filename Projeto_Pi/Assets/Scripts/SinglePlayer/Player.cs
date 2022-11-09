@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.Animations;
 
 public class Player : MonoBehaviour
 {
     public GameObject SenhaPuzzle0;
     public int efs;
+    public Animator amin1;
 
     private GameContoller GC;
     private Vector3 forward, strafe, vertical;
@@ -20,6 +22,7 @@ public class Player : MonoBehaviour
         //----------------------------------------------------------------------------------------------------------------------------------------
         gravity = (-2 * maxJumpHeight) / (timeToMaxHeight * timeToMaxHeight);
         jumpSpeed = (2 * maxJumpHeight) / timeToMaxHeight;
+        amin1.SetFloat("batata", 1);
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Update()
