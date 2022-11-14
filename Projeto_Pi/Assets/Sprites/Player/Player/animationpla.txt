@@ -1,7 +1,0 @@
-Root
-  Node
-  tronco
-  braço direito
-  braço esquerdo
-  perna esquerda
-  perna direita
