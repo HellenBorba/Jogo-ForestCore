@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: a14f52c2cbd0f2e458b37a2310bfc511
+guid: 8ac730559f99e2943af935b528978c4a
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Happy Idle
+    second: mixamo.com
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Happy Idle
+      name: mixamo.com
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 88
+      lastFrame: 49
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
