@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 
     private GameContoller GC;
     private Vector3 forward, strafe, vertical;
-    private float forwardSpeed = 5, strafeSpeed = 5, gravity, jumpSpeed, maxJumpHeight = 2, timeToMaxHeight = 0.5f, minZ, minX, minY, maxY, maxX, maxZ;
+    private float forwardSpeed = 3, strafeSpeed = 5, gravity, jumpSpeed, maxJumpHeight = 2, timeToMaxHeight = 0.5f, minZ, minX, minY, maxY, maxX, maxZ;
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
         controller = GetComponent<CharacterController>();
         gravity = (-2 * maxJumpHeight) / (timeToMaxHeight * timeToMaxHeight);
         jumpSpeed = (4 * maxJumpHeight) / timeToMaxHeight;
+        
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Update()
@@ -164,6 +165,14 @@ public class Player : MonoBehaviour
             efs += 1;
         }
         #endregion
+        if(controller.velocity.x != 0 || controller.velocity.z != 0)
+        {
+            amin1.SetFloat("Andar", 1);
+        }
+        else
+        {
+            amin1.SetFloat("Andar", 0);
+        }
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
 }
