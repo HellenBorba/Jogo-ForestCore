@@ -62,11 +62,10 @@ public class Player : MonoBehaviour
 
         if (efs == 1)
         {
-            GC.Camera[0].SetActive(false);
-            GC.Camera[1].SetActive(true);
+            transform.eulerAngles = new Vector3(0, -180, 0);
 
-            float forwardInput = Input.GetAxisRaw("VerticalCam");
-            float strafeInput = Input.GetAxisRaw("HorizontalCam");
+            float forwardInput = Input.GetAxisRaw("Vertical");
+            float strafeInput = Input.GetAxisRaw("Horizontal");
 
             forward = forwardInput * forwardSpeed * transform.forward;
             strafe = strafeInput * strafeSpeed * transform.right;
@@ -79,8 +78,7 @@ public class Player : MonoBehaviour
         else
         if (efs == 2)
         {
-            GC.Camera[0].SetActive(true);
-            GC.Camera[1].SetActive(false);
+            transform.eulerAngles = new Vector3(0, 0, 0);
 
             float forwardInput = Input.GetAxisRaw("Vertical");
             float strafeInput = Input.GetAxisRaw("Horizontal");
@@ -90,10 +88,10 @@ public class Player : MonoBehaviour
 
             vertical += gravity * Time.deltaTime * Vector3.up;
 
-            efs = 0;
-
             Vector3 finalVelocity = forward + strafe + vertical;
             controller.Move(finalVelocity * Time.deltaTime);
+
+            efs = 0;
         }
         else
         if (efs == 3)
