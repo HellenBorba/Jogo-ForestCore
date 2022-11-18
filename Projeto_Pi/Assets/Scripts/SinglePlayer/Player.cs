@@ -158,6 +158,10 @@ public class Player : MonoBehaviour
             GC.Camera[3].SetActive(false);
             GC.Camera[2].SetActive(false);
         }
+        if(efs == 6)
+        {
+            GC.Camera[5].SetActive(true);
+        }
         if(Input.GetKeyDown(KeyCode.F))
         {
             efs += 1;

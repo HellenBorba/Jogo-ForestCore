@@ -1900,7 +1900,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.35743824, y: 0.58229584}
   m_AnchorMax: {x: 0.6594045, y: 0.656}
-  m_AnchoredPosition: {x: 12.700001, y: -17.9}
+  m_AnchoredPosition: {x: 12.700012, y: -17.899994}
   m_SizeDelta: {x: 32, y: 14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &199531769
@@ -3962,7 +3962,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.35743824, y: 0.27370435}
   m_AnchorMax: {x: 0.71643823, y: 0.32000002}
-  m_AnchoredPosition: {x: -7.399994, y: -15.800018}
+  m_AnchoredPosition: {x: -7.4000244, y: -15.800049}
   m_SizeDelta: {x: 13.399994, y: 11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &363045965
@@ -9821,7 +9821,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.08556183, y: 0.284}
   m_AnchorMax: {x: 0.47012365, y: 0.4382957}
-  m_AnchoredPosition: {x: 44.1, y: -29.200003}
+  m_AnchoredPosition: {x: 44.100006, y: -29.200003}
   m_SizeDelta: {x: 2, y: -2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &870094454
@@ -14982,7 +14982,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.38312367, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.55142254}
-  m_AnchoredPosition: {x: 37.60004, y: -13.600149}
+  m_AnchoredPosition: {x: 37.600037, y: -13.600149}
   m_SizeDelta: {x: 81.7, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1322771643
@@ -22308,7 +22308,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.08556183, y: 0.5}
   m_AnchorMax: {x: 0.47012365, y: 0.6388592}
-  m_AnchoredPosition: {x: 34.4, y: -28.6}
+  m_AnchoredPosition: {x: 34.399994, y: -28.599998}
   m_SizeDelta: {x: 2, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1817513904
@@ -23437,7 +23437,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -0.9000015, y: -0.20000076}
+  m_AnchoredPosition: {x: -0.8999939, y: -0.19999695}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1925367353
@@ -27255,7 +27255,7 @@ MonoBehaviour:
   - {fileID: 87955217}
   - {fileID: 207619313}
   - {fileID: 1574007846}
-  - {fileID: 0}
+  - {fileID: 1178885352}
   PaneisTutoriais:
   - {fileID: 533504663}
   - {fileID: 974460073}
