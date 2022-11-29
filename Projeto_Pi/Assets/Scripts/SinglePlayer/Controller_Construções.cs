@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Controller_Construções : MonoBehaviour
 {
-    public int C_E;
+    public int C_E, C_E2;
 
     private Player PY;
     private ItemCollect IC;
@@ -17,6 +17,20 @@ public class Controller_Construções : MonoBehaviour
         GC = GameObject.Find("GameController").GetComponent<GameContoller>();
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
+    private void Update()
+    {
+        switch (C_E2)
+        {
+            case 3: //Puzzle0 Núcleo
+                if (PY.efs == 5)
+                {
+                    GC.PaneisTutoriais[2].SetActive(true);
+                    GC.InformaçãoPontos.text = "Click G para dados da árvore";
+                }
+                break;
+        }
+    }
+    //----------------------------------------------------------------------------------------------------------------------------------------
     private void OnTriggerStay(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -24,14 +38,10 @@ public class Controller_Construções : MonoBehaviour
             switch (C_E)
             {
                 case 1: //Puzzle0
-                    PY.efs = 5;
+                        PY.efs = 5;
                     break;
                 case 2: //Puzzle2
-                    PY.efs = 3;
-                    break;
-                case 3: //Puzzle0
-                    GC.PaneisTutoriais[2].SetActive(true);
-                    GC.InformaçãoPontos.text = "Click G para dados da árvore";
+                        PY.efs2 = 1;
                     break;
             }
         }
@@ -39,8 +49,10 @@ public class Controller_Construções : MonoBehaviour
     //----------------------------------------------------------------------------------------------------------------------------------------
     private void OnTriggerExit(Collider other)
     {
-        PY.efs = 4;
+        PY.efs = 6;
         GC.PaneisTutoriais[2].SetActive(false);
+        IC.Player.SetActive(true);
+        Cursor.visible = false;
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
 }

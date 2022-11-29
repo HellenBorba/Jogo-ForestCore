@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ItemCollect : MonoBehaviour
 {
-    public int Itemtipo;
+    public int Itemtipo, Lugar;
     public GameObject TextoDoJog;
     public GameObject Player;
 
@@ -26,15 +26,40 @@ public class ItemCollect : MonoBehaviour
         Cursor.visible = false;
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
+    private void Update()
+    {
+        if (PL.efs2 == 1)
+        {
+            TextoDoJog.SetActive(true);
+            switch (Lugar)
+            {
+                case 2:
+                    if (Input.GetKey(KeyCode.E))
+                    {
+                        TextoDoJog.SetActive(false);
+                        GC.Camera[3].SetActive(true);
+                        GC.Camera[0].SetActive(false);
+                        GC.Camera[1].SetActive(false);
+                        Cursor.visible = true;
+                        StartCoroutine(Puzzle2());
+                        StartCoroutine(Tutorial2());
+                        Player.SetActive(false);
+                        GC.PaneisTutoriais[2].SetActive(false);
+                    }
+                    break;
+            }
+        }
+    }
+    //----------------------------------------------------------------------------------------------------------------------------------------
     #region Item Tipo
     private void OnTriggerStay(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            TextoDoJog.SetActive(true);
             switch (Itemtipo)
             {
                 case 0:
+                    TextoDoJog.SetActive(true);
                     if (Input.GetKey(KeyCode.E))
                     {
                         TextoDoJog.SetActive(false);
@@ -48,6 +73,7 @@ public class ItemCollect : MonoBehaviour
                     }
                     break;
                 case 1:
+                    TextoDoJog.SetActive(true);
                     if (Input.GetKey(KeyCode.E))
                     {
                         TextoDoJog.SetActive(false);
@@ -57,20 +83,6 @@ public class ItemCollect : MonoBehaviour
                         Cursor.visible = true;
                         StartCoroutine(Puzzle1());
                         StartCoroutine(Tutorial1());
-                        Player.SetActive(false);
-                        GC.PaneisTutoriais[2].SetActive(false);
-                    }
-                    break;
-                case 2:
-                    if (Input.GetKey(KeyCode.E))
-                    {
-                        TextoDoJog.SetActive(false);
-                        GC.Camera[3].SetActive(true);
-                        GC.Camera[0].SetActive(false);
-                        GC.Camera[1].SetActive(false);
-                        Cursor.visible = true;
-                        StartCoroutine(Puzzle2());
-                        StartCoroutine(Tutorial2());
                         Player.SetActive(false);
                         GC.PaneisTutoriais[2].SetActive(false);
                     }

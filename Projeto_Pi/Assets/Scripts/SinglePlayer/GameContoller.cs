@@ -34,7 +34,7 @@ public class GameContoller : MonoBehaviour
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void Update()
     {
-        #region ESC, M e G
+        #region ESC, M, G e Q
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             idEsc += 1;
@@ -101,6 +101,23 @@ public class GameContoller : MonoBehaviour
                 Puzzle0_Fios[1].SetActive(false);
                 idG = 0;
             }
+        }
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            information[1].SetActive(false);
+            panel[1].SetActive(false);
+            panel[2].SetActive(false);
+            panel[3].SetActive(false);
+            panel[4].SetActive(false);
+            panel[5].SetActive(false);
+            panel[6].SetActive(false);
+            Camera[3].SetActive(false);
+            Camera[0].SetActive(false);
+            Camera[1].SetActive(false);
+            Camera[2].SetActive(false);
+            Camera[4].SetActive(false);
+            IC.Player.SetActive(false);
+            PaneisTutoriais[2].SetActive(false);
         }
         #endregion
         //----------------------------------------------------------------------------------------------------------------------------------------
