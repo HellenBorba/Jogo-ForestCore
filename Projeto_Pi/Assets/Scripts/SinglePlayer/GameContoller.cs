@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class GameContoller : MonoBehaviour
 {
     public GameObject[] buton, Camera, PaneisTutoriais, information, panel, portas, Puzzle0_Fios, Puzzle1_Poço, Puzzle2_Glicose;
+    public GameObject SpawnPlayerAqui;
     public Button[] interact, circulo;
     public Button CirculoStart;
     public Text texto_puzzle_1, texto_puzzle1_1, texto_puzzle_0, texto_puzzle0_1, InformaçãoPontos;
@@ -34,7 +35,7 @@ public class GameContoller : MonoBehaviour
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void Update()
     {
-        #region ESC, M, G e Q
+        #region ESC, M e G
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             idEsc += 1;
@@ -47,11 +48,9 @@ public class GameContoller : MonoBehaviour
                 panel[4].SetActive(false);
                 panel[5].SetActive(false);
                 panel[6].SetActive(false);
-                Camera[0].SetActive(true);
+                Camera[0].SetActive(false);
                 Camera[1].SetActive(false);
                 Camera[2].SetActive(false);
-                Camera[3].SetActive(false);
-                Camera[4].SetActive(false);
                 IC.Player.SetActive(true);
                 PaneisTutoriais[2].SetActive(false);
                 idEsc = 0;
@@ -74,11 +73,9 @@ public class GameContoller : MonoBehaviour
                 panel[4].SetActive(false);
                 panel[5].SetActive(false);
                 panel[6].SetActive(false);
-                Camera[3].SetActive(false);
-                Camera[0].SetActive(true);
                 Camera[1].SetActive(false);
+                Camera[0].SetActive(false);
                 Camera[2].SetActive(false);
-                Camera[4].SetActive(false);
                 IC.Player.SetActive(true);
                 PaneisTutoriais[2].SetActive(false);
                 idM = 0;
@@ -101,23 +98,6 @@ public class GameContoller : MonoBehaviour
                 Puzzle0_Fios[1].SetActive(false);
                 idG = 0;
             }
-        }
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            information[1].SetActive(false);
-            panel[1].SetActive(false);
-            panel[2].SetActive(false);
-            panel[3].SetActive(false);
-            panel[4].SetActive(false);
-            panel[5].SetActive(false);
-            panel[6].SetActive(false);
-            Camera[3].SetActive(false);
-            Camera[0].SetActive(false);
-            Camera[1].SetActive(false);
-            Camera[2].SetActive(false);
-            Camera[4].SetActive(false);
-            IC.Player.SetActive(false);
-            PaneisTutoriais[2].SetActive(false);
         }
         #endregion
         //----------------------------------------------------------------------------------------------------------------------------------------
@@ -518,6 +498,28 @@ public class GameContoller : MonoBehaviour
     }
     #endregion
     //---------------------------------------------------------------------------------------------------------------------------------------- 
+    #region saindo das Casas
+    public void SairCasas()
+    {
+        panel[0].SetActive(false);
+        panel[1].SetActive(false);
+        panel[2].SetActive(false);
+        panel[3].SetActive(false);
+        panel[4].SetActive(false);
+        panel[5].SetActive(false);
+        panel[6].SetActive(false);
+        Camera[0].SetActive(false);
+        Camera[1].SetActive(false);
+        Camera[2].SetActive(false);
+        IC.Player.SetActive(true);
+        Puzzle0_Fios[1].SetActive(false);
+        information[0].SetActive(false);
+        information[1].SetActive(false);
+        PY.efs2 = 0;
+        IC.TextoDoJog.SetActive(false);
+    }
+    #endregion
+    //---------------------------------------------------------------------------------------------------------------------------------------- 
     #region Saida de Puzzles
     public void Panel()
     {
@@ -528,11 +530,9 @@ public class GameContoller : MonoBehaviour
         panel[4].SetActive(false);
         panel[5].SetActive(false);
         panel[6].SetActive(false);
-        Camera[0].SetActive(true);
+        Camera[0].SetActive(false);
         Camera[1].SetActive(false);
         Camera[2].SetActive(false);
-        Camera[3].SetActive(false);
-        Camera[4].SetActive(false);
         IC.Player.SetActive(true);
         Puzzle0_Fios[1].SetActive(false);
         information[0].SetActive(false);

@@ -42,17 +42,10 @@ public class Controller_Construções : MonoBehaviour
                     break;
                 case 2: //Puzzle2
                         PY.efs2 = 1;
+                        GC.buton[3].SetActive(true);
                     break;
             }
         }
-    }
-    //----------------------------------------------------------------------------------------------------------------------------------------
-    private void OnTriggerExit(Collider other)
-    {
-        PY.efs = 6;
-        GC.PaneisTutoriais[2].SetActive(false);
-        IC.Player.SetActive(true);
-        Cursor.visible = false;
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
 }

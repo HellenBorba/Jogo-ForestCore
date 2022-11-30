@@ -97,11 +97,6 @@ public class ItemCollect : MonoBehaviour
     }
     #endregion
     //----------------------------------------------------------------------------------------------------------------------------------------
-    private void OnTriggerExit(Collider other)
-    {
-        TextoDoJog.SetActive(false);
-    }
-    //----------------------------------------------------------------------------------------------------------------------------------------
     #region Tutoriais
     IEnumerator Tutorial1()
     {
