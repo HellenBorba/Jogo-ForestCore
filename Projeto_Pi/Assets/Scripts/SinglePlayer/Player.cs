@@ -140,16 +140,15 @@ public class Player : MonoBehaviour
             {
                 amin1.SetFloat("Andar", 1);
             }
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                amin1.SetFloat("Esquerda", 1);
+            }
         }
         else
         {
             amin1.SetFloat("Andar", 0);
-        }
-
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            amin1.SetFloat("Esquerda", 1);
-            amin1.SetFloat("Esquerda", 2);
+            amin1.SetFloat("Esquerda", 0);
         }
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
