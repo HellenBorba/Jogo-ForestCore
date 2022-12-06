@@ -136,11 +136,20 @@ public class Player : MonoBehaviour
         //----------------------------------------------------------------------------------------------------------------------------------------
         if (controller.velocity.x != 0 || controller.velocity.z != 0)
         {
-            amin1.SetFloat("Andar", 1);
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                amin1.SetFloat("Andar", 1);
+            }
         }
         else
         {
             amin1.SetFloat("Andar", 0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            amin1.SetFloat("Esquerda", 1);
+            amin1.SetFloat("Esquerda", 2);
         }
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
