@@ -13,6 +13,7 @@ public class GameContoller : MonoBehaviour
     public Button CirculoStart;
     public Text texto_puzzle_1, texto_puzzle1_1, texto_puzzle_0, texto_puzzle0_1, InformaçãoPontos;
     public Slider slider, Glicose, Água;
+    public Animator aminPD, aminPE;
 
     public int click, quantidade, contagemG, contagemA, numeroCirculos, idEsc, idM, idG;
     public string sequencia, valor, codigo;
@@ -140,6 +141,11 @@ public class GameContoller : MonoBehaviour
             portas[1].GetComponent<BoxCollider>().enabled = true;
 
             StartCoroutine(Puzzle0_InformaçãoV());
+
+            aminPD.SetFloat("Habilita", 1);
+            aminPE.SetFloat("Habilita", 1);
+            StartCoroutine(AnimaçãoPortas());
+            PaneisTutoriais[2].SetActive(false);
         }
         texto_puzzle0_1.text = "" + codigo;
         //----------------------------------------------------------------------------------------------------------------------------------------
@@ -173,6 +179,14 @@ public class GameContoller : MonoBehaviour
         texto_puzzle_0.text = "Reinicie!";
         yield return new WaitForSeconds(3f);
         texto_puzzle_0.text = "";
+    }
+    //----------------------------------------------------------------------------------------------------------------------------------------
+    IEnumerator AnimaçãoPortas()
+    {
+        yield return new WaitForSeconds(1f);
+        portas[0].GetComponent<BoxCollider>().enabled = false;
+        portas[1].GetComponent<BoxCollider>().enabled = false;
+        IC.TextoDoJog.SetActive(false);
     }
     #endregion
     //----------------------------------------------------------------------------------------------------------------------------------------
