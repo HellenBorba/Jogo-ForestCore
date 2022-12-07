@@ -58,7 +58,7 @@ public class GameContoller : MonoBehaviour
             }
             if (idEsc == 1)
             {
-                Camera[3].SetActive(true);
+                Camera[1].SetActive(true);
                 StartCoroutine(Esc());
             }
         }
@@ -83,7 +83,7 @@ public class GameContoller : MonoBehaviour
             }
             if (idM == 1)
             {
-                Camera[3].SetActive(true);
+                Camera[1].SetActive(true);
                 StartCoroutine(M());
             }
         }
@@ -93,6 +93,7 @@ public class GameContoller : MonoBehaviour
             if (idG == 1)
             {
                 Puzzle0_Fios[1].SetActive(true);
+                PaneisTutoriais[2].SetActive(false);
             }
             if (idG == 2)
             {
@@ -112,6 +113,7 @@ public class GameContoller : MonoBehaviour
                 interact[1].interactable = true;
                 interact[2].interactable = true;
                 interact[3].interactable = true;
+                texto_puzzle0_1.text = "";
                 codigo = null;
                 quantidade = 0;
                 contagemA -= 10;
@@ -530,6 +532,7 @@ public class GameContoller : MonoBehaviour
         information[0].SetActive(false);
         information[1].SetActive(false);
         PY.efs2 = 0;
+        PY.efs = 0;
         IC.TextoDoJog.SetActive(false);
     }
     #endregion
@@ -589,9 +592,7 @@ public class GameContoller : MonoBehaviour
         panel[5].SetActive(false);
         panel[6].SetActive(false);
         Camera[0].SetActive(false);
-        Camera[1].SetActive(false);
         Camera[2].SetActive(false);
-        Camera[4].SetActive(false);
         IC.Player.SetActive(false);
         PaneisTutoriais[2].SetActive(false);
     }
@@ -608,7 +609,6 @@ public class GameContoller : MonoBehaviour
         Camera[0].SetActive(false);
         Camera[1].SetActive(false);
         Camera[2].SetActive(false);
-        Camera[4].SetActive(false);
         IC.Player.SetActive(false);
         PaneisTutoriais[2].SetActive(false);
     }

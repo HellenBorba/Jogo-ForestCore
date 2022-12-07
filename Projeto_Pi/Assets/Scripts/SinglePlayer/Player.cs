@@ -124,8 +124,8 @@ public class Player : MonoBehaviour
             GC.Camera[2].SetActive(true);
             GC.Camera[1].SetActive(false);
             GC.Camera[0].SetActive(false);
-            IC.Player.SetActive(false);
             Cursor.visible = true;
+            gameObject.transform.position = GC.SpawnPlayerAqui.transform.position;
         }
         #endregion
         if(Input.GetKeyDown(KeyCode.F))
