@@ -104,7 +104,6 @@ public class Player : MonoBehaviour
                 GC.Puzzle0_Fios[1].SetActive(false);
             }
             Cursor.visible = true;
-            gameObject.transform.position = GC.SpawnPlayerAqui.transform.position;
         }
         #endregion
         #region Puzzle0
@@ -134,6 +133,7 @@ public class Player : MonoBehaviour
         }
         #endregion
         //----------------------------------------------------------------------------------------------------------------------------------------
+        #region Animação
         if (controller.velocity.x != 0 || controller.velocity.z != 0)
         {
             if (Input.GetKeyDown(KeyCode.W))
@@ -159,6 +159,7 @@ public class Player : MonoBehaviour
             amin1.SetFloat("Esquerda", 0);
             amin1.SetFloat("Direita", 0);
         }
+        #endregion
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
 }

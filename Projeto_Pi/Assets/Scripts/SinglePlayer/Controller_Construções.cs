@@ -39,14 +39,19 @@ public class Controller_Construções : MonoBehaviour
             {
                 case 1: //Puzzle0
                         PY.efs = 5;
-                    GC.buton[3].SetActive(true);
-                    break;
-                case 2: //Puzzle2
-                        PY.efs2 = 1;
                         GC.buton[3].SetActive(true);
+                    break;
+                case 2:
+                    GC.Camera[0].SetActive(true);
                     break;
             }
         }
+    }
+    //----------------------------------------------------------------------------------------------------------------------------------------
+    private void OnTriggerExit(Collider other)
+    {
+        GC.Camera[0].SetActive(false);
+        IC.TextoDoJog.SetActive(false);
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
 }

@@ -16,7 +16,7 @@ public class GameContoller : MonoBehaviour
     public Animator aminPD, aminPE;
     public float timerTutorial;
 
-    public int click, quantidade, contagemG, contagemA, numeroCirculos, idEsc, idM, idG;
+    public int click, quantidade, contagemG, contagemA, numeroCirculos, idEsc, idM, idG, ordemdevir;
     public string sequencia, valor, codigo;
     private ItemCollect IC;
     private Player PY;
@@ -25,6 +25,8 @@ public class GameContoller : MonoBehaviour
     {
         IC = GameObject.Find("poço").GetComponent<ItemCollect>();
         PY = GameObject.Find("Player_Game").GetComponent<Player>();
+        //----------------------------------------------------------------------------------------------------------------------------------------
+        vem();
         //----------------------------------------------------------------------------------------------------------------------------------------
         Cursor.visible = true;
         //----------------------------------------------------------------------------------------------------------------------------------------
@@ -37,43 +39,10 @@ public class GameContoller : MonoBehaviour
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void Update()
     {
-        #region Inicio
-        timerTutorial += Time.deltaTime;
-        if(timerTutorial >= 0)
+        if (timerTutorial <= 40)
         {
-            Tutorial_história.text = "Olá! Seja bem vindo(a) ao jogo.";
+            timerTutorial += Time.deltaTime;
         }
-        if(timerTutorial >= 3)
-        {
-            Tutorial_história.text = "Vamos começar a jogar!";
-        }
-        if(timerTutorial >= 6)
-        {
-            Tutorial_história.text = "O seu objetivo é salvar a árvore da vida!";
-            Camera[2].SetActive(true);
-            Camera[3].SetActive(false);
-        }
-        if(timerTutorial >= 9)
-        {
-            Tutorial_história.text = "Para isso você precisa fazer tarefas.";
-        }
-        if(timerTutorial >= 12)
-        {
-            Camera[3].SetActive(true);
-            Camera[2].SetActive(false);
-            Tutorial_história.text = "Hora de fazer o 1°!";
-        }
-        if(timerTutorial >= 15)
-        {
-            Tutorial_história.text = "Vá até a estufa que se encontra no canto superior direito do mapa!";
-        }
-        if(timerTutorial >= 18)
-        {
-            PaneisTutoriais[4].SetActive(false);
-            PaneisTutoriais[2].SetActive(true);
-            Camera[3].SetActive(false);
-        }
-        #endregion
         #region ESC, M e G
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -614,9 +583,94 @@ public class GameContoller : MonoBehaviour
     }
     #endregion
     //----------------------------------------------------------------------------------------------------------------------------------------
+    #region Inicio
+    public void vem()
+    {
+        switch (ordemdevir)
+        {
+            case 0:
+                IC.Player.SetActive(false);
+                Camera[3].SetActive(true);
+                Tutorial_história.text = "Olá! Seja bem vindo(a) ao jogo.";
+                StartCoroutine(Tutorial(3));
+                break;
+            case 1:
+                Tutorial_história.text = "Vamos começar a jogar!";
+                StartCoroutine(Tutorial(3));
+
+                break;
+            case 2:
+                Tutorial_história.text = "O seu objetivo é salvar a árvore da vida!";
+                StartCoroutine(Tutorial(5));
+                Camera[2].SetActive(true);
+                Camera[3].SetActive(false);
+                break;
+            case 3:
+                Tutorial_história.text = "Para isso você vai usar a bioenergética.";
+                StartCoroutine(Tutorial(5));
+                break;
+            case 4:
+                Tutorial_história.text = "Você vai ajudar a planta a fazer fotossíntese!";
+                StartCoroutine(Tutorial(3));
+                break;
+            case 5:
+                Tutorial_história.text = "Você vai precisar de Água!";
+                StartCoroutine(Tutorial(3));
+                Camera[2].SetActive(false);
+                Camera[3].SetActive(false);
+                Camera[4].SetActive(true);
+                break;
+            case 6:
+                Tutorial_história.text = "E também precisa ajudar a planta a produzir Glicose!";
+                StartCoroutine(Tutorial(5));
+                Camera[4].SetActive(false);
+                Camera[0].SetActive(true);
+                break;
+            case 7:
+                Tutorial_história.text = "Cada tarefa que você errar, pode perder água ou glicose.";
+                StartCoroutine(Tutorial(5));
+                Camera[3].SetActive(true);
+                Camera[0].SetActive(false);
+                break;
+            case 8:
+                StartCoroutine(Tutorial(3));
+                PaneisTutoriais[4].SetActive(false);
+                panel[7].SetActive(true);
+                break;
+            case 9:
+                StartCoroutine(Tutorial(3));
+                PaneisTutoriais[4].SetActive(true);
+                Tutorial_história.text = "Cada tarefa correta você ganha água ou glicose!";
+                panel[7].SetActive(false);
+                break;
+            case 10:
+                Tutorial_história.text = "Hora de fazer a 1° tarefa!";
+                StartCoroutine(Tutorial(3));
+                break;
+            case 11:
+                Tutorial_história.text = "Vá até a estufa que se encontra no canto superior direito do mapa!";
+                StartCoroutine(Tutorial(5));
+                break;
+            case 12:
+                IC.Player.SetActive(true);
+                PaneisTutoriais[4].SetActive(false);
+                Camera[3].SetActive(false);
+                PaneisTutoriais[2].SetActive(true);
+                break;
+        }
+    }
+    #endregion
+    //----------------------------------------------------------------------------------------------------------------------------------------
     public void VoltaMenu()
     {
         SceneManager.LoadScene("Menu_Game");
+    }
+    //----------------------------------------------------------------------------------------------------------------------------------------
+    IEnumerator Tutorial(float tempo)
+    {
+        yield return new WaitForSeconds(tempo);
+        vem();
+        ordemdevir += 1;
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     #region Paineis Aparecem
