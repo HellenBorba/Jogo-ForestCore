@@ -11,9 +11,10 @@ public class GameContoller : MonoBehaviour
     public GameObject SpawnPlayerAqui;
     public Button[] interact, circulo;
     public Button CirculoStart;
-    public Text texto_puzzle_1, texto_puzzle1_1, texto_puzzle_0, texto_puzzle0_1, InformaçãoPontos;
+    public Text texto_puzzle_1, texto_puzzle1_1, texto_puzzle_0, texto_puzzle0_1, InformaçãoPontos, Tutorial_história;
     public Slider slider, Glicose, Água;
     public Animator aminPD, aminPE;
+    public float timerTutorial;
 
     public int click, quantidade, contagemG, contagemA, numeroCirculos, idEsc, idM, idG;
     public string sequencia, valor, codigo;
@@ -36,6 +37,43 @@ public class GameContoller : MonoBehaviour
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void Update()
     {
+        #region Inicio
+        timerTutorial += Time.deltaTime;
+        if(timerTutorial >= 0)
+        {
+            Tutorial_história.text = "Olá! Seja bem vindo(a) ao jogo.";
+        }
+        if(timerTutorial >= 3)
+        {
+            Tutorial_história.text = "Vamos começar a jogar!";
+        }
+        if(timerTutorial >= 6)
+        {
+            Tutorial_história.text = "O seu objetivo é salvar a árvore da vida!";
+            Camera[2].SetActive(true);
+            Camera[3].SetActive(false);
+        }
+        if(timerTutorial >= 9)
+        {
+            Tutorial_história.text = "Para isso você precisa fazer tarefas.";
+        }
+        if(timerTutorial >= 12)
+        {
+            Camera[3].SetActive(true);
+            Camera[2].SetActive(false);
+            Tutorial_história.text = "Hora de fazer o 1°!";
+        }
+        if(timerTutorial >= 15)
+        {
+            Tutorial_história.text = "Vá até a estufa que se encontra no canto superior direito do mapa!";
+        }
+        if(timerTutorial >= 18)
+        {
+            PaneisTutoriais[4].SetActive(false);
+            PaneisTutoriais[2].SetActive(true);
+            Camera[3].SetActive(false);
+        }
+        #endregion
         #region ESC, M e G
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -531,6 +569,7 @@ public class GameContoller : MonoBehaviour
         Puzzle0_Fios[1].SetActive(false);
         information[0].SetActive(false);
         information[1].SetActive(false);
+        PaneisTutoriais[2].SetActive(false);
         PY.efs2 = 0;
         PY.efs = 0;
         IC.TextoDoJog.SetActive(false);

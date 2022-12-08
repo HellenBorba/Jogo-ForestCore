@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     public int efs, efs2;
     public Animator amin1;
     CharacterController controller;
-
+    
     private GameContoller GC;
     private ItemCollect IC;
     private Vector3 forward, strafe, vertical;
@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
         controller = GetComponent<CharacterController>();
         gravity = (-2 * maxJumpHeight) / (timeToMaxHeight * timeToMaxHeight);
         jumpSpeed = (4 * maxJumpHeight) / timeToMaxHeight;
-        
+
     }
     //----------------------------------------------------------------------------------------------------------------------------------------
     void Update()
@@ -139,13 +139,17 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.W))
             {
                 amin1.SetFloat("Andar", 1);
-            }
-            if (Input.GetKeyDown(KeyCode.A))
+                amin1.SetFloat("Esquerda", 0);
+                amin1.SetFloat("Direita", 0);
+            }else if (Input.GetKeyDown(KeyCode.A))
             {
+                amin1.SetFloat("Andar", 0);
+                amin1.SetFloat("Direita", 0);
                 amin1.SetFloat("Esquerda", 1);
-            }
-            if(Input.GetKeyDown(KeyCode.D))
+            }else if(Input.GetKeyDown(KeyCode.D))
             {
+                amin1.SetFloat("Andar", 0);
+                amin1.SetFloat("Esquerda", 0);
                 amin1.SetFloat("Direita", 1);
             }
         }
