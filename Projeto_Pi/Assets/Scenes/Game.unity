@@ -19711,7 +19711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Itemtipo: 9
-  Lugar: 0
+  Lugar: 2
   TextoDoJog: {fileID: 2147001726}
   Player: {fileID: 919132147756959635}
 --- !u!114 &1568382888
