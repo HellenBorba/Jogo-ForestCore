@@ -277,7 +277,6 @@ public class GameControllerCHO : MonoBehaviour
     {
         yield return new WaitForSeconds(0f);
         GC.panel[4].SetActive(true);
-        GC.buton[3].SetActive(true);
         yield return new WaitForSeconds(2f);
         GC.panel[4].SetActive(false);
     }

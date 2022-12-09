@@ -75,6 +75,11 @@ public class ItemCollect : MonoBehaviour
     }
     #endregion
     //----------------------------------------------------------------------------------------------------------------------------------------
+    private void OnTriggerExit(Collider other)
+    {
+        TextoDoJog.SetActive(false);
+    }
+    //----------------------------------------------------------------------------------------------------------------------------------------
     #region Tutoriais
     IEnumerator Tutorial1()
     {
@@ -87,6 +92,7 @@ public class ItemCollect : MonoBehaviour
         GC.PaneisTutoriais[1].SetActive(true);
     }
     #endregion
+    //----------------------------------------------------------------------------------------------------------------------------------------
     #region PuzzlesPaineis
     IEnumerator Puzzle0()
     {

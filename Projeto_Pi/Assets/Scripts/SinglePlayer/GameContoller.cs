@@ -39,6 +39,15 @@ public class GameContoller : MonoBehaviour
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void Update()
     {
+        if(contagemG == 100 && contagemA == 100)
+        {
+            StartCoroutine(Vitória());
+        }
+        if(contagemA == 0 || contagemG == 0)
+        {
+            StartCoroutine(Derrota());
+        }
+        //----------------------------------------------------------------------------------------------------------------------------------------
         if (timerTutorial <= 40)
         {
             timerTutorial += Time.deltaTime;
@@ -565,13 +574,22 @@ public class GameContoller : MonoBehaviour
     }
     #endregion
     //----------------------------------------------------------------------------------------------------------------------------------------
-    #region Vitória/ContagemPontos
+    #region Vitória/Derrota/ContagemPontos
     IEnumerator Vitória()
     {
         yield return new WaitForSeconds(0f);
         panel[6].SetActive(true);
+        Camera[1].SetActive(true);
         yield return new WaitForSeconds(5f);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Menu_Game");
+    }
+    IEnumerator Derrota()
+    {
+        yield return new WaitForSeconds(0f);
+        Camera[1].SetActive(true);
+        panel[5].SetActive(true);
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene("Menu_Game");
     }
     public void ContagemGlicose(int num)
     {
@@ -606,7 +624,7 @@ public class GameContoller : MonoBehaviour
                 Camera[3].SetActive(false);
                 break;
             case 3:
-                Tutorial_história.text = "Para isso você vai usar a bioenergética.";
+                Tutorial_história.text = "Para isso vamos usar a bioenergética.";
                 StartCoroutine(Tutorial(5));
                 break;
             case 4:
@@ -614,20 +632,20 @@ public class GameContoller : MonoBehaviour
                 StartCoroutine(Tutorial(3));
                 break;
             case 5:
-                Tutorial_história.text = "Você vai precisar de Água!";
+                Tutorial_história.text = "Precisa de Água!";
                 StartCoroutine(Tutorial(3));
                 Camera[2].SetActive(false);
                 Camera[3].SetActive(false);
                 Camera[4].SetActive(true);
                 break;
             case 6:
-                Tutorial_história.text = "E também precisa ajudar a planta a produzir Glicose!";
+                Tutorial_história.text = "E também a ajudar a planta a produzir Glicose!";
                 StartCoroutine(Tutorial(5));
                 Camera[4].SetActive(false);
                 Camera[0].SetActive(true);
                 break;
             case 7:
-                Tutorial_história.text = "Cada tarefa que você errar, pode perder água ou glicose.";
+                Tutorial_história.text = "Cada tarefa que você errar, PERDERÁ água ou glicose.";
                 StartCoroutine(Tutorial(5));
                 Camera[3].SetActive(true);
                 Camera[0].SetActive(false);
@@ -640,7 +658,7 @@ public class GameContoller : MonoBehaviour
             case 9:
                 StartCoroutine(Tutorial(3));
                 PaneisTutoriais[4].SetActive(true);
-                Tutorial_história.text = "Cada tarefa correta você ganha água ou glicose!";
+                Tutorial_história.text = "E cada correta GANHARÁ água ou glicose!";
                 panel[7].SetActive(false);
                 break;
             case 10:
