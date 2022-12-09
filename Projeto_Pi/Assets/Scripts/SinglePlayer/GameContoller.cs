@@ -609,7 +609,7 @@ public class GameContoller : MonoBehaviour
             case 0:
                 IC.Player.SetActive(false);
                 Camera[3].SetActive(true);
-                Tutorial_história.text = "Olá! Seja bem vindo(a) ao jogo.";
+                Tutorial_história.text = "Olá! Seja bem vindo(a) ao Forest Core.";
                 StartCoroutine(Tutorial(3));
                 break;
             case 1:
@@ -629,7 +629,7 @@ public class GameContoller : MonoBehaviour
                 break;
             case 4:
                 Tutorial_história.text = "Você vai ajudar a planta a fazer fotossíntese!";
-                StartCoroutine(Tutorial(3));
+                StartCoroutine(Tutorial(5));
                 break;
             case 5:
                 Tutorial_história.text = "Precisa de Água!";
@@ -651,25 +651,29 @@ public class GameContoller : MonoBehaviour
                 Camera[0].SetActive(false);
                 break;
             case 8:
-                StartCoroutine(Tutorial(3));
+                StartCoroutine(Tutorial(5));
                 PaneisTutoriais[4].SetActive(false);
                 panel[7].SetActive(true);
                 break;
             case 9:
-                StartCoroutine(Tutorial(3));
+                StartCoroutine(Tutorial(5));
                 PaneisTutoriais[4].SetActive(true);
                 Tutorial_história.text = "E cada correta GANHARÁ água ou glicose!";
                 panel[7].SetActive(false);
                 break;
             case 10:
-                Tutorial_história.text = "Hora de fazer a 1° tarefa!";
-                StartCoroutine(Tutorial(3));
+                Tutorial_história.text = "Lembrando que para vencer, você precisa ter cheio a água e a glicose.";
+                StartCoroutine(Tutorial(7));
                 break;
             case 11:
-                Tutorial_história.text = "Vá até a estufa que se encontra no canto superior direito do mapa!";
+                Tutorial_história.text = "Hora de fazer a 1° tarefa!";
                 StartCoroutine(Tutorial(5));
                 break;
             case 12:
+                Tutorial_história.text = "Vá até a estufa que se encontra no canto superior direito do mapa!";
+                StartCoroutine(Tutorial(7));
+                break;
+            case 13:
                 IC.Player.SetActive(true);
                 PaneisTutoriais[4].SetActive(false);
                 Camera[3].SetActive(false);
