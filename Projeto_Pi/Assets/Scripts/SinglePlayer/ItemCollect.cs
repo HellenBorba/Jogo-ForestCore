@@ -36,7 +36,6 @@ public class ItemCollect : MonoBehaviour
                         GC.Camera[0].SetActive(false);
                         GC.Camera[2].SetActive(false);
                         Cursor.visible = true;
-                        StartCoroutine(Puzzle0());
                         Player.SetActive(false);
                         GC.PaneisTutoriais[2].SetActive(false);
                     }
@@ -94,11 +93,6 @@ public class ItemCollect : MonoBehaviour
     #endregion
     //----------------------------------------------------------------------------------------------------------------------------------------
     #region PuzzlesPaineis
-    IEnumerator Puzzle0()
-    {
-        yield return new WaitForSeconds(1.5f);
-        GC.panel[0].SetActive(true);
-    }
     IEnumerator Puzzle1()
     {
         yield return new WaitForSeconds(1.5f);
