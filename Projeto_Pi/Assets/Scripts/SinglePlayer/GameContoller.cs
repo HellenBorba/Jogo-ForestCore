@@ -15,9 +15,9 @@ public class GameContoller : MonoBehaviour
     public Slider slider, Glicose, Água;
     public Animator aminPD, aminPE;
     public float timerTutorial;
-
     public int click, quantidade, contagemG, contagemA, numeroCirculos, idEsc, idM, idG, ordemdevir;
     public string sequencia, valor, codigo;
+
     private ItemCollect IC;
     private Player PY;
     //----------------------------------------------------------------------------------------------------------------------------------------
@@ -39,11 +39,11 @@ public class GameContoller : MonoBehaviour
     //----------------------------------------------------------------------------------------------------------------------------------------
     public void Update()
     {
-        if(contagemG == 100 && contagemA == 100)
+        if(contagemG >= 100 && contagemA >= 100)
         {
             StartCoroutine(Vitória());
         }
-        if(contagemA == 0 || contagemG == 0)
+        if(contagemA <= 0 || contagemG <= 0)
         {
             StartCoroutine(Derrota());
         }
@@ -164,6 +164,9 @@ public class GameContoller : MonoBehaviour
             aminPE.SetFloat("Habilita", 1);
             StartCoroutine(AnimaçãoPortas());
             PaneisTutoriais[2].SetActive(false);
+
+            contagemG += 15;
+            contagemA += 15;
         }
         texto_puzzle0_1.text = "" + codigo;
         //----------------------------------------------------------------------------------------------------------------------------------------
@@ -297,6 +300,7 @@ public class GameContoller : MonoBehaviour
                     slider.value = 0;
                     numeroCirculos = 0;
                     StartCoroutine(Puzzle1_InformaçõesV());
+                    contagemA += 20;
                 }
                 else
                 {
@@ -591,14 +595,6 @@ public class GameContoller : MonoBehaviour
         yield return new WaitForSeconds(5f);
         SceneManager.LoadScene("Menu_Game");
     }
-    public void ContagemGlicose(int num)
-    {
-        contagemG += num;
-    }
-    public void ContagemÁgua(int num)
-    {
-        contagemA += num;
-    }
     #endregion
     //----------------------------------------------------------------------------------------------------------------------------------------
     #region Inicio
@@ -609,7 +605,7 @@ public class GameContoller : MonoBehaviour
             case 0:
                 IC.Player.SetActive(false);
                 Camera[3].SetActive(true);
-                Tutorial_história.text = "Olá! Seja bem vindo(a) ao Forest Core.";
+                Tutorial_história.text = "Olá! Seja bem vindo (a) ao Forest Core.";
                 StartCoroutine(Tutorial(3));
                 break;
             case 1:
@@ -766,7 +762,7 @@ public class GameContoller : MonoBehaviour
         {
             yield return new WaitForSeconds(0f);
             PaneisTutoriais[2].SetActive(true);
-            InformaçãoPontos.text = "-20 de glicose";
+            InformaçãoPontos.text = "-10 de glicose";
             yield return new WaitForSeconds(1.5f);
             PaneisTutoriais[2].SetActive(false);
         }
@@ -778,7 +774,8 @@ public class GameContoller : MonoBehaviour
         {
             yield return new WaitForSeconds(0f);
             PaneisTutoriais[2].SetActive(true);
-            InformaçãoPontos.text = "+10 de glicose";
+            InformaçãoPontos.text = "+20 de glicose";
+            contagemG += 30;
             yield return new WaitForSeconds(1.5f);
             PaneisTutoriais[2].SetActive(false);
         }

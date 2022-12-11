@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 47e2aab4194aaf5479b125a4a890bf5a
+guid: baf9a5fd6dbd77a4bb2ef947a5d43778
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Golden Age
+  - Upheaval TT (BRK)
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
