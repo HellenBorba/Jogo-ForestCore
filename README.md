@@ -1,6 +1,6 @@
 # Projeto do TeamHL
 
-Projeto de Pi da escola. Nossa equipe se chama TeamHL e criamos um jogo SinglePlayer/MultiPlayer baseado em Bioenergética, o tema que nos foi dado de biologia.
+Projeto de Pi da escola. Nossa equipe se chama TeamHL e criamos um jogo SinglePlayer/MultiPlayer baseado em Bioenergética, do tema que nos foi dado de biologia.
 
 # Forest Core
 
