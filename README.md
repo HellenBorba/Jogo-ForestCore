@@ -29,8 +29,8 @@ Projeto de Pi da escola. Nossa equipe se chama TeamHL e criamos um jogo SinglePl
 ![esquema lógico](ForestCore-Mapa.png)
 
 # MultiPlayer
-![esquema lógico](ForestCore-ForestCore-Multiplayer.png)
-![esquema lógico](ForestCore-ForestCore-Multiplayer1.png)
+![esquema lógico](ForestCore-ForestCore-MultiPlayer.png)
+![esquema lógico](ForestCore-ForestCore-MultiPlayer1.png)
 
 # Informações do Jogo
 ![esquema lógico](ForestCore-Informação1.png)
