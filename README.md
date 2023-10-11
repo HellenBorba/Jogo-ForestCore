@@ -3,6 +3,7 @@
 Projeto de Pi da escola. Nossa equipe se chama TeamHL e criamos um jogo SinglePlayer/MultiPlayer baseado em Bioenergética, do tema que nos foi dado de biologia.
 
 # Forest Core
+![esquema lógico](ForestCore-Icon.png)
 
 # Menu
 ![esquema lógico](ForestCore-Menu.png)
